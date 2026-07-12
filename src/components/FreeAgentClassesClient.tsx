@@ -633,6 +633,7 @@ function FreeAgentsInner({
             sortDir={(dir === "asc" || dir === "desc" ? dir : "desc") as SortDir}
             onSortChange={(key, nextDir) => setFilters({ sort: key, dir: nextDir })}
             compact={compact}
+            totalCount={activeGroup?.contracts.length}
             emptyMessage={`No free agents in ${yearLabel(view)} match your filters.`}
             emptyActionLabel="Clear filters"
             onEmptyAction={() =>

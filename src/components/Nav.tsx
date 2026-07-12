@@ -14,12 +14,26 @@ const LINKS = [
 
 export function Nav({ updatedLabel }: { updatedLabel?: string }) {
   const pathname = usePathname();
+  const onHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)] print:hidden">
+    <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md print:hidden">
       <div className="mx-auto flex h-12 max-w-7xl items-center gap-3 px-4 sm:gap-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex shrink-0 items-baseline gap-1.5 min-w-0" aria-label="Front Office home">
-          <span className="text-[14px] font-bold tracking-[-0.03em] text-[var(--foreground)] transition-colors group-hover:text-[var(--accent)]">
+        <Link
+          href="/"
+          className={classNames(
+            "group flex shrink-0 items-baseline gap-1.5 min-w-0",
+            onHome && "text-[var(--accent)]"
+          )}
+          aria-label="Front Office home"
+          aria-current={onHome ? "page" : undefined}
+        >
+          <span
+            className={classNames(
+              "text-[14px] font-bold tracking-[-0.03em] transition-colors group-hover:text-[var(--accent)]",
+              onHome ? "text-[var(--accent)]" : "text-[var(--foreground)]"
+            )}
+          >
             Front Office
           </span>
           <span className="hidden text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--faint)] sm:inline">
@@ -27,26 +41,32 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
           </span>
         </Link>
 
-        <nav className="flex min-w-0 flex-1 items-center gap-0 overflow-x-auto scrollbar-none">
-          {LINKS.map((link) => {
-            const active =
-              pathname === link.href || pathname.startsWith(`${link.href}/`);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={classNames(
-                  "shrink-0 border-b-2 px-2.5 py-3 text-[12px] font-medium transition-colors sm:px-3",
-                  active
-                    ? "border-[var(--accent)] text-[var(--accent)]"
-                    : "border-transparent text-[var(--muted)] hover:text-[var(--foreground)]"
-                )}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="relative min-w-0 flex-1">
+          <nav
+            className="flex min-w-0 items-center gap-0 overflow-x-auto scrollbar-none [mask-image:linear-gradient(to_right,transparent,black_12px,black_calc(100%-20px),transparent)] sm:[mask-image:none]"
+            aria-label="Primary"
+          >
+            {LINKS.map((link) => {
+              const active =
+                pathname === link.href || pathname.startsWith(`${link.href}/`);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={classNames(
+                    "shrink-0 border-b-2 px-2.5 py-3 text-[12px] font-medium transition-colors sm:px-3",
+                    active
+                      ? "border-[var(--accent)] text-[var(--accent)]"
+                      : "border-transparent text-[var(--muted)] hover:text-[var(--foreground)]"
+                  )}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
 
         <div className="flex shrink-0 items-center gap-2">
           {updatedLabel && (
@@ -64,7 +84,7 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
             title="Search (⌘K or /)"
           >
             <SearchIcon />
-              <span className="hidden sm:inline">Find</span>
+            <span className="hidden sm:inline">Find</span>
             <kbd className="hidden md:inline rounded border border-[var(--border)] bg-[var(--surface-2)] px-1 py-px text-[10px] font-normal text-[var(--faint)]">
               ⌘K
             </kbd>

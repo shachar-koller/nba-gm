@@ -253,6 +253,7 @@ function DraftInner({ picks }: { picks: DraftPick[] }) {
         sortDir={(dir === "asc" || dir === "desc" ? dir : "asc") as SortDir}
         onSortChange={(key, nextDir) => setFilters({ sort: key, dir: nextDir })}
         compact={compact}
+        totalCount={picks.length}
         emptyMessage="No draft picks match these filters."
         emptyActionLabel="Clear all filters"
         onEmptyAction={clearFilters}

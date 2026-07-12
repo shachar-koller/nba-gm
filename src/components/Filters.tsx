@@ -1,6 +1,7 @@
 "use client";
 
 import { classNames } from "@/lib/format";
+import { shouldClearSearchOnEscape } from "@/lib/ux";
 import type { ActiveFilterChip } from "@/lib/urlState";
 
 export function FilterBar({
@@ -19,7 +20,10 @@ export function FilterBar({
   const showChips = Boolean(chips?.length && onClearChip);
 
   return (
-    <div className="border-y border-[var(--border)] bg-[var(--surface)]">
+    <div
+      data-sticky-filters
+      className="sticky top-12 z-30 border-y border-[var(--border)] bg-[var(--surface)]/95 shadow-[0_1px_0_0_var(--border)] backdrop-blur-md print:static print:bg-[var(--surface)] print:shadow-none print:backdrop-blur-none"
+    >
       <div className="flex flex-wrap items-end gap-2 px-2.5 py-2">{children}</div>
       {(showChips || (hasActive && onClear)) && (
         <div className="flex flex-wrap items-center gap-1.5 border-t border-[var(--border)] px-2.5 py-2">
@@ -87,15 +91,37 @@ export function SearchInput({
   placeholder?: string;
   id?: string;
 }) {
+  const hasValue = shouldClearSearchOnEscape(value);
   return (
-    <input
-      id={id}
-      type="search"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder={placeholder}
-      className={controlClass}
-    />
+    <div className="relative">
+      <input
+        id={id}
+        type="search"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Escape" && shouldClearSearchOnEscape(value)) {
+            e.preventDefault();
+            e.stopPropagation();
+            onChange("");
+          }
+        }}
+        placeholder={placeholder}
+        className={`${controlClass} ${hasValue ? "pr-8" : ""}`}
+        autoComplete="off"
+      />
+      {hasValue && (
+        <button
+          type="button"
+          onClick={() => onChange("")}
+          className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded px-1 py-0.5 text-[12px] leading-none text-[var(--muted)] hover:bg-[var(--surface-3)] hover:text-[var(--foreground)]"
+          aria-label="Clear search"
+          title="Clear (Esc)"
+        >
+          ×
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -245,13 +271,19 @@ export function EmptyState({
   onAction?: () => void;
 }) {
   return (
-    <div className="px-4 py-10 text-center">
-      <p className="text-[13px] text-[var(--muted)]">{message}</p>
+    <div className="px-4 py-12 text-center" role="status">
+      <div className="mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-2)] text-[14px] text-[var(--faint)]">
+        ∅
+      </div>
+      <p className="text-[13px] font-medium text-[var(--foreground)]">{message}</p>
+      <p className="mt-1 text-[12px] text-[var(--muted)]">
+        Try broadening filters or clearing search.
+      </p>
       {actionLabel && onAction && (
         <button
           type="button"
           onClick={onAction}
-          className="mt-2.5 text-[13px] font-medium text-[var(--accent)] hover:underline"
+          className="mt-3 inline-flex items-center rounded-[var(--radius-sm)] border border-[var(--accent-border)] bg-[var(--accent-soft)] px-2.5 py-1 text-[12px] font-medium text-[var(--accent)] hover:border-[var(--accent)]"
         >
           {actionLabel}
         </button>

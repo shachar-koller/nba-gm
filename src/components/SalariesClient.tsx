@@ -421,6 +421,7 @@ function SalariesInner({
         sortDir={(dir === "asc" || dir === "desc" ? dir : "desc") as SortDir}
         onSortChange={(key, nextDir) => setFilters({ sort: key, dir: nextDir })}
         compact={compact}
+        totalCount={contracts.length}
         emptyMessage="No players match these filters."
         emptyActionLabel="Clear all filters"
         onEmptyAction={clearFilters}

@@ -124,12 +124,18 @@ export default function HomePage() {
             </Link>
           </div>
           <ul className="divide-y divide-[var(--border)]">
-            {teamRows.slice(0, 8).map((r) => (
+            {teamRows.slice(0, 8).map((r, i) => (
               <li key={r.team.abbr}>
                 <Link
                   href={`/teams/${r.team.abbr.toLowerCase()}`}
                   className="flex items-center gap-2.5 px-3.5 py-2 transition-colors hover:bg-[var(--surface-2)]"
                 >
+                  <span
+                    className="w-5 shrink-0 text-right text-[11px] font-semibold tabular-nums text-[var(--faint)]"
+                    aria-hidden
+                  >
+                    {i + 1}
+                  </span>
                   <div
                     className="flex h-7 w-7 shrink-0 items-center justify-center rounded-[var(--radius-sm)]"
                     style={{ backgroundColor: `${r.team.primary}14` }}

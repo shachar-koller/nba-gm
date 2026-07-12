@@ -6,6 +6,7 @@ import { getAppData } from "@/lib/data";
 import { TEAMS } from "@/lib/teams";
 import { formatMoney } from "@/lib/format";
 import { classNames } from "@/lib/format";
+import { clampActiveIndex, scoreSearchMatch } from "@/lib/ux";
 
 type Item = {
   id: string;
@@ -42,6 +43,8 @@ export function CommandPalette() {
   const [q, setQ] = useState("");
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const previouslyFocused = useRef<HTMLElement | null>(null);
 
   const items = useMemo(() => {
     const data = getAppData();
@@ -72,14 +75,8 @@ export function CommandPalette() {
     }
     const scored = items
       .map((item) => {
-        const label = item.label.toLowerCase();
-        const hint = (item.hint ?? "").toLowerCase();
-        let score = 0;
-        if (label === query || hint === query) score = 100;
-        else if (label.startsWith(query)) score = 80;
-        else if (label.includes(query)) score = 50;
-        else if (hint.includes(query)) score = 30;
-        else return null;
+        const score = scoreSearchMatch(item.label, item.hint, query);
+        if (score == null) return null;
         return { item, score };
       })
       .filter(Boolean) as Array<{ item: Item; score: number }>;
@@ -138,8 +135,28 @@ export function CommandPalette() {
 
   useEffect(() => {
     if (!open) return;
+    previouslyFocused.current = document.activeElement as HTMLElement | null;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     requestAnimationFrame(() => inputRef.current?.focus());
+    return () => {
+      document.body.style.overflow = prev;
+      const el = previouslyFocused.current;
+      previouslyFocused.current = null;
+      if (el && typeof el.focus === "function") {
+        requestAnimationFrame(() => el.focus());
+      }
+    };
   }, [open]);
+
+  // Keep keyboard selection visible in the scrollable list
+  useEffect(() => {
+    if (!open || !listRef.current) return;
+    const node = listRef.current.querySelector<HTMLElement>(
+      `[data-palette-index="${active}"]`
+    );
+    node?.scrollIntoView({ block: "nearest" });
+  }, [active, open, filtered]);
 
   if (!open) return null;
 
@@ -149,6 +166,7 @@ export function CommandPalette() {
   }, {});
 
   let flatIndex = -1;
+  const safeActive = clampActiveIndex(active, filtered.length);
 
   return (
     <div className="fixed inset-0 z-[60] flex items-start justify-center px-4 pt-[12vh] print:hidden">
@@ -177,19 +195,23 @@ export function CommandPalette() {
             }}
             placeholder="Search players, teams, pages…"
             className="w-full bg-transparent py-2.5 text-[13px] outline-none placeholder:text-[var(--faint)]"
+            aria-controls="command-palette-list"
+            aria-activedescendant={
+              filtered[safeActive] ? `palette-item-${filtered[safeActive].id}` : undefined
+            }
             onKeyDown={(e) => {
               if (e.key === "Escape") {
                 e.preventDefault();
                 close();
               } else if (e.key === "ArrowDown") {
                 e.preventDefault();
-                setActive((i) => Math.min(i + 1, filtered.length - 1));
+                setActive((i) => clampActiveIndex(i + 1, filtered.length));
               } else if (e.key === "ArrowUp") {
                 e.preventDefault();
-                setActive((i) => Math.max(i - 1, 0));
-              } else if (e.key === "Enter" && filtered[active]) {
+                setActive((i) => clampActiveIndex(i - 1, filtered.length));
+              } else if (e.key === "Enter" && filtered[safeActive]) {
                 e.preventDefault();
-                go(filtered[active]);
+                go(filtered[safeActive]);
               }
             }}
           />
@@ -197,10 +219,18 @@ export function CommandPalette() {
             esc
           </kbd>
         </div>
-        <div className="max-h-[min(50vh,360px)] overflow-y-auto py-2">
+        <div
+          id="command-palette-list"
+          ref={listRef}
+          role="listbox"
+          className="max-h-[min(50vh,360px)] overflow-y-auto py-2"
+        >
           {filtered.length === 0 ? (
-            <p className="px-4 py-8 text-center text-sm text-[var(--muted)]">
+            <p className="px-4 py-8 text-center text-sm text-[var(--muted)]" role="status">
               No matches for “{q}”
+              <span className="mt-1 block text-[12px] text-[var(--faint)]">
+                Try a player name, team abbr, or page title
+              </span>
             </p>
           ) : (
             Object.entries(groups).map(([group, list]) => (
@@ -214,12 +244,16 @@ export function CommandPalette() {
                   return (
                     <button
                       key={item.id}
+                      id={`palette-item-${item.id}`}
                       type="button"
+                      role="option"
+                      data-palette-index={idx}
+                      aria-selected={idx === safeActive}
                       onClick={() => go(item)}
                       onMouseEnter={() => setActive(idx)}
                       className={classNames(
                         "flex w-full items-center justify-between gap-3 border-l-2 pl-2.5 pr-3 py-1.5 text-left text-[13px]",
-                        idx === active
+                        idx === safeActive
                           ? "border-l-[var(--accent)] bg-[var(--accent-soft)] text-[var(--foreground)]"
                           : "border-l-transparent hover:bg-[var(--surface-2)]"
                       )}
