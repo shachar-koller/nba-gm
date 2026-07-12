@@ -33,6 +33,7 @@ import { ExportButton } from "./ExportButton";
 import { DensityToggle } from "./DensityToggle";
 import { SavedViewsBar } from "./SavedViews";
 import { PlayerDrawer, PlayerNameButton } from "./PlayerDrawer";
+import { useModShortcut } from "@/lib/useModShortcut";
 
 type TypeFilter = "all" | "ufa" | "rfa";
 
@@ -367,12 +368,13 @@ function FreeAgentsInner({
 
   const isSpecial =
     view === NO_FA_BUCKET || view === TWO_WAY_BUCKET || view === "overview";
+  const { shortcut } = useModShortcut();
 
   return (
     <div>
       <PageHeader
         title="Free Agent Classes"
-        description="Who becomes free each offseason — UFA vs RFA, estimated cap holds, option timing. Click a player for the full contract. ⌘K to search."
+        description={`Who becomes free each offseason — UFA vs RFA, estimated cap holds, option timing. Click a player for the full contract. ${shortcut} to search.`}
       >
         <DensityToggle density={density} onChange={setDensity} />
         <SavedViewsBar path={pathname} queryString={queryString} />

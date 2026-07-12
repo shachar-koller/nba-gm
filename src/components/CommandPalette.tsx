@@ -7,6 +7,7 @@ import { TEAMS } from "@/lib/teams";
 import { formatMoney } from "@/lib/format";
 import { classNames } from "@/lib/format";
 import { clampActiveIndex, scoreSearchMatch } from "@/lib/ux";
+import { useModShortcut } from "@/lib/useModShortcut";
 
 type Item = {
   id: string;
@@ -45,6 +46,7 @@ export function CommandPalette() {
   const inputRef = useRef<HTMLInputElement>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const previouslyFocused = useRef<HTMLElement | null>(null);
+  const { shortcut, openHint } = useModShortcut();
 
   const items = useMemo(() => {
     const data = getAppData();
@@ -184,7 +186,7 @@ export function CommandPalette() {
       >
         <div className="flex items-center gap-2 border-b border-[var(--border-strong)] px-3.5">
           <span className="rounded border border-[var(--border)] px-1.5 py-0.5 text-[10px] font-medium text-[var(--muted)]">
-            ⌘K
+            {shortcut}
           </span>
           <input
             ref={inputRef}
@@ -272,7 +274,7 @@ export function CommandPalette() {
           )}
         </div>
         <div className="border-t border-[var(--border)] px-3 py-2 text-[10px] text-[var(--muted)]">
-          ↑↓ navigate · Enter open · Esc close · / or ⌘K to open
+          {openHint}
         </div>
       </div>
     </div>

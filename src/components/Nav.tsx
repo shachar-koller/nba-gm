@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { classNames } from "@/lib/format";
+import { useModShortcut } from "@/lib/useModShortcut";
 
 const LINKS = [
   { href: "/draft", label: "Draft" },
@@ -15,6 +16,7 @@ const LINKS = [
 export function Nav({ updatedLabel }: { updatedLabel?: string }) {
   const pathname = usePathname();
   const onHome = pathname === "/";
+  const { shortcut, spoken } = useModShortcut();
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md print:hidden">
@@ -80,13 +82,13 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
               window.dispatchEvent(new Event("nba-fo-open-palette"));
             }}
             className="inline-flex items-center gap-1.5 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-2 py-1 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--border-strong)] transition-colors"
-            aria-label="Open search (Command K)"
-            title="Search (⌘K or /)"
+            aria-label={`Open search (${spoken})`}
+            title={`Search (${shortcut} or /)`}
           >
             <SearchIcon />
             <span className="hidden sm:inline">Find</span>
             <kbd className="hidden md:inline rounded border border-[var(--border)] bg-[var(--surface-2)] px-1 py-px text-[10px] font-normal text-[var(--faint)]">
-              ⌘K
+              {shortcut}
             </kbd>
           </button>
         </div>

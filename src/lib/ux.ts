@@ -45,3 +45,42 @@ export function scoreSearchMatch(
 export function shouldClearSearchOnEscape(value: string): boolean {
   return value.trim().length > 0;
 }
+
+/**
+ * Detect Apple platforms (⌘) vs Windows/Linux (Ctrl).
+ * Pass navigator fields for testability; in browsers omit args.
+ */
+export function isApplePlatform(
+  platform?: string | null,
+  userAgent?: string | null
+): boolean {
+  const p = platform ?? "";
+  const ua = userAgent ?? "";
+  if (/Mac|iPhone|iPad|iPod/i.test(p)) return true;
+  // navigator.platform is often empty on modern browsers; UA still has Mac.
+  if (/Macintosh|Mac OS X|iPhone|iPad|iPod/i.test(ua)) return true;
+  return false;
+}
+
+/** Compact chord label for UI chrome: "⌘K" on Apple, "Ctrl+K" elsewhere. */
+export function formatModShortcut(
+  isApple: boolean,
+  key = "K"
+): string {
+  const k = key.toUpperCase();
+  return isApple ? `⌘${k}` : `Ctrl+${k}`;
+}
+
+/** Accessible long form: "Command K" / "Control K". */
+export function formatModShortcutSpoken(
+  isApple: boolean,
+  key = "K"
+): string {
+  const k = key.toUpperCase();
+  return isApple ? `Command ${k}` : `Control ${k}`;
+}
+
+/** Footer / tooltip hint for opening the command palette. */
+export function formatPaletteOpenHint(isApple: boolean): string {
+  return `↑↓ navigate · Enter open · Esc close · / or ${formatModShortcut(isApple)} to open`;
+}
