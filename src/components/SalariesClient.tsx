@@ -8,6 +8,7 @@ import { pctOfCapForSeason } from "@/lib/data";
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
 import { positionFilterLabel, positionMatches } from "@/lib/positions";
+import { matchesSearch } from "@/lib/ux";
 import type { SortDir } from "./DataTable";
 import { DataTable, type Column } from "./DataTable";
 import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from "./Filters";
@@ -85,14 +86,13 @@ function SalariesInner({
   }));
 
   const filtered = useMemo(() => {
-    const query = q.trim().toLowerCase();
     return contracts.filter((c) => {
       if (team && c.team !== team) return false;
       if (pos && !positionMatches(pos, c.position)) return false;
       if (age === "u25" && (c.age == null || c.age >= 25)) return false;
       if (age === "25-29" && (c.age == null || c.age < 25 || c.age > 29)) return false;
       if (age === "30+" && (c.age == null || c.age < 30)) return false;
-      if (query && !c.player.toLowerCase().includes(query)) return false;
+      if (!matchesSearch(q, c.player, c.team)) return false;
       if (status === "po" && !c.salaries.some((s) => s.option === "player")) return false;
       if (status === "to" && !c.salaries.some((s) => s.option === "team")) return false;
       if (status === "ufa" && c.freeAgencyType !== "UFA") return false;

@@ -18,6 +18,7 @@ import {
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
 import { positionFilterLabel, positionMatches } from "@/lib/positions";
+import { matchesSearch } from "@/lib/ux";
 import { DataTable, type Column, type SortDir } from "./DataTable";
 import {
   Field,
@@ -124,7 +125,6 @@ function FreeAgentsInner({
 
   const filteredPlayers = useMemo(() => {
     if (!activeGroup) return [];
-    const query = q.trim().toLowerCase();
     return activeGroup.contracts.filter((c) => {
       if (team && c.team !== team) return false;
       if (pos && !positionMatches(pos, c.position)) return false;
@@ -134,7 +134,7 @@ function FreeAgentsInner({
       if (age === "30+" && (c.age == null || c.age < 30)) return false;
       if (type === "ufa" && effectiveFreeAgencyType(c) !== "UFA") return false;
       if (type === "rfa" && effectiveFreeAgencyType(c) !== "RFA") return false;
-      if (query && !c.player.toLowerCase().includes(query)) return false;
+      if (!matchesSearch(q, c.player, c.team)) return false;
       return true;
     });
   }, [activeGroup, q, team, type, pos, age]);

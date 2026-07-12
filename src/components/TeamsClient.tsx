@@ -23,6 +23,7 @@ import {
   defaultDirForTeamSort,
   type SortDir,
 } from "@/lib/teamsMetrics";
+import { matchesSearch } from "@/lib/ux";
 import { Field, FilterBar, PageHeader, SearchInput, SelectInput, SegmentedControl, StatCard } from "./Filters";
 import { TeamLogo } from "./TeamLogo";
 import { ApronBadge, OptionBadge } from "./Badge";
@@ -78,7 +79,6 @@ function TeamsClientInner({
   );
 
   const rows = useMemo(() => {
-    const query = q.trim().toLowerCase();
     let list = TEAMS.map((t) => {
       const p = payrolls.find((x) => x.team === t.abbr);
       const spending = p ? effectivePayroll(p) : 0;
@@ -104,12 +104,9 @@ function TeamsClientInner({
     });
 
     if (conf) list = list.filter((r) => r.team.conference === conf);
-    if (query) {
-      list = list.filter(
-        (r) =>
-          r.team.fullName.toLowerCase().includes(query) ||
-          r.team.abbr.toLowerCase().includes(query) ||
-          r.team.city.toLowerCase().includes(query)
+    if (q.trim()) {
+      list = list.filter((r) =>
+        matchesSearch(q, r.team.fullName, r.team.abbr, r.team.city, r.team.name)
       );
     }
 

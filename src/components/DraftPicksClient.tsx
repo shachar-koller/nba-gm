@@ -6,6 +6,7 @@ import { TEAMS } from "@/lib/teams";
 import { draftCapitalMatrix } from "@/lib/data";
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
+import { matchesSearch } from "@/lib/ux";
 import { DataTable, type Column, type SortDir } from "./DataTable";
 import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from "./Filters";
 import { TeamChip } from "./TeamLogo";
@@ -63,16 +64,22 @@ function DraftInner({ picks }: { picks: DraftPick[] }) {
   }));
 
   const filtered = useMemo(() => {
-    const query = q.trim().toLowerCase();
     return picks.filter((p) => {
       if (year && String(p.year) !== year) return false;
       if (owner && p.currentOwner !== owner) return false;
       if (original && p.originalTeam !== original) return false;
       if (round && String(p.round) !== round) return false;
-      if (query) {
-        const hay =
-          `${p.description} ${p.currentOwner} ${p.originalTeam} ${p.via ?? ""} ${p.protections ?? ""}`.toLowerCase();
-        if (!hay.includes(query)) return false;
+      if (
+        !matchesSearch(
+          q,
+          p.description,
+          p.currentOwner,
+          p.originalTeam,
+          p.via,
+          p.protections
+        )
+      ) {
+        return false;
       }
       return true;
     });

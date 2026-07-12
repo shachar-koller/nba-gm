@@ -95,6 +95,12 @@ body {
   outline-offset: 2px;
 }
 
+/* Components that set outline-none (custom focus rings, command palette, etc.) */
+.outline-none:focus-visible {
+  outline: none;
+  outline-offset: 0;
+}
+
 /* Dense label (stat / field captions) */
 .label-caps {
   font-size: 10px;

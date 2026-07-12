@@ -196,7 +196,7 @@ export function CommandPalette() {
               setActive(0);
             }}
             placeholder="Search players, teams, pages…"
-            className="w-full bg-transparent py-2.5 text-[13px] outline-none placeholder:text-[var(--faint)]"
+            className="w-full bg-transparent py-2.5 text-[13px] outline-none focus-visible:outline-none placeholder:text-[var(--faint)]"
             aria-controls="command-palette-list"
             aria-activedescendant={
               filtered[safeActive] ? `palette-item-${filtered[safeActive].id}` : undefined
