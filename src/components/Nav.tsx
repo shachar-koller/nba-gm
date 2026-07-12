@@ -6,6 +6,7 @@ import { classNames } from "@/lib/format";
 import { useModShortcut } from "@/lib/useModShortcut";
 
 const LINKS = [
+  { href: "/", label: "Home" },
   { href: "/draft", label: "Draft" },
   { href: "/cap", label: "Cap" },
   { href: "/salaries", label: "Salaries" },
@@ -50,7 +51,10 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
           >
             {LINKS.map((link) => {
               const active =
-                pathname === link.href || pathname.startsWith(`${link.href}/`);
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname === link.href ||
+                    pathname.startsWith(`${link.href}/`);
               return (
                 <Link
                   key={link.href}
