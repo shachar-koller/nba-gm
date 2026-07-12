@@ -7,6 +7,7 @@ import { formatMoney, formatPct } from "@/lib/format";
 import { pctOfCapForSeason } from "@/lib/data";
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
+import { positionFilterLabel, positionMatches } from "@/lib/positions";
 import type { SortDir } from "./DataTable";
 import { DataTable, type Column } from "./DataTable";
 import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from "./Filters";
@@ -87,7 +88,7 @@ function SalariesInner({
     const query = q.trim().toLowerCase();
     return contracts.filter((c) => {
       if (team && c.team !== team) return false;
-      if (pos && c.position !== pos) return false;
+      if (pos && !positionMatches(pos, c.position)) return false;
       if (age === "u25" && (c.age == null || c.age >= 25)) return false;
       if (age === "25-29" && (c.age == null || c.age < 25 || c.age > 29)) return false;
       if (age === "30+" && (c.age == null || c.age < 30)) return false;
@@ -371,7 +372,10 @@ function SalariesInner({
             <SelectInput
               value={pos}
               onChange={(v) => setFilter("pos", v)}
-              options={positions.map((p) => ({ value: p, label: p }))}
+              options={positions.map((p) => ({
+                value: p,
+                label: positionFilterLabel(p),
+              }))}
               placeholder="All positions"
             />
           </Field>

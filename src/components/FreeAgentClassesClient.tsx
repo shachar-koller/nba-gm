@@ -17,6 +17,7 @@ import {
 } from "@/lib/freeAgency";
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
+import { positionFilterLabel, positionMatches } from "@/lib/positions";
 import { DataTable, type Column, type SortDir } from "./DataTable";
 import {
   Field,
@@ -126,7 +127,7 @@ function FreeAgentsInner({
     const query = q.trim().toLowerCase();
     return activeGroup.contracts.filter((c) => {
       if (team && c.team !== team) return false;
-      if (pos && c.position !== pos) return false;
+      if (pos && !positionMatches(pos, c.position)) return false;
       if (age === "u25" && (c.age == null || c.age >= 25)) return false;
       if (age === "25-29" && (c.age == null || c.age < 25 || c.age > 29))
         return false;
@@ -608,7 +609,10 @@ function FreeAgentsInner({
                 <SelectInput
                   value={pos}
                   onChange={(v) => setFilter("pos", v)}
-                  options={positions.map((p) => ({ value: p, label: p }))}
+                  options={positions.map((p) => ({
+                    value: p,
+                    label: positionFilterLabel(p),
+                  }))}
                   placeholder="All positions"
                 />
               </Field>

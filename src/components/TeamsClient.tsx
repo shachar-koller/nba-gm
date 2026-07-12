@@ -18,7 +18,12 @@ import {
   faCapHold,
 } from "@/lib/freeAgency";
 import { useUrlFilters } from "@/lib/urlState";
-import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from "./Filters";
+import {
+  compareTeamRows,
+  defaultDirForTeamSort,
+  type SortDir,
+} from "@/lib/teamsMetrics";
+import { Field, FilterBar, PageHeader, SearchInput, SelectInput, SegmentedControl, StatCard } from "./Filters";
 import { TeamLogo } from "./TeamLogo";
 import { ApronBadge, OptionBadge } from "./Badge";
 import { CapScale, TeamCapMeter } from "./CapScale";
@@ -31,16 +36,21 @@ function TeamsClientInner({
   payrolls,
   cap,
   pickCounts,
+  firstRoundCounts,
+  weightedAges,
   rosterCounts,
 }: {
   payrolls: TeamPayroll[];
   cap: CapThresholds;
   pickCounts: Record<string, number>;
+  firstRoundCounts: Record<string, number>;
+  weightedAges: Record<string, number | null>;
   rosterCounts: Record<string, number>;
 }) {
   const {
     values,
     setFilter,
+    setFilters,
     clearFilters,
     clearFilter,
     hasActive,
@@ -52,11 +62,20 @@ function TeamsClientInner({
       q: "",
       conf: "",
       sort: "payroll",
+      dir: "desc",
     },
-    { q: "Search", conf: "Conference", sort: "Sort" }
+    { q: "Search", conf: "Conference", sort: "Sort", dir: "Direction" }
   );
   const { q, conf, sort } = values;
-  const filterChips = chips.filter((c) => !(c.key === "sort" && c.value === "payroll"));
+  const dir: SortDir =
+    values.dir === "asc" || values.dir === "desc"
+      ? values.dir
+      : defaultDirForTeamSort(sort);
+  const filterChips = chips.filter(
+    (c) =>
+      !(c.key === "sort" && c.value === "payroll") &&
+      !(c.key === "dir" && c.value === defaultDirForTeamSort(sort || "payroll"))
+  );
 
   const rows = useMemo(() => {
     const query = q.trim().toLowerCase();
@@ -72,8 +91,10 @@ function TeamsClientInner({
         active: p?.activeCap ?? 0,
         dead: p?.deadCap ?? 0,
         avgAge: p?.avgAge ?? null,
+        weightedAge: weightedAges[t.abbr] ?? null,
         status,
         picks: pickCounts[t.abbr] ?? 0,
+        firstRound: firstRoundCounts[t.abbr] ?? 0,
         roster: rosterCounts[t.abbr] ?? p?.playersActive ?? 0,
         roomCap: roomToLine(spending, cap.salaryCap),
         roomTax: roomToLine(spending, cap.luxuryTax),
@@ -92,15 +113,43 @@ function TeamsClientInner({
       );
     }
 
-    list.sort((a, b) => {
-      if (sort === "name") return a.team.fullName.localeCompare(b.team.fullName);
-      if (sort === "space") return b.roomCap - a.roomCap;
-      if (sort === "picks") return b.picks - a.picks;
-      if (sort === "age") return (b.avgAge ?? 0) - (a.avgAge ?? 0);
-      return b.spending - a.spending;
-    });
+    list.sort((a, b) =>
+      compareTeamRows(
+        {
+          name: a.team.fullName,
+          spending: a.spending,
+          roomCap: a.roomCap,
+          picks: a.picks,
+          firstRound: a.firstRound,
+          avgAge: a.avgAge,
+          weightedAge: a.weightedAge,
+        },
+        {
+          name: b.team.fullName,
+          spending: b.spending,
+          roomCap: b.roomCap,
+          picks: b.picks,
+          firstRound: b.firstRound,
+          avgAge: b.avgAge,
+          weightedAge: b.weightedAge,
+        },
+        sort || "payroll",
+        dir
+      )
+    );
     return list;
-  }, [payrolls, cap, pickCounts, rosterCounts, q, conf, sort]);
+  }, [
+    payrolls,
+    cap,
+    pickCounts,
+    firstRoundCounts,
+    weightedAges,
+    rosterCounts,
+    q,
+    conf,
+    sort,
+    dir,
+  ]);
 
   const statusCounts = useMemo(() => {
     const all = TEAMS.map((t) => {
@@ -124,10 +173,17 @@ function TeamsClientInner({
     r.dead,
     r.totalAllocations,
     r.avgAge,
+    r.weightedAge,
     r.roster,
     r.picks,
+    r.firstRound,
     r.status,
   ]);
+
+  const dirLabels =
+    sort === "name"
+      ? { desc: "Z → A", asc: "A → Z" }
+      : { desc: "High → low", asc: "Low → high" };
 
   return (
     <div>
@@ -146,8 +202,10 @@ function TeamsClientInner({
             "dead",
             "total_allocations",
             "avg_age",
+            "weighted_age",
             "roster",
             "picks",
+            "first_round_picks",
             "apron_status",
           ]}
           rows={exportRows}
@@ -191,25 +249,43 @@ function TeamsClientInner({
               placeholder="All conferences"
             />
           </Field>
-          <Field label="Sort">
+          <Field label="Sort by">
             <SelectInput
               value={sort}
-              onChange={(v) => setFilter("sort", v)}
+              onChange={(v) => {
+                const next = v || "payroll";
+                setFilters({ sort: next, dir: defaultDirForTeamSort(next) });
+              }}
               options={[
-                { value: "payroll", label: "Payroll (high → low)" },
+                { value: "payroll", label: "Payroll" },
                 { value: "space", label: "Cap room" },
-                { value: "picks", label: "Draft picks" },
+                { value: "first", label: "1st-round picks" },
+                { value: "picks", label: "All draft picks" },
+                { value: "wage", label: "Weighted age" },
                 { value: "age", label: "Avg age" },
                 { value: "name", label: "Name" },
               ]}
               placeholder="Sort"
             />
           </Field>
+          <Field label="Direction" className="min-w-[140px] flex-none">
+            <div className="pt-0.5">
+              <SegmentedControl
+                value={dir}
+                onChange={(v) => setFilter("dir", v)}
+                options={[
+                  { value: "desc", label: dirLabels.desc },
+                  { value: "asc", label: dirLabels.asc },
+                ]}
+              />
+            </div>
+          </Field>
         </FilterBar>
       </div>
 
       <p className="mb-3 text-[11px] text-[var(--muted)] print:hidden">
-        Spending = active + dead. Apron status ignores FA holds / incomplete-roster charges.
+        Spending = active + dead. Weighted age = salary-weighted roster age. Apron status
+        ignores FA holds / incomplete-roster charges.
       </p>
 
       {rows.length === 0 && (
@@ -250,7 +326,11 @@ function TeamsClientInner({
                   </div>
                   <div className="text-[11px] text-[var(--muted)] truncate">
                     {r.team.conference} · {r.team.division}
-                    {r.avgAge != null ? ` · ${r.avgAge.toFixed(1)}y` : ""}
+                    {r.weightedAge != null
+                      ? ` · ${r.weightedAge.toFixed(1)}y wtd`
+                      : r.avgAge != null
+                        ? ` · ${r.avgAge.toFixed(1)}y`
+                        : ""}
                   </div>
                 </div>
               </div>
@@ -274,15 +354,29 @@ function TeamsClientInner({
 
             <TeamCapMeter payroll={r.spending} cap={cap} className="mt-3" />
 
-            <div className="mt-2.5 flex items-center gap-3 border-t border-[var(--border)] pt-2 text-[11px] text-[var(--muted)]">
+            <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-[var(--border)] pt-2 text-[11px] text-[var(--muted)]">
               <span>
                 Roster{" "}
                 <b className="font-semibold text-[var(--foreground)] tabular-nums">{r.roster}</b>
               </span>
-              <span>
+              <span title="First-round picks owned">
+                1st{" "}
+                <b className="font-semibold text-[var(--foreground)] tabular-nums">
+                  {r.firstRound}
+                </b>
+              </span>
+              <span title="All draft picks owned">
                 Picks{" "}
                 <b className="font-semibold text-[var(--foreground)] tabular-nums">{r.picks}</b>
               </span>
+              {r.weightedAge != null && (
+                <span title="Salary-weighted average age">
+                  Wtd age{" "}
+                  <b className="font-semibold text-[var(--foreground)] tabular-nums">
+                    {r.weightedAge.toFixed(1)}
+                  </b>
+                </span>
+              )}
               {r.dead > 0 && (
                 <span className="text-neg">
                   Dead {formatMoney(r.dead, true)}
@@ -300,6 +394,8 @@ export function TeamsClient(props: {
   payrolls: TeamPayroll[];
   cap: CapThresholds;
   pickCounts: Record<string, number>;
+  firstRoundCounts: Record<string, number>;
+  weightedAges: Record<string, number | null>;
   rosterCounts: Record<string, number>;
 }) {
   return (
