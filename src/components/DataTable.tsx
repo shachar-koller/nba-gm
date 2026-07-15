@@ -12,11 +12,32 @@ export interface Column<T> {
   header: React.ReactNode;
   sortable?: boolean;
   sortValue?: (row: T) => string | number | null | undefined;
+  /**
+   * Direction used on the first click of this column.
+   * Defaults: numbers → desc (high→low), text → asc (A→Z).
+   */
+  defaultSortDir?: SortDir;
   className?: string;
   headerClassName?: string;
   align?: "left" | "right";
   sticky?: boolean;
   render: (row: T) => React.ReactNode;
+}
+
+/** First-click sort direction: leaderboard metrics high→low, names A→Z. */
+function firstClickSortDir<T>(
+  col: Column<T> | undefined,
+  rows: T[]
+): SortDir {
+  if (col?.defaultSortDir) return col.defaultSortDir;
+  if (col?.sortValue) {
+    for (const row of rows) {
+      const v = col.sortValue(row);
+      if (v == null) continue;
+      return typeof v === "number" ? "desc" : "asc";
+    }
+  }
+  return "asc";
 }
 
 function SortIcon({ active, dir }: { active: boolean; dir: SortDir }) {
@@ -109,17 +130,21 @@ export function DataTable<T>({
   }, [rows, columns, sortKey, sortDir]);
 
   function onSort(key: string) {
-    let nextDir: SortDir = "asc";
-    if (sortKey === key) {
-      nextDir = sortDir === "asc" ? "desc" : "asc";
-    }
+    const col = columns.find((c) => c.key === key);
+    let nextDir: SortDir =
+      sortKey === key
+        ? sortDir === "asc"
+          ? "desc"
+          : "asc"
+        : firstClickSortDir(col, rows);
+
     if (controlled) {
       onSortChange!(key, nextDir);
     } else if (sortKey === key) {
       setInternalDir(nextDir);
     } else {
       setInternalKey(key);
-      setInternalDir("asc");
+      setInternalDir(nextDir);
     }
   }
 

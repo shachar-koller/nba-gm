@@ -82,7 +82,7 @@ export function Drawer({
     <div className="fixed inset-0 z-50 flex justify-end print:hidden">
       <button
         type="button"
-        className="absolute inset-0 bg-[rgb(14_21_36/0.4)]"
+        className="absolute inset-0 bg-[var(--overlay)]"
         aria-label="Close panel"
         onClick={onClose}
         tabIndex={-1}

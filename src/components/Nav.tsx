@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { classNames } from "@/lib/format";
 import { useModShortcut } from "@/lib/useModShortcut";
+import { SettingsMenu } from "./SettingsMenu";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -12,6 +13,8 @@ const LINKS = [
   { href: "/salaries", label: "Salaries" },
   { href: "/free-agents", label: "Free Agents" },
   { href: "/teams", label: "Teams" },
+  { href: "/stats", label: "Stats" },
+  { href: "/stats/advanced", label: "Advanced" },
 ];
 
 export function Nav({ updatedLabel }: { updatedLabel?: string }) {
@@ -50,11 +53,18 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
             aria-label="Primary"
           >
             {LINKS.map((link) => {
+              // Prefer longest matching href so /stats/advanced does not also
+              // highlight the /stats parent.
               const active =
                 link.href === "/"
                   ? pathname === "/"
-                  : pathname === link.href ||
-                    pathname.startsWith(`${link.href}/`);
+                  : LINKS.filter(
+                      (l) =>
+                        l.href !== "/" &&
+                        (pathname === l.href ||
+                          pathname.startsWith(`${l.href}/`))
+                    ).sort((a, b) => b.href.length - a.href.length)[0]
+                      ?.href === link.href;
               return (
                 <Link
                   key={link.href}
@@ -74,12 +84,13 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
           </nav>
         </div>
 
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           {updatedLabel && (
             <span className="hidden lg:inline text-[10px] text-[var(--faint)] tabular-nums">
               Data {updatedLabel}
             </span>
           )}
+          <SettingsMenu />
           <button
             type="button"
             onClick={() => {

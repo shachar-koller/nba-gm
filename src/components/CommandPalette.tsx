@@ -24,6 +24,13 @@ const PAGES: Item[] = [
   { id: "p-sal", group: "Pages", label: "Player Salaries", href: "/salaries" },
   { id: "p-fa", group: "Pages", label: "Free Agent Classes", href: "/free-agents" },
   { id: "p-teams", group: "Pages", label: "Teams", href: "/teams" },
+  { id: "p-stats", group: "Pages", label: "Player Stats", href: "/stats" },
+  {
+    id: "p-adv",
+    group: "Pages",
+    label: "Advanced Stats",
+    href: "/stats/advanced",
+  },
   {
     id: "p-fa-next",
     group: "Pages",
@@ -35,6 +42,12 @@ const PAGES: Item[] = [
     group: "Pages",
     label: "Salaries · UFA only",
     href: "/salaries?status=ufa",
+  },
+  {
+    id: "p-pts",
+    group: "Pages",
+    label: "Stats · by points",
+    href: "/stats?sort=pts&dir=desc",
   },
 ];
 
@@ -174,7 +187,7 @@ export function CommandPalette() {
     <div className="fixed inset-0 z-[60] flex items-start justify-center px-4 pt-[12vh] print:hidden">
       <button
         type="button"
-        className="absolute inset-0 bg-[rgb(14_21_36/0.45)]"
+        className="absolute inset-0 bg-[var(--overlay)]"
         aria-label="Close command palette"
         onClick={close}
       />

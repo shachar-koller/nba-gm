@@ -13,6 +13,8 @@ Built for clarity: front-office data organization over trade machines, logins, o
 | **Player Salaries** | Multi-season $, % of cap, options, guarantees, notes; position/age filters; URL-synced filters; CSV |
 | **Free Agents** | Classes by year (UFA/RFA), cap holds (est.), next expiring board, two-way bucket |
 | **Teams** | Apron status from **active + dead** payroll, multi-year projection, draft capital matrix, roster with FA years |
+| **Stats** | League-wide per-game counting stats (PTS/REB/AST/STL/BLK/…); sortable columns; filters + CSV |
+| **Advanced** | TS%, eFG%, 3PAr, FTr, TOV%, AST/TO, EFF, stocks — plus a glossary on how to use each metric |
 
 ## Apron status (important)
 
@@ -28,9 +30,11 @@ Total allocations include free-agent holds and incomplete-roster charges, which 
 | Draft rights | **Spotrac** future picks | Protections / swaps when published |
 | Cap thresholds | **NBA official announcements** | e.g. 2026-27 cap $164.961M |
 | Team logos | **ESPN CDN** | Public assets |
+| Player stats | **ESPN public statistics API** | Per-game + derived advanced rates |
 
 ```bash
-npm run refresh   # re-scrape Spotrac → src/data/app-data.json
+npm run refresh         # Spotrac + ESPN stats → src/data/*.json
+npm run refresh:stats   # stats only
 ```
 
 Be polite: the script rate-limits (~600ms between team pages). Re-run after free agency, the draft, or big trades.
@@ -59,11 +63,11 @@ npm run build && npm start   # production
 ## Project layout
 
 ```
-src/app/           # Routes: /, /draft, /cap, /salaries, /free-agents, /teams, /teams/[abbr]
-src/components/    # Nav, tables, badges, filters, team UI
-src/lib/           # Types, teams, cap, free agency, CSV, URL state, data loaders
-src/data/          # app-data.json (generated)
-scripts/           # refresh-data.mjs live scraper
+src/app/           # Routes: /, /draft, /cap, /salaries, /free-agents, /teams, /stats, /stats/advanced
+src/components/    # Nav, tables, badges, filters, team UI, stats clients
+src/lib/           # Types, teams, cap, free agency, player stats, CSV, URL state
+src/data/          # app-data.json + player-stats.json (generated)
+scripts/           # refresh-data.mjs, fetch-player-stats.mjs
 ```
 
 ## Out of scope (by design)

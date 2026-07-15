@@ -76,6 +76,16 @@ export default function HomePage() {
       title: "Under-25 contracts",
       body: "Highest salary first",
     },
+    {
+      href: "/stats?sort=pts&dir=desc",
+      title: "Scoring leaders",
+      body: "Per-game points, all players",
+    },
+    {
+      href: "/stats/advanced?sort=tsPct&dir=desc",
+      title: "Advanced efficiency",
+      body: "TS%, eFG%, EFF + glossary",
+    },
   ];
 
   return (

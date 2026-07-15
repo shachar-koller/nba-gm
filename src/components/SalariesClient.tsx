@@ -15,7 +15,6 @@ import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from
 import { TeamChip } from "./TeamLogo";
 import { OptionBadge } from "./Badge";
 import { ExportButton } from "./ExportButton";
-import { DensityToggle } from "./DensityToggle";
 import { SavedViewsBar } from "./SavedViews";
 import { PlayerDrawer, PlayerNameButton } from "./PlayerDrawer";
 
@@ -65,7 +64,7 @@ function SalariesInner({
       FILTER_LABELS
     );
   const { q, team, status, season: seasonFilter, pos, age, sort, dir } = values;
-  const { density, compact, setDensity } = useTableDensity();
+  const { compact } = useTableDensity();
   const [selected, setSelected] = useState<PlayerContract | null>(null);
 
   const visibleChips = chips.filter((c) => {
@@ -298,7 +297,6 @@ function SalariesInner({
         title="Player Salaries"
         description="Click a player for the full year grid. Filters and sort sync to the URL — shareable and saveable."
       >
-        <DensityToggle density={density} onChange={setDensity} />
         <SavedViewsBar path={pathname} queryString={queryString} />
         <ExportButton
           filename="nba-salaries.csv"

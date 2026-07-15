@@ -120,3 +120,69 @@ export interface AppData {
   contracts: PlayerContract[];
   draftPicks: DraftPick[];
 }
+
+/** Per-game counting stats + season totals + derived advanced metrics. */
+export interface PlayerSeasonStats {
+  id: string;
+  player: string;
+  team: TeamAbbr | null;
+  position: string;
+  age: number | null;
+  gp: number;
+  min: number | null;
+  pts: number | null;
+  reb: number | null;
+  ast: number | null;
+  stl: number | null;
+  blk: number | null;
+  tov: number | null;
+  pf: number | null;
+  fgm: number | null;
+  fga: number | null;
+  fgPct: number | null;
+  threePm: number | null;
+  threePa: number | null;
+  threePct: number | null;
+  ftm: number | null;
+  fta: number | null;
+  ftPct: number | null;
+  dd2: number;
+  td3: number;
+  ptsTotal: number | null;
+  rebTotal: number | null;
+  astTotal: number | null;
+  stlTotal: number | null;
+  blkTotal: number | null;
+  tovTotal: number | null;
+  minTotal: number | null;
+  fgmTotal: number | null;
+  fgaTotal: number | null;
+  threePmTotal: number | null;
+  threePaTotal: number | null;
+  ftmTotal: number | null;
+  ftaTotal: number | null;
+  /** True shooting % (0–100 scale). */
+  tsPct: number | null;
+  /** Effective FG% (0–100 scale). */
+  efgPct: number | null;
+  /** 3PA / FGA. */
+  threePar: number | null;
+  /** FTA / FGA. */
+  ftr: number | null;
+  /** AST / TOV. */
+  astTo: number | null;
+  /** Turnover % (0–100 scale). */
+  tovPct: number | null;
+  /** NBA traditional efficiency per game. */
+  eff: number | null;
+  /** Steals + blocks per game. */
+  stocks: number | null;
+}
+
+export interface PlayerStatsData {
+  updatedAt: string;
+  source: string;
+  season: string;
+  seasonType: string;
+  players: PlayerSeasonStats[];
+}

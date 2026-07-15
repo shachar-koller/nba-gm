@@ -15,6 +15,15 @@ export function formatPct(value: number | null | undefined, digits = 1): string 
   return `${value.toFixed(digits)}%`;
 }
 
+/** Fixed-decimal number for table stats (points, rebounds, rates, etc.). */
+export function formatNum(
+  value: number | null | undefined,
+  digits = 1
+): string {
+  if (value == null || Number.isNaN(value)) return "—";
+  return value.toFixed(digits);
+}
+
 export function formatDelta(value: number | null | undefined): string {
   if (value == null || Number.isNaN(value)) return "—";
   const prefix = value > 0 ? "+" : "";

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --experimental-strip-types --test src/lib/**/*.test.ts",
-    "refresh": "node scripts/refresh-data.mjs"
+    "refresh": "node scripts/refresh-data.mjs && node scripts/fetch-player-stats.mjs",
+    "refresh:stats": "node scripts/fetch-player-stats.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

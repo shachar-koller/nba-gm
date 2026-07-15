@@ -12,7 +12,6 @@ import { Field, FilterBar, PageHeader, SearchInput, SelectInput, StatCard } from
 import { TeamChip } from "./TeamLogo";
 import { ConditionalBadge, ProtectionBadge, SwapBadge } from "./Badge";
 import { ExportButton } from "./ExportButton";
-import { DensityToggle } from "./DensityToggle";
 import { SavedViewsBar } from "./SavedViews";
 
 function DraftInner({ picks }: { picks: DraftPick[] }) {
@@ -47,7 +46,7 @@ function DraftInner({ picks }: { picks: DraftPick[] }) {
     }
   );
   const { q, year, owner, original, round, sort, dir } = values;
-  const { density, compact, setDensity } = useTableDensity();
+  const { compact } = useTableDensity();
   const filterChips = chips.filter((c) => c.key !== "sort" && c.key !== "dir");
 
   const years = useMemo(
@@ -166,7 +165,6 @@ function DraftInner({ picks }: { picks: DraftPick[] }) {
         title="Draft Picks"
         description="First- and second-round draft rights — who owns each pick, with swaps, protections, and conditions."
       >
-        <DensityToggle density={density} onChange={setDensity} />
         <SavedViewsBar path={pathname} queryString={queryString} />
         <ExportButton
           filename="nba-draft-picks.csv"

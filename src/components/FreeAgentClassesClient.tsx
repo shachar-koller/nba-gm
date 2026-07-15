@@ -32,7 +32,6 @@ import {
 import { TeamChip } from "./TeamLogo";
 import { OptionBadge } from "./Badge";
 import { ExportButton } from "./ExportButton";
-import { DensityToggle } from "./DensityToggle";
 import { SavedViewsBar } from "./SavedViews";
 import { PlayerDrawer, PlayerNameButton } from "./PlayerDrawer";
 import { useModShortcut } from "@/lib/useModShortcut";
@@ -104,7 +103,7 @@ function FreeAgentsInner({
   const view = values.view || defaultView;
   const type = (values.type || "all") as TypeFilter;
   const { q, team, pos, age, sort, dir } = values;
-  const { density, compact, setDensity } = useTableDensity();
+  const { compact } = useTableDensity();
   const [selected, setSelected] = useState<PlayerContract | null>(null);
 
   const filterChips = chips.filter((c) => {
@@ -377,7 +376,6 @@ function FreeAgentsInner({
         title="Free Agent Classes"
         description={`Who becomes free each offseason — UFA vs RFA, estimated cap holds, option timing. Click a player for the full contract. ${shortcut} to search.`}
       >
-        <DensityToggle density={density} onChange={setDensity} />
         <SavedViewsBar path={pathname} queryString={queryString} />
         {view !== "overview" && activeGroup && (
           <ExportButton
