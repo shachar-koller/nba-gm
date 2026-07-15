@@ -152,6 +152,69 @@ export function SelectInput({
   );
 }
 
+/** Text box for numeric min/max filters (not a slider or select). */
+export function NumberInput({
+  value,
+  onChange,
+  placeholder = "",
+  id,
+  min,
+  step,
+  "aria-label": ariaLabel,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  placeholder?: string;
+  id?: string;
+  min?: number;
+  step?: string | number;
+  "aria-label"?: string;
+}) {
+  return (
+    <input
+      id={id}
+      type="text"
+      inputMode="decimal"
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && value) {
+          e.preventDefault();
+          e.stopPropagation();
+          onChange("");
+        }
+      }}
+      placeholder={placeholder}
+      min={min}
+      step={step}
+      aria-label={ariaLabel}
+      autoComplete="off"
+      className={controlClass}
+    />
+  );
+}
+
+/** Section of min-stat text filters under the main filter bar. */
+export function StatMinFilterSection({
+  title = "Stat filters (minimum)",
+  children,
+}: {
+  title?: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="mt-2 rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] print:hidden">
+      <div className="border-b border-[var(--border)] px-2.5 py-1.5">
+        <span className="label-caps text-[var(--muted)]">{title}</span>
+        <span className="ml-2 text-[11px] text-[var(--faint)]">
+          Enter a number to keep players at or above that value
+        </span>
+      </div>
+      <div className="flex flex-wrap items-end gap-2 px-2.5 py-2">{children}</div>
+    </div>
+  );
+}
+
 export function StatCard({
   label,
   value,

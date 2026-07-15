@@ -12,27 +12,49 @@ import {
 import { useUrlFilters } from "@/lib/urlState";
 import { useTableDensity } from "@/lib/tablePrefs";
 import { positionFilterLabel, positionMatches } from "@/lib/positions";
+import {
+  ADVANCED_STAT_MIN_FILTERS,
+  formatMinFilterChip,
+  minFilterDefaults,
+  minFilterLabels,
+  passesStatMinFilters,
+} from "@/lib/statFilters";
 import { matchesSearch } from "@/lib/ux";
 import type { SortDir } from "./DataTable";
 import { DataTable, type Column } from "./DataTable";
 import {
   Field,
   FilterBar,
+  NumberInput,
   PageHeader,
   SearchInput,
   SelectInput,
   StatCard,
+  StatMinFilterSection,
 } from "./Filters";
 import { TeamChip } from "./TeamLogo";
 import { ExportButton } from "./ExportButton";
 
-const FILTER_LABELS = {
+const STAT_MIN_KEYS = new Set(ADVANCED_STAT_MIN_FILTERS.map((d) => d.key));
+
+const FILTER_DEFAULTS: Record<string, string> = {
+  q: "",
+  team: "",
+  pos: "",
+  gp: "20",
+  sort: "tsPct",
+  dir: "desc",
+  ...minFilterDefaults(ADVANCED_STAT_MIN_FILTERS),
+};
+
+const FILTER_LABELS: Record<string, string> = {
   q: "Player",
   team: "Team",
   pos: "Pos",
   gp: "Min GP",
   sort: "Sort",
   dir: "Dir",
+  ...minFilterLabels(ADVANCED_STAT_MIN_FILTERS),
 };
 
 function HeaderWithTip({ abbr, tip }: { abbr: string; tip: string }) {
@@ -56,17 +78,7 @@ function AdvancedInner({
   positions: string[];
 }) {
   const { values, setFilter, setFilters, clearFilters, clearFilter, hasActive, chips } =
-    useUrlFilters(
-      {
-        q: "",
-        team: "",
-        pos: "",
-        gp: "20",
-        sort: "tsPct",
-        dir: "desc",
-      },
-      FILTER_LABELS
-    );
+    useUrlFilters(FILTER_DEFAULTS, FILTER_LABELS);
   const { q, team, pos, gp, sort, dir } = values;
   const { compact } = useTableDensity();
   const minGp = Number(gp) || 0;
@@ -88,9 +100,10 @@ function AdvancedInner({
       if (pos && !positionMatches(pos, p.position)) return false;
       if (minGp > 0 && (p.gp ?? 0) < minGp) return false;
       if (!matchesSearch(q, p.player, p.team ?? "", p.position)) return false;
+      if (!passesStatMinFilters(p, ADVANCED_STAT_MIN_FILTERS, values)) return false;
       return true;
     });
-  }, [players, q, team, pos, minGp]);
+  }, [players, q, team, pos, minGp, values]);
 
   const defMap = useMemo(() => {
     const m = new Map(ADVANCED_STAT_DEFINITIONS.map((d) => [d.key, d]));
@@ -284,6 +297,9 @@ function AdvancedInner({
 
   const chipDisplay = visibleChips.map((c) => {
     if (c.key === "gp") return { ...c, display: `${c.value}+ games` };
+    if (STAT_MIN_KEYS.has(c.key)) {
+      return { ...c, display: formatMinFilterChip(c.value) };
+    }
     return c;
   });
 
@@ -411,6 +427,22 @@ function AdvancedInner({
             />
           </Field>
         </FilterBar>
+        <StatMinFilterSection>
+          {ADVANCED_STAT_MIN_FILTERS.map((def) => (
+            <Field
+              key={def.key}
+              label={def.label}
+              className="min-w-[88px] max-w-[110px] flex-none"
+            >
+              <NumberInput
+                value={values[def.key] ?? ""}
+                onChange={(v) => setFilter(def.key, v)}
+                placeholder={def.placeholder}
+                aria-label={def.label}
+              />
+            </Field>
+          ))}
+        </StatMinFilterSection>
       </div>
 
       <DataTable
