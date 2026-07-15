@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-14T21:06:50.515Z",
+  "updatedAt": "2026-07-15T18:42:38.480Z",
   "source": "Spotrac (live scrape) + NBA official cap announcements",
   "currentSeason": "2026-27",
   "capThresholds": [
@@ -131,8 +131,8 @@
     {
       "team": "BOS",
       "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 27.7,
+      "playersActive": 16,
+      "avgAge": 27.2,
       "totalCap": 210176596,
       "capSpace": -45215596,
       "activeCap": 198722406,
@@ -259,16 +259,6 @@
       "deadCap": 0
     },
     {
-      "team": "PHX",
-      "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 25.8,
-      "totalCap": 236880959,
-      "capSpace": -71919959,
-      "activeCap": 187533192,
-      "deadCap": 23197051
-    },
-    {
       "team": "ORL",
       "season": "2026-27",
       "playersActive": 14,
@@ -289,6 +279,16 @@
       "deadCap": 0
     },
     {
+      "team": "PHX",
+      "season": "2026-27",
+      "playersActive": 15,
+      "avgAge": 26.1,
+      "totalCap": 243248959,
+      "capSpace": -78287959,
+      "activeCap": 193901192,
+      "deadCap": 23197051
+    },
+    {
       "team": "CLE",
       "season": "2026-27",
       "playersActive": 12,
@@ -301,11 +301,11 @@
     {
       "team": "DEN",
       "season": "2026-27",
-      "playersActive": 10,
-      "avgAge": 27,
-      "totalCap": 252053882,
-      "capSpace": -87092882,
-      "activeCap": 202754486,
+      "playersActive": 11,
+      "avgAge": 27.3,
+      "totalCap": 250696119,
+      "capSpace": -85735119,
+      "activeCap": 205203907,
       "deadCap": 2000000
     },
     {
@@ -1617,6 +1617,52 @@
       "freeAgencyType": "UFA",
       "contractYears": 1,
       "currentSalary": 2406205,
+      "notes": []
+    },
+    {
+      "id": "109561",
+      "player": "Tucker DeVries",
+      "team": "BOS",
+      "position": "F",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "98640",
+      "player": "Milos Uzan",
+      "team": "BOS",
+      "position": "PG",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 0,
       "notes": []
     },
     {
