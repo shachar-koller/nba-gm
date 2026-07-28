@@ -7,9 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --experimental-strip-types --test src/lib/**/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts",
+    "ci": "npm run lint && npm run typecheck && npm run test && npm run build",
     "refresh": "node scripts/refresh-data.mjs && node scripts/fetch-player-stats.mjs",
     "refresh:stats": "node scripts/fetch-player-stats.mjs"
+  },
+  "engines": {
+    "node": ">=22.6.0"
   },
   "dependencies": {
     "next": "16.2.10",

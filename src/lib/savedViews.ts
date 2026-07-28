@@ -37,8 +37,21 @@ function getSnapshot(): SavedView[] {
   }
 
   try {
-    const parsed = JSON.parse(raw) as SavedView[];
-    cachedSnapshot = Array.isArray(parsed) ? parsed : EMPTY;
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) {
+      cachedSnapshot = EMPTY;
+      return cachedSnapshot;
+    }
+    // Drop corrupt entries so a bad localStorage payload cannot crash the UI.
+    cachedSnapshot = parsed.filter(
+      (v): v is SavedView =>
+        Boolean(v) &&
+        typeof v === "object" &&
+        typeof (v as SavedView).id === "string" &&
+        typeof (v as SavedView).name === "string" &&
+        typeof (v as SavedView).path === "string" &&
+        typeof (v as SavedView).query === "string"
+    );
   } catch {
     cachedSnapshot = EMPTY;
   }

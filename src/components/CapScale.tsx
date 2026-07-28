@@ -154,12 +154,15 @@ export function TeamCapMeter({
   const max = cap.secondApron * 1.08;
   const pct = (v: number) => Math.min(100, Math.max(0, (v / max) * 100));
 
+  const label = `Payroll position: cap $${cap.salaryCap.toLocaleString()}, tax $${cap.luxuryTax.toLocaleString()}, first apron $${cap.firstApron.toLocaleString()}, second apron $${cap.secondApron.toLocaleString()}, team payroll $${Math.round(payroll).toLocaleString()}`;
+
   return (
-    <div className={className}>
+    <div className={className} role="img" aria-label={label}>
       <div className="relative h-1.5 w-full overflow-hidden rounded-full bg-[var(--surface-2)] border border-[var(--border)]">
         <div
           className="absolute inset-y-0 left-0"
           style={{ width: `${pct(cap.luxuryTax)}%`, background: "var(--zone-under)" }}
+          aria-hidden
         />
         <div
           className="absolute inset-y-0"
@@ -168,6 +171,7 @@ export function TeamCapMeter({
             width: `${Math.max(0, pct(cap.firstApron) - pct(cap.luxuryTax))}%`,
             background: "var(--zone-tax)",
           }}
+          aria-hidden
         />
         <div
           className="absolute inset-y-0"
@@ -176,13 +180,15 @@ export function TeamCapMeter({
             width: `${Math.max(0, pct(cap.secondApron) - pct(cap.firstApron))}%`,
             background: "var(--zone-first)",
           }}
+          aria-hidden
         />
         <div
           className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)] ring-2 ring-[var(--surface)]"
           style={{ left: `${pct(payroll)}%` }}
+          aria-hidden
         />
       </div>
-      <div className="mt-1 flex justify-between text-[9px] uppercase tracking-wide text-[var(--faint)]">
+      <div className="mt-1 flex justify-between text-[9px] uppercase tracking-wide text-[var(--faint)]" aria-hidden>
         <span>cap</span>
         <span>tax</span>
         <span>1st</span>

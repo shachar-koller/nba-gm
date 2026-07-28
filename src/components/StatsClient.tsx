@@ -1,8 +1,10 @@
 "use client";
 
-import { Suspense, useMemo } from "react";
+import { Suspense, useCallback, useMemo, useState } from "react";
 import Link from "next/link";
-import type { PlayerSeasonStats, TeamAbbr } from "@/lib/types";
+import { useSearchParams } from "next/navigation";
+import type { PlayerContract, PlayerSeasonStats, TeamAbbr } from "@/lib/types";
+import { getAppData } from "@/lib/data";
 import { TEAMS } from "@/lib/teams";
 import { formatNum, formatPct } from "@/lib/format";
 import { useUrlFilters } from "@/lib/urlState";
@@ -15,7 +17,7 @@ import {
   minFilterLabels,
   passesStatMinFilters,
 } from "@/lib/statFilters";
-import { matchesSearch } from "@/lib/ux";
+import { matchesSearch, normalizeSearchText } from "@/lib/ux";
 import type { SortDir } from "./DataTable";
 import { DataTable, type Column } from "./DataTable";
 import {
@@ -30,6 +32,19 @@ import {
 } from "./Filters";
 import { TeamChip } from "./TeamLogo";
 import { ExportButton } from "./ExportButton";
+import { PlayerDrawer } from "./PlayerDrawer";
+
+/** Shared filter keys to carry between basic and advanced stats pages. */
+function statsCrossLinkQuery(searchParams: URLSearchParams, target: string): string {
+  const keep = ["q", "team", "pos", "gp"];
+  const params = new URLSearchParams();
+  for (const key of keep) {
+    const v = searchParams.get(key);
+    if (v) params.set(key, v);
+  }
+  const qs = params.toString();
+  return qs ? `${target}?${qs}` : target;
+}
 
 const STAT_MIN_KEYS = new Set(BASIC_STAT_MIN_FILTERS.map((d) => d.key));
 
@@ -62,11 +77,47 @@ function StatsInner({
   season: string;
   positions: string[];
 }) {
+  const searchParams = useSearchParams();
   const { values, setFilter, setFilters, clearFilters, clearFilter, hasActive, chips } =
     useUrlFilters(FILTER_DEFAULTS, FILTER_LABELS);
   const { q, team, pos, gp, sort, dir } = values;
   const { compact } = useTableDensity();
   const minGp = Number(gp) || 0;
+  const [selected, setSelected] = useState<PlayerContract | null>(null);
+
+  const contracts = useMemo(() => getAppData().contracts, []);
+  const contractByKey = useMemo(() => {
+    const byTeamName = new Map<string, PlayerContract>();
+    const byName = new Map<string, PlayerContract>();
+    for (const c of contracts) {
+      const name = normalizeSearchText(c.player);
+      if (!name) continue;
+      byTeamName.set(`${c.team}|${name}`, c);
+      if (!byName.has(name)) byName.set(name, c);
+    }
+    return { byTeamName, byName };
+  }, [contracts]);
+
+  const matchContract = useCallback(
+    (row: PlayerSeasonStats) => {
+      const name = normalizeSearchText(row.player);
+      if (!name) return null;
+      if (row.team) {
+        const hit = contractByKey.byTeamName.get(`${row.team}|${name}`);
+        if (hit) return hit;
+      }
+      return contractByKey.byName.get(name) ?? null;
+    },
+    [contractByKey]
+  );
+
+  const openPlayer = useCallback(
+    (row: PlayerSeasonStats) => {
+      const match = matchContract(row);
+      if (match) setSelected(match);
+    },
+    [matchContract]
+  );
 
   const visibleChips = chips.filter((c) => {
     if (c.key === "sort" || c.key === "dir") return false;
@@ -99,15 +150,35 @@ function StatsInner({
         sortable: true,
         sortValue: (r) => r.player,
         className: "font-semibold min-w-[140px]",
-        render: (r) => (
-          <div>
-            <div className="text-[13px] leading-tight">{r.player}</div>
-            <div className="text-[10px] font-normal text-[var(--muted)]">
-              {r.position || "—"}
-              {r.age != null ? ` · ${r.age}` : ""}
+        render: (r) => {
+          const hasContract = Boolean(matchContract(r));
+          return (
+            <div>
+              {hasContract ? (
+                <button
+                  type="button"
+                  onClick={() => openPlayer(r)}
+                  className="group/name text-left"
+                >
+                  <span className="text-[13px] font-semibold leading-tight group-hover/name:text-[var(--accent)] transition-colors">
+                    {r.player}
+                  </span>
+                </button>
+              ) : (
+                <Link
+                  href={`/salaries?q=${encodeURIComponent(r.player)}`}
+                  className="text-[13px] font-semibold leading-tight hover:text-[var(--accent)] transition-colors"
+                >
+                  {r.player}
+                </Link>
+              )}
+              <div className="text-[10px] font-normal text-[var(--muted)]">
+                {r.position || "—"}
+                {r.age != null ? ` · ${r.age}` : ""}
+              </div>
             </div>
-          </div>
-        ),
+          );
+        },
       },
       {
         key: "team",
@@ -295,7 +366,7 @@ function StatsInner({
         render: (r) => r.td3 || "—",
       },
     ],
-    []
+    [matchContract, openPlayer]
   );
 
   const leaders = useMemo(() => {
@@ -322,10 +393,10 @@ function StatsInner({
     <div>
       <PageHeader
         title="Player Stats"
-        description={`${season} regular season per-game averages. Click any column header to sort. For efficiency metrics and how to read them, open Advanced Stats.`}
+        description={`${season} regular season per-game averages (last completed season — contracts use the current front-office year). Click a column header to sort, or a player for contract details.`}
       >
         <Link
-          href="/stats/advanced"
+          href={statsCrossLinkQuery(searchParams, "/stats/advanced")}
           className="inline-flex items-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--muted)] hover:border-[var(--border-strong)] hover:text-[var(--foreground)]"
         >
           Advanced stats →
@@ -501,8 +572,13 @@ function StatsInner({
       />
       <p className="mt-2 text-[11px] text-[var(--muted)] print:hidden">
         Per-game averages for the {season} regular season. Sort and filters sync to
-        the URL.
+        the URL. Click a player name for contract details.
       </p>
+      <PlayerDrawer
+        player={selected}
+        season={getAppData().currentSeason}
+        onClose={() => setSelected(null)}
+      />
     </div>
   );
 }

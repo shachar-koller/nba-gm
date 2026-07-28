@@ -3,7 +3,7 @@ import { getAppData, getContracts, uniquePositions } from "@/lib/data";
 import { getCurrentCap } from "@/lib/cap";
 
 export const metadata = {
-  title: "Player Salaries | NBA Front Office",
+  title: "Player Salaries",
 };
 
 export default function SalariesPage() {

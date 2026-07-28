@@ -27,18 +27,33 @@ const optionLabels: Record<OptionType, string> = {
   estimate: "Est.",
 };
 
+const optionAriaLabels: Record<OptionType, string> = {
+  none: "",
+  player: "Player option",
+  team: "Team option",
+  ufa: "Unrestricted free agent",
+  rfa: "Restricted free agent",
+  qualifying: "Qualifying offer",
+  "two-way": "Two-way contract",
+  "non-guaranteed": "Non-guaranteed",
+  estimate: "Estimate",
+};
+
 export function Badge({
   children,
   className,
   title,
+  "aria-label": ariaLabel,
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string;
+  "aria-label"?: string;
 }) {
   return (
     <span
       title={title}
+      aria-label={ariaLabel}
       className={classNames(
         "inline-flex items-center rounded-[var(--radius-sm)] border border-transparent px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide",
         className
@@ -52,7 +67,11 @@ export function Badge({
 export function OptionBadge({ option }: { option: OptionType }) {
   if (!option || option === "none") return null;
   return (
-    <Badge className={optionStyles[option]} title={optionLabels[option]}>
+    <Badge
+      className={optionStyles[option]}
+      title={optionAriaLabels[option]}
+      aria-label={optionAriaLabels[option]}
+    >
       {optionLabels[option]}
     </Badge>
   );

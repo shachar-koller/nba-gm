@@ -30,6 +30,12 @@ export function Drawer({
   const previouslyFocused = useRef<HTMLElement | null>(null);
   const titleId = useId();
 
+  // Keep latest onClose without re-running the trap/focus effect on every parent render.
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+
   useEffect(() => {
     if (!open) return;
 
@@ -37,13 +43,14 @@ export function Drawer({
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        onCloseRef.current();
         return;
       }
       if (e.key !== "Tab" || !panelRef.current) return;
       const focusable = getFocusable(panelRef.current);
       if (focusable.length === 0) {
         e.preventDefault();
+        panelRef.current?.focus();
         return;
       }
       const first = focusable[0];
@@ -74,7 +81,7 @@ export function Drawer({
         requestAnimationFrame(() => el.focus());
       }
     };
-  }, [open, onClose]);
+  }, [open]);
 
   if (!open) return null;
 
@@ -92,8 +99,9 @@ export function Drawer({
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
+        tabIndex={-1}
         className={classNames(
-          "animate-drawer-in relative flex h-full w-full flex-col border-l border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)]",
+          "animate-drawer-in relative flex h-full w-full flex-col border-l border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-md)] outline-none",
           wide ? "max-w-xl" : "max-w-md"
         )}
       >

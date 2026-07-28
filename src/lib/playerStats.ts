@@ -1,5 +1,6 @@
 import type { PlayerSeasonStats, PlayerStatsData } from "./types";
 import snapshot from "@/data/player-stats.json";
+import { sortPositionList } from "./positions";
 
 export function getPlayerStatsData(): PlayerStatsData {
   return snapshot as PlayerStatsData;
@@ -18,15 +19,7 @@ export function uniqueStatPositions(
   for (const p of players) {
     if (p.position) set.add(p.position);
   }
-  const order = ["PG", "SG", "SF", "PF", "C", "G", "F"];
-  return [...set].sort((a, b) => {
-    const ia = order.indexOf(a);
-    const ib = order.indexOf(b);
-    if (ia >= 0 && ib >= 0) return ia - ib;
-    if (ia >= 0) return -1;
-    if (ib >= 0) return 1;
-    return a.localeCompare(b);
-  });
+  return sortPositionList(set);
 }
 
 export function formatStat(

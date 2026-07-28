@@ -10,7 +10,7 @@ import { getAppData } from "@/lib/data";
 import { formatMoney } from "@/lib/format";
 
 export const metadata = {
-  title: "Salary Cap | NBA Front Office",
+  title: "Salary Cap",
 };
 
 export default function CapPage() {

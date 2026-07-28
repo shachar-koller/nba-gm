@@ -13,8 +13,9 @@ const LINKS = [
   { href: "/salaries", label: "Salaries" },
   { href: "/free-agents", label: "Free Agents" },
   { href: "/teams", label: "Teams" },
+  { href: "/staff", label: "GMs/Coaches" },
   { href: "/stats", label: "Stats" },
-  { href: "/stats/advanced", label: "Advanced" },
+  { href: "/stats/advanced", label: "Adv. Stats" },
 ];
 
 export function Nav({ updatedLabel }: { updatedLabel?: string }) {

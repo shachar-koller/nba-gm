@@ -10,6 +10,9 @@ import { getCurrentCap } from "@/lib/cap";
 import { TEAM_BY_ABBR } from "@/lib/teams";
 import type { TeamAbbr } from "@/lib/types";
 
+/** Unknown abbrs are not generated and must 404 (no on-demand rendering). */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return Object.keys(TEAM_BY_ABBR).map((abbr) => ({
     abbr: abbr.toLowerCase(),
@@ -24,7 +27,7 @@ export async function generateMetadata({
   const { abbr } = await params;
   const team = TEAM_BY_ABBR[abbr.toUpperCase() as TeamAbbr];
   return {
-    title: team ? `${team.fullName} | NBA Front Office` : "Team | NBA Front Office",
+    title: team ? team.fullName : "Team",
   };
 }
 

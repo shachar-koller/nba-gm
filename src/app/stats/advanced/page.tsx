@@ -6,7 +6,7 @@ import {
 } from "@/lib/playerStats";
 
 export const metadata = {
-  title: "Advanced Stats | NBA Front Office",
+  title: "Advanced Stats",
   description:
     "Advanced NBA player metrics — TS%, eFG%, turnover rate, EFF, and more — with explanations for how to use each stat.",
 };

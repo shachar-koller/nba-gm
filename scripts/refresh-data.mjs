@@ -403,12 +403,6 @@ function parseTeamDraftPicks(html, ownerAbbr) {
         // (handled below if needed)
 
         const { isSwap, isConditional, protections, via } = parseConditions(description);
-        // Only keep picks that this owner actually controls:
-        // - pure own pick
-        // - text contains owner abbr or starts with other team they received
-        const mentionsOwner = new RegExp(`\\b${ownerAbbr}\\b`).test(text);
-        const isOwnSimple = firstAbbr === ownerAbbr || (!firstAbbr && mentionsOwner);
-        const isAcquired = firstAbbr && firstAbbr !== ownerAbbr;
         // On yearly page, ALL listed picks are owned by this team (current owner view)
         // first abbr often = original team OR the owner itself
         if (firstAbbr === ownerAbbr) {

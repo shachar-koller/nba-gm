@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-15T18:42:38.480Z",
+  "updatedAt": "2026-07-28T06:53:21.052Z",
   "source": "Spotrac (live scrape) + NBA official cap announcements",
   "currentSeason": "2026-27",
   "capThresholds": [
@@ -39,6 +39,16 @@
   ],
   "teamPayrolls": [
     {
+      "team": "MEM",
+      "season": "2026-27",
+      "playersActive": 18,
+      "avgAge": 25.6,
+      "totalCap": 159673784,
+      "capSpace": 5287216,
+      "activeCap": 134017043,
+      "deadCap": 21909021
+    },
+    {
       "team": "CHI",
       "season": "2026-27",
       "playersActive": 14,
@@ -47,16 +57,6 @@
       "capSpace": 1960133,
       "activeCap": 161925408,
       "deadCap": 1075459
-    },
-    {
-      "team": "MEM",
-      "season": "2026-27",
-      "playersActive": 19,
-      "avgAge": 26,
-      "totalCap": 163550313,
-      "capSpace": 1410687,
-      "activeCap": 155638543,
-      "deadCap": 4164050
     },
     {
       "team": "BKN",
@@ -73,9 +73,9 @@
       "season": "2026-27",
       "playersActive": 18,
       "avgAge": 25.4,
-      "totalCap": 179510148,
-      "capSpace": -14549148,
-      "activeCap": 174875611,
+      "totalCap": 179941135,
+      "capSpace": -14980135,
+      "activeCap": 175306598,
       "deadCap": 0
     },
     {
@@ -89,20 +89,10 @@
       "deadCap": 0
     },
     {
-      "team": "MIL",
-      "season": "2026-27",
-      "playersActive": 16,
-      "avgAge": 25.3,
-      "totalCap": 188668957,
-      "capSpace": -23707957,
-      "activeCap": 153120596,
-      "deadCap": 24027877
-    },
-    {
       "team": "UTA",
       "season": "2026-27",
-      "playersActive": 15,
-      "avgAge": 25.3,
+      "playersActive": 16,
+      "avgAge": 25.2,
       "totalCap": 192721921,
       "capSpace": -27760921,
       "activeCap": 178017268,
@@ -111,12 +101,22 @@
     {
       "team": "LAL",
       "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 25.2,
-      "totalCap": 195998480,
-      "capSpace": -31037480,
-      "activeCap": 195998480,
+      "playersActive": 15,
+      "avgAge": 25.3,
+      "totalCap": 198447901,
+      "capSpace": -33486901,
+      "activeCap": 198447901,
       "deadCap": 0
+    },
+    {
+      "team": "MIL",
+      "season": "2026-27",
+      "playersActive": 17,
+      "avgAge": 25.4,
+      "totalCap": 199432431,
+      "capSpace": -34471431,
+      "activeCap": 168320596,
+      "deadCap": 24027877
     },
     {
       "team": "TOR",
@@ -142,47 +142,47 @@
       "team": "IND",
       "season": "2026-27",
       "playersActive": 14,
-      "avgAge": 27.8,
-      "totalCap": 213119587,
-      "capSpace": -48158587,
+      "avgAge": 27.9,
+      "totalCap": 210934471,
+      "capSpace": -45973471,
       "activeCap": 206299934,
       "deadCap": 0
     },
     {
       "team": "HOU",
       "season": "2026-27",
-      "playersActive": 13,
-      "avgAge": 27.6,
-      "totalCap": 213359194,
-      "capSpace": -48398194,
-      "activeCap": 196741857,
+      "playersActive": 17,
+      "avgAge": 27.4,
+      "totalCap": 213623499,
+      "capSpace": -48662499,
+      "activeCap": 201640699,
       "deadCap": 0
     },
     {
       "team": "NOP",
       "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 26,
+      "playersActive": 15,
+      "avgAge": 25.7,
       "totalCap": 215123967,
       "capSpace": -50162967,
       "activeCap": 192207320,
       "deadCap": 0
     },
     {
-      "team": "DAL",
+      "team": "OKC",
       "season": "2026-27",
-      "playersActive": 15,
-      "avgAge": 25.7,
-      "totalCap": 215210671,
-      "capSpace": -50249671,
-      "activeCap": 180794640,
-      "deadCap": 3211216
+      "playersActive": 14,
+      "avgAge": 24.5,
+      "totalCap": 216464608,
+      "capSpace": -51503608,
+      "activeCap": 214279492,
+      "deadCap": 0
     },
     {
       "team": "MIA",
       "season": "2026-27",
       "playersActive": 12,
-      "avgAge": 27.9,
+      "avgAge": 27.7,
       "totalCap": 216818639,
       "capSpace": -51857639,
       "activeCap": 197215694,
@@ -199,34 +199,64 @@
       "deadCap": 0
     },
     {
-      "team": "PHI",
-      "season": "2026-27",
-      "playersActive": 15,
-      "avgAge": 24.9,
-      "totalCap": 222213315,
-      "capSpace": -57252315,
-      "activeCap": 205595978,
-      "deadCap": 0
-    },
-    {
       "team": "SAC",
       "season": "2026-27",
       "playersActive": 13,
       "avgAge": 25.9,
-      "totalCap": 224105241,
-      "capSpace": -59144241,
+      "totalCap": 221655820,
+      "capSpace": -56694820,
       "activeCap": 190139641,
       "deadCap": 10000000
+    },
+    {
+      "team": "PHI",
+      "season": "2026-27",
+      "playersActive": 15,
+      "avgAge": 25.9,
+      "totalCap": 223505305,
+      "capSpace": -58544305,
+      "activeCap": 206887968,
+      "deadCap": 0
+    },
+    {
+      "team": "DAL",
+      "season": "2026-27",
+      "playersActive": 16,
+      "avgAge": 25.5,
+      "totalCap": 224436373,
+      "capSpace": -59475373,
+      "activeCap": 194654879,
+      "deadCap": 3211216
     },
     {
       "team": "POR",
       "season": "2026-27",
       "playersActive": 14,
-      "avgAge": 26.2,
+      "avgAge": 26.1,
       "totalCap": 227941284,
       "capSpace": -62980284,
       "activeCap": 191824641,
       "deadCap": 268032
+    },
+    {
+      "team": "SAS",
+      "season": "2026-27",
+      "playersActive": 13,
+      "avgAge": 25.3,
+      "totalCap": 231173962,
+      "capSpace": -66212962,
+      "activeCap": 195830546,
+      "deadCap": 0
+    },
+    {
+      "team": "ORL",
+      "season": "2026-27",
+      "playersActive": 14,
+      "avgAge": 26.4,
+      "totalCap": 231999858,
+      "capSpace": -67038858,
+      "activeCap": 209865321,
+      "deadCap": 8000000
     },
     {
       "team": "NYK",
@@ -237,36 +267,6 @@
       "capSpace": -68871377,
       "activeCap": 218412232,
       "deadCap": 0
-    },
-    {
-      "team": "OKC",
-      "season": "2026-27",
-      "playersActive": 15,
-      "avgAge": 24.7,
-      "totalCap": 234186830,
-      "capSpace": -69225830,
-      "activeCap": 232001714,
-      "deadCap": 0
-    },
-    {
-      "team": "SAS",
-      "season": "2026-27",
-      "playersActive": 13,
-      "avgAge": 25.3,
-      "totalCap": 235808499,
-      "capSpace": -70847499,
-      "activeCap": 195830546,
-      "deadCap": 0
-    },
-    {
-      "team": "ORL",
-      "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 26.4,
-      "totalCap": 239337797,
-      "capSpace": -74376797,
-      "activeCap": 209865321,
-      "deadCap": 8000000
     },
     {
       "team": "WAS",
@@ -283,9 +283,9 @@
       "season": "2026-27",
       "playersActive": 15,
       "avgAge": 26.1,
-      "totalCap": 243248959,
-      "capSpace": -78287959,
-      "activeCap": 193901192,
+      "totalCap": 242944959,
+      "capSpace": -77983959,
+      "activeCap": 193597192,
       "deadCap": 23197051
     },
     {
@@ -299,34 +299,24 @@
       "deadCap": 424672
     },
     {
-      "team": "DEN",
-      "season": "2026-27",
-      "playersActive": 11,
-      "avgAge": 27.3,
-      "totalCap": 250696119,
-      "capSpace": -85735119,
-      "activeCap": 205203907,
-      "deadCap": 2000000
-    },
-    {
       "team": "MIN",
       "season": "2026-27",
       "playersActive": 13,
       "avgAge": 25.8,
-      "totalCap": 256856699,
-      "capSpace": -91895699,
+      "totalCap": 254406699,
+      "capSpace": -89445699,
       "activeCap": 214514065,
       "deadCap": 0
     },
     {
-      "team": "ATL",
+      "team": "DEN",
       "season": "2026-27",
-      "playersActive": 16,
-      "avgAge": 25.5,
-      "totalCap": 260115312,
-      "capSpace": -95154312,
-      "activeCap": 188857129,
-      "deadCap": 0
+      "playersActive": 13,
+      "avgAge": 27.1,
+      "totalCap": 257641436,
+      "capSpace": -92680436,
+      "activeCap": 213506987,
+      "deadCap": 2000000
     },
     {
       "team": "GSW",
@@ -336,6 +326,16 @@
       "totalCap": 262157819,
       "capSpace": -97196819,
       "activeCap": 179747598,
+      "deadCap": 0
+    },
+    {
+      "team": "ATL",
+      "season": "2026-27",
+      "playersActive": 17,
+      "avgAge": 25.7,
+      "totalCap": 266162411,
+      "capSpace": -101201411,
+      "activeCap": 194904228,
       "deadCap": 0
     }
   ],
@@ -468,6 +468,37 @@
       "contractYears": 1,
       "currentSalary": 21000000,
       "notes": []
+    },
+    {
+      "id": "33033",
+      "player": "Luguentz Dort",
+      "team": "ATL",
+      "position": "SG",
+      "age": 27,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 17722222,
+          "option": "none",
+          "display": "$17,722,222",
+          "pctOfCap": 10.7
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $27.3M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 17722222,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 17722222,
+      "notes": [
+        "Trade restriction: 09/19/2026"
+      ]
     },
     {
       "id": "70648",
@@ -620,42 +651,6 @@
       "freeAgencyType": "UFA",
       "contractYears": 3,
       "currentSalary": 13975000,
-      "notes": []
-    },
-    {
-      "id": "91733",
-      "player": "Zaccharie Risacher",
-      "team": "ATL",
-      "position": "SF",
-      "age": 21,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 13826040,
-          "option": "none",
-          "display": "$13,826,040",
-          "pctOfCap": 8.4
-        },
-        {
-          "season": "2027-28",
-          "amount": 17434637,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 10
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "rfa",
-          "display": "RFA / $43.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 31260677,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "RFA",
-      "contractYears": 2,
-      "currentSalary": 13826040,
       "notes": []
     },
     {
@@ -954,6 +949,37 @@
       "notes": []
     },
     {
+      "id": "99651",
+      "player": "Ryan Nembhard",
+      "team": "ATL",
+      "position": "PG",
+      "age": 23,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2150917,
+          "option": "none",
+          "display": "$2,150,917",
+          "pctOfCap": 1.3
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "rfa",
+          "display": "RFA / $2.8M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 2150917,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "RFA",
+      "contractYears": 1,
+      "currentSalary": 2150917,
+      "notes": [
+        "Trade restriction: 09/19/2026"
+      ]
+    },
+    {
       "id": "107947",
       "player": "Henri Veesaar",
       "team": "ATL",
@@ -1031,6 +1057,28 @@
       "freeAgencyType": null,
       "contractYears": 0,
       "currentSalary": null,
+      "notes": []
+    },
+    {
+      "id": "84477",
+      "player": "Jalen Wilson",
+      "team": "ATL",
+      "position": "PF",
+      "age": 26,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 91000,
       "notes": []
     },
     {
@@ -1511,7 +1559,7 @@
           "season": "2026-27",
           "amount": 2667944,
           "option": "none",
-          "display": "$1,333,972",
+          "display": "$2,667,944",
           "pctOfCap": 1.6
         },
         {
@@ -1601,23 +1649,46 @@
           "season": "2026-27",
           "amount": 2406205,
           "option": "none",
-          "display": "$0",
+          "display": "$2,406,205",
           "pctOfCap": 1.5
         },
         {
           "season": "2027-28",
+          "amount": 5000000,
+          "option": "none",
+          "display": "$5,000,000",
+          "pctOfCap": 2.9
+        },
+        {
+          "season": "2028-29",
+          "amount": 5250000,
+          "option": "none",
+          "display": "$5,250,000",
+          "pctOfCap": 2.9
+        },
+        {
+          "season": "2029-30",
+          "amount": 5500000,
+          "option": "team",
+          "display": "$5,500,000",
+          "pctOfCap": 2.9
+        },
+        {
+          "season": "2030-31",
           "amount": null,
           "option": "ufa",
-          "display": "UFA / $3.0M",
+          "display": "UFA / $10.5M",
           "pctOfCap": null
         }
       ],
-      "guaranteed": 2406205,
-      "freeAgencyYear": "2027-28",
+      "guaranteed": 18156205,
+      "freeAgencyYear": "2030-31",
       "freeAgencyType": "UFA",
-      "contractYears": 1,
+      "contractYears": 4,
       "currentSalary": 2406205,
-      "notes": []
+      "notes": [
+        "Trade restriction: 07/01/2027"
+      ]
     },
     {
       "id": "109561",
@@ -1663,7 +1734,9 @@
       "freeAgencyType": null,
       "contractYears": 1,
       "currentSalary": 0,
-      "notes": []
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
     },
     {
       "id": "98644",
@@ -2538,17 +2611,17 @@
       "salaries": [
         {
           "season": "2026-27",
-          "amount": 13765987,
+          "amount": 14196974,
           "option": "none",
-          "display": "$13,765,987",
-          "pctOfCap": 8.3
+          "display": "$14,196,974",
+          "pctOfCap": 8.6
         },
         {
           "season": "2027-28",
-          "amount": 13765987,
+          "amount": 13335000,
           "option": "non-guaranteed",
           "display": "$0",
-          "pctOfCap": 7.9
+          "pctOfCap": 7.7
         },
         {
           "season": "2028-29",
@@ -2569,7 +2642,7 @@
       "freeAgencyYear": "2029-30",
       "freeAgencyType": "UFA",
       "contractYears": 3,
-      "currentSalary": 13765987,
+      "currentSalary": 14196974,
       "notes": [
         "Trade restriction: 09/06/2026"
       ]
@@ -4461,6 +4534,44 @@
       "notes": []
     },
     {
+      "id": "91733",
+      "player": "Zaccharie Risacher",
+      "team": "DAL",
+      "position": "SF",
+      "age": 21,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 13826040,
+          "option": "none",
+          "display": "$13,826,040",
+          "pctOfCap": 8.4
+        },
+        {
+          "season": "2027-28",
+          "amount": 17434637,
+          "option": "team",
+          "display": "$0",
+          "pctOfCap": 10
+        },
+        {
+          "season": "2028-29",
+          "amount": null,
+          "option": "rfa",
+          "display": "RFA / $43.6M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 31260677,
+      "freeAgencyYear": "2028-29",
+      "freeAgencyType": "RFA",
+      "contractYears": 2,
+      "currentSalary": 13826040,
+      "notes": [
+        "Trade restriction: 09/19/2026"
+      ]
+    },
+    {
       "id": "32682",
       "player": "Caleb Martin",
       "team": "DAL",
@@ -4764,32 +4875,63 @@
       ]
     },
     {
-      "id": "99651",
-      "player": "Ryan Nembhard",
+      "id": "99882",
+      "player": "Moussa Cisse",
       "team": "DAL",
-      "position": "PG",
-      "age": 23,
+      "position": "F",
+      "age": 24,
       "salaries": [
         {
           "season": "2026-27",
-          "amount": 2150917,
-          "option": "none",
-          "display": "$0",
+          "amount": 2185116,
+          "option": "non-guaranteed",
+          "display": "$1,092,558",
           "pctOfCap": 1.3
         },
         {
           "season": "2027-28",
+          "amount": 2571895,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2028-29",
           "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.8M",
+          "option": "rfa",
+          "display": "RFA / $3.5M",
           "pctOfCap": null
         }
       ],
-      "guaranteed": 2150917,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
+      "guaranteed": 4757011,
+      "freeAgencyYear": "2028-29",
+      "freeAgencyType": "RFA",
+      "contractYears": 2,
+      "currentSalary": 2185116,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "82211",
+      "player": "Jett Howard",
+      "team": "DAL",
+      "position": "SG",
+      "age": 23,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
       "contractYears": 1,
-      "currentSalary": 2150917,
+      "currentSalary": 91000,
       "notes": []
     },
     {
@@ -4822,20 +4964,6 @@
       "team": "DAL",
       "position": "G",
       "age": 23,
-      "salaries": [],
-      "guaranteed": null,
-      "freeAgencyYear": null,
-      "freeAgencyType": null,
-      "contractYears": 0,
-      "currentSalary": null,
-      "notes": []
-    },
-    {
-      "id": "91762",
-      "player": "Tyler Smith",
-      "team": "DAL",
-      "position": "SF",
-      "age": 22,
       "salaries": [],
       "guaranteed": null,
       "freeAgencyYear": null,
@@ -5089,6 +5217,44 @@
       "notes": []
     },
     {
+      "id": "95438",
+      "player": "Spencer Jones",
+      "team": "DEN",
+      "position": "SF",
+      "age": 25,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 5853659,
+          "option": "estimate",
+          "display": "$5,853,659",
+          "pctOfCap": 3.5
+        },
+        {
+          "season": "2027-28",
+          "amount": 6146341,
+          "option": "estimate",
+          "display": "$6,146,341",
+          "pctOfCap": 3.5
+        },
+        {
+          "season": "2028-29",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $11.7M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 12000000,
+      "freeAgencyYear": "2028-29",
+      "freeAgencyType": "UFA",
+      "contractYears": 2,
+      "currentSalary": 5853659,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "84463",
       "player": "Julian Strawther",
       "team": "DEN",
@@ -5116,37 +5282,6 @@
       "contractYears": 1,
       "currentSalary": 4826931,
       "notes": []
-    },
-    {
-      "id": "26968",
-      "player": "Marvin Bagley III",
-      "team": "DEN",
-      "position": "PF",
-      "age": 27,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 3506659,
-          "option": "estimate",
-          "display": "$3,506,659",
-          "pctOfCap": 2.1
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 3506659,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 3506659,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
     },
     {
       "id": "91791",
@@ -5194,7 +5329,38 @@
         {
           "season": "2026-27",
           "amount": 2449421,
-          "option": "estimate",
+          "option": "none",
+          "display": "$2,449,421",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $2.6M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 2449421,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 2449421,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "26968",
+      "player": "Marvin Bagley III",
+      "team": "DEN",
+      "position": "PF",
+      "age": 27,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2449421,
+          "option": "none",
           "display": "$2,449,421",
           "pctOfCap": 1.5
         },
@@ -5225,7 +5391,7 @@
         {
           "season": "2026-27",
           "amount": 1357763,
-          "option": "estimate",
+          "option": "none",
           "display": "$1,357,763",
           "pctOfCap": 0.8
         },
@@ -5262,10 +5428,10 @@
         },
         {
           "season": "2027-28",
-          "amount": null,
-          "option": "rfa",
-          "display": "RFA / $2.9M",
-          "pctOfCap": null
+          "amount": 2294370,
+          "option": "none",
+          "display": "$2,294,370",
+          "pctOfCap": 1.3
         },
         {
           "season": "2028-29",
@@ -5289,10 +5455,10 @@
           "pctOfCap": null
         }
       ],
-      "guaranteed": 5612515,
+      "guaranteed": 7906885,
       "freeAgencyYear": "2030-31",
       "freeAgencyType": "RFA",
-      "contractYears": 3,
+      "contractYears": 4,
       "currentSalary": 0,
       "notes": [
         "Trade restriction: 12/15/2026"
@@ -6827,6 +6993,151 @@
       ]
     },
     {
+      "id": "70758",
+      "player": "Jae’Sean Tate",
+      "team": "HOU",
+      "position": "SF",
+      "age": 31,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2449421,
+          "option": "non-guaranteed",
+          "display": "$1,039,669",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $0.0M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 2449421,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 2449421,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "94482",
+      "player": "Isaiah Crawford",
+      "team": "HOU",
+      "position": "G",
+      "age": 25,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2449421,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2027-28",
+          "amount": 2664401,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2028-29",
+          "amount": 2888193,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": 1.6
+        },
+        {
+          "season": "2029-30",
+          "amount": 3272766,
+          "option": "team",
+          "display": "$0",
+          "pctOfCap": 1.7
+        },
+        {
+          "season": "2030-31",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $3.0M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 11274781,
+      "freeAgencyYear": "2030-31",
+      "freeAgencyType": "UFA",
+      "contractYears": 4,
+      "currentSalary": 2449421,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "84444",
+      "player": "Julian Phillips",
+      "team": "HOU",
+      "position": "SF",
+      "age": 23,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
+      "id": "84732",
+      "player": "Oscar Tshiebwe",
+      "team": "HOU",
+      "position": "PF",
+      "age": 27,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "108556",
       "player": "Bruce Thornton",
       "team": "HOU",
@@ -7321,8 +7632,8 @@
         {
           "season": "2026-27",
           "amount": 2584539,
-          "option": "non-guaranteed",
-          "display": "$275,000",
+          "option": "none",
+          "display": "$2,584,539",
           "pctOfCap": 1.6
         },
         {
@@ -7437,18 +7748,28 @@
       "notes": []
     },
     {
-      "id": "99267",
-      "player": "Taelon Peter",
+      "id": "84480",
+      "player": "Jalen Slawson",
       "team": "IND",
-      "position": "G",
-      "age": 24,
-      "salaries": [],
-      "guaranteed": null,
+      "position": "PF",
+      "age": 27,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
       "freeAgencyYear": null,
       "freeAgencyType": null,
-      "contractYears": 0,
-      "currentSalary": null,
-      "notes": []
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": [
+        "Trade restriction: 08/22/2026"
+      ]
     },
     {
       "id": "74413",
@@ -8403,9 +8724,7 @@
       "freeAgencyType": "UFA",
       "contractYears": 2,
       "currentSalary": 6000000,
-      "notes": [
-        "Trade restriction: 09/07/2026"
-      ]
+      "notes": []
     },
     {
       "id": "78141",
@@ -8556,6 +8875,37 @@
       ]
     },
     {
+      "id": "31577",
+      "player": "Matisse Thybulle",
+      "team": "LAL",
+      "position": "SG",
+      "age": 29,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2449421,
+          "option": "none",
+          "display": "$2,449,421",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $2.6M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 2449421,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 2449421,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "74117",
       "player": "Ziaire Williams",
       "team": "LAL",
@@ -8565,7 +8915,7 @@
         {
           "season": "2026-27",
           "amount": 2449421,
-          "option": "estimate",
+          "option": "none",
           "display": "$2,449,421",
           "pctOfCap": 1.5
         },
@@ -8659,6 +9009,30 @@
       "notes": []
     },
     {
+      "id": "100568",
+      "player": "Arthur Kaluma",
+      "team": "LAL",
+      "position": "F",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": [
+        "Trade restriction: 08/22/2026"
+      ]
+    },
+    {
       "id": "100551",
       "player": "Chris Manon",
       "team": "LAL",
@@ -8685,30 +9059,6 @@
       "player": "AK Okereke",
       "team": "LAL",
       "position": "F",
-      "age": 23,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 91000,
-          "option": "two-way",
-          "display": "$91,000",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 91000,
-      "freeAgencyYear": null,
-      "freeAgencyType": null,
-      "contractYears": 1,
-      "currentSalary": 91000,
-      "notes": [
-        "Trade restriction: 08/02/2026"
-      ]
-    },
-    {
-      "id": "108843",
-      "player": "Peter Suder",
-      "team": "LAL",
-      "position": "G",
       "age": 23,
       "salaries": [
         {
@@ -8765,35 +9115,6 @@
       "notes": [
         "Trade restriction: 08/29/2026"
       ]
-    },
-    {
-      "id": "13321",
-      "player": "Kentavious Caldwell-Pope",
-      "team": "MEM",
-      "position": "SG",
-      "age": 33,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 21621500,
-          "option": "none",
-          "display": "$21,621,500",
-          "pctOfCap": 13.1
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $32.4M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 21621500,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 21621500,
-      "notes": []
     },
     {
       "id": "70658",
@@ -9927,6 +10248,28 @@
       "notes": []
     },
     {
+      "id": "99644",
+      "player": "Vladislav Goldin",
+      "team": "MIA",
+      "position": "C",
+      "age": 25,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": []
+    },
+    {
       "id": "31570",
       "player": "Tyler Herro",
       "team": "MIL",
@@ -10030,6 +10373,58 @@
       "notes": []
     },
     {
+      "id": "27003",
+      "player": "Gary Trent Jr.",
+      "team": "MIL",
+      "position": "SG",
+      "age": 28,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 15200000,
+          "option": "none",
+          "display": "$15,200,000",
+          "pctOfCap": 9.2
+        },
+        {
+          "season": "2027-28",
+          "amount": 16400000,
+          "option": "none",
+          "display": "$16,400,000",
+          "pctOfCap": 9.4
+        },
+        {
+          "season": "2028-29",
+          "amount": 16400000,
+          "option": "none",
+          "display": "$16,400,000",
+          "pctOfCap": 9
+        },
+        {
+          "season": "2029-30",
+          "amount": 16000000,
+          "option": "none",
+          "display": "$16,000,000",
+          "pctOfCap": 8.3
+        },
+        {
+          "season": "2030-31",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $30.4M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 64000000,
+      "freeAgencyYear": "2030-31",
+      "freeAgencyType": "UFA",
+      "contractYears": 4,
+      "currentSalary": 15200000,
+      "notes": [
+        "Trade restriction: 01/15/2027"
+      ]
+    },
+    {
       "id": "20225",
       "player": "Caris LeVert",
       "team": "MIL",
@@ -10058,58 +10453,6 @@
       "currentSalary": 14809200,
       "notes": [
         "Trade restriction: 09/08/2026"
-      ]
-    },
-    {
-      "id": "27003",
-      "player": "Gary Trent Jr.",
-      "team": "MIL",
-      "position": "SG",
-      "age": 28,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 14285714,
-          "option": "estimate",
-          "display": "$14,285,714",
-          "pctOfCap": 8.7
-        },
-        {
-          "season": "2027-28",
-          "amount": 15428571,
-          "option": "estimate",
-          "display": "$15,428,571",
-          "pctOfCap": 8.9
-        },
-        {
-          "season": "2028-29",
-          "amount": 16571429,
-          "option": "estimate",
-          "display": "$16,571,429",
-          "pctOfCap": 9.1
-        },
-        {
-          "season": "2029-30",
-          "amount": 17714286,
-          "option": "estimate",
-          "display": "$17,714,286",
-          "pctOfCap": 9.2
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $33.7M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 64000000,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "UFA",
-      "contractYears": 4,
-      "currentSalary": 14285714,
-      "notes": [
-        "Trade restriction: 12/15/2026"
       ]
     },
     {
@@ -11734,6 +12077,30 @@
       "notes": []
     },
     {
+      "id": "82271",
+      "player": "Kobe Bufkin",
+      "team": "NOP",
+      "position": "PG",
+      "age": 23,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "99654",
       "player": "Hunter Dickinson",
       "team": "NOP",
@@ -11754,6 +12121,30 @@
       "contractYears": 1,
       "currentSalary": 91000,
       "notes": []
+    },
+    {
+      "id": "108566",
+      "player": "Jaron Pierre Jr.",
+      "team": "NOP",
+      "position": "F",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": [
+        "Trade restriction: 08/24/2026"
+      ]
     },
     {
       "id": "17829",
@@ -12532,35 +12923,6 @@
       "freeAgencyType": "UFA",
       "contractYears": 3,
       "currentSalary": 19550160,
-      "notes": []
-    },
-    {
-      "id": "33033",
-      "player": "Luguentz Dort",
-      "team": "OKC",
-      "position": "SG",
-      "age": 27,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 17722222,
-          "option": "none",
-          "display": "$17,722,222",
-          "pctOfCap": 10.7
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $27.3M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 17722222,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 17722222,
       "notes": []
     },
     {
@@ -13859,6 +14221,44 @@
       ]
     },
     {
+      "id": "2257",
+      "player": "LeBron James",
+      "team": "PHI",
+      "position": "PF",
+      "age": 42,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 3876529,
+          "option": "none",
+          "display": "$3,876,529",
+          "pctOfCap": 2.4
+        },
+        {
+          "season": "2027-28",
+          "amount": 4070355,
+          "option": "player",
+          "display": "$4,070,355",
+          "pctOfCap": 2.3
+        },
+        {
+          "season": "2028-29",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $2.7M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 7946884,
+      "freeAgencyYear": "2028-29",
+      "freeAgencyType": "UFA",
+      "contractYears": 2,
+      "currentSalary": 3876529,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "98628",
       "player": "Labaron Philon Jr.",
       "team": "PHI",
@@ -13969,35 +14369,6 @@
       "notes": [
         "Trade restriction: 12/15/2026"
       ]
-    },
-    {
-      "id": "78128",
-      "player": "Dalen Terry",
-      "team": "PHI",
-      "position": "SG",
-      "age": 24,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2584539,
-          "option": "none",
-          "display": "$0",
-          "pctOfCap": 1.6
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 2584539,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 2584539,
-      "notes": []
     },
     {
       "id": "78167",
@@ -14464,44 +14835,6 @@
       ]
     },
     {
-      "id": "23607",
-      "player": "Luke Kennard",
-      "team": "PHX",
-      "position": "SG",
-      "age": 30,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 6368000,
-          "option": "estimate",
-          "display": "$6,368,000",
-          "pctOfCap": 3.9
-        },
-        {
-          "season": "2027-28",
-          "amount": 6686400,
-          "option": "player",
-          "display": "$6,686,400",
-          "pctOfCap": 3.8
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $8.7M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 13054400,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "UFA",
-      "contractYears": 2,
-      "currentSalary": 6368000,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
       "id": "98606",
       "player": "Khaman Maluach",
       "team": "PHX",
@@ -14543,6 +14876,44 @@
       "contractYears": 3,
       "currentSalary": 6316680,
       "notes": []
+    },
+    {
+      "id": "23607",
+      "player": "Luke Kennard",
+      "team": "PHX",
+      "position": "SG",
+      "age": 30,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 6064000,
+          "option": "none",
+          "display": "$6,064,000",
+          "pctOfCap": 3.7
+        },
+        {
+          "season": "2027-28",
+          "amount": 6367200,
+          "option": "player",
+          "display": "$6,367,200",
+          "pctOfCap": 3.7
+        },
+        {
+          "season": "2028-29",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $8.3M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 12431200,
+      "freeAgencyYear": "2028-29",
+      "freeAgencyType": "UFA",
+      "contractYears": 2,
+      "currentSalary": 6064000,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
     },
     {
       "id": "74333",
@@ -15355,8 +15726,8 @@
         {
           "season": "2026-27",
           "amount": 2497812,
-          "option": "non-guaranteed",
-          "display": "$0",
+          "option": "none",
+          "display": "$2,497,812",
           "pctOfCap": 1.5
         },
         {
@@ -15418,6 +15789,30 @@
       "contractYears": 0,
       "currentSalary": null,
       "notes": []
+    },
+    {
+      "id": "99266",
+      "player": "John Tonje",
+      "team": "POR",
+      "position": "G",
+      "age": 25,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": [
+        "Trade restriction: 08/23/2026"
+      ]
     },
     {
       "id": "101235",
@@ -16676,18 +17071,28 @@
       "notes": []
     },
     {
-      "id": "94538",
-      "player": "Emanuel Miller",
+      "id": "100548",
+      "player": "David Jones-Garcia",
       "team": "SAS",
       "position": "SF",
-      "age": 26,
-      "salaries": [],
-      "guaranteed": null,
+      "age": 25,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 91000,
+          "option": "two-way",
+          "display": "$91,000",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 91000,
       "freeAgencyYear": null,
       "freeAgencyType": null,
-      "contractYears": 0,
-      "currentSalary": null,
-      "notes": []
+      "contractYears": 1,
+      "currentSalary": 91000,
+      "notes": [
+        "Trade restriction: 08/22/2026"
+      ]
     },
     {
       "id": "8066",
@@ -17725,8 +18130,8 @@
         {
           "season": "2026-27",
           "amount": 3506659,
-          "option": "none",
-          "display": "$3,506,659",
+          "option": "non-guaranteed",
+          "display": "$200,000",
           "pctOfCap": 2.1
         },
         {
@@ -17824,6 +18229,30 @@
       "contractYears": 2,
       "currentSalary": 2763960,
       "notes": []
+    },
+    {
+      "id": "91775",
+      "player": "Harrison Ingram",
+      "team": "UTA",
+      "position": "SF",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
     },
     {
       "id": "94483",
@@ -18598,19 +19027,7 @@
       "via": "BOS to MEM to POR"
     },
     {
-      "id": "2027-R2-ATL-ATL-9",
-      "year": 2027,
-      "round": 2,
-      "originalTeam": "ATL",
-      "currentOwner": "ATL",
-      "description": "ATL (via POR)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": "POR"
-    },
-    {
-      "id": "2028-R2-BKN-ATL-10",
+      "id": "2028-R2-BKN-ATL-9",
       "year": 2028,
       "round": 2,
       "originalTeam": "BKN",
@@ -18622,7 +19039,7 @@
       "via": "GSW"
     },
     {
-      "id": "2029-R2-CHA-ATL-11",
+      "id": "2029-R2-CHA-ATL-10",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHA",
@@ -18634,7 +19051,7 @@
       "via": "OKC"
     },
     {
-      "id": "2029-R2-ATL-ATL-12",
+      "id": "2029-R2-ATL-ATL-11",
       "year": 2029,
       "round": 2,
       "originalTeam": "ATL",
@@ -18646,7 +19063,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-OKC-ATL-13",
+      "id": "2030-R2-OKC-ATL-12",
       "year": 2030,
       "round": 2,
       "originalTeam": "OKC",
@@ -18658,7 +19075,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-ATL-ATL-14",
+      "id": "2030-R2-ATL-ATL-13",
       "year": 2030,
       "round": 2,
       "originalTeam": "ATL",
@@ -18670,43 +19087,31 @@
       "via": "POR"
     },
     {
-      "id": "2031-R2-ATL-ATL-15",
+      "id": "2031-R2-OKC-ATL-14",
       "year": 2031,
       "round": 2,
-      "originalTeam": "ATL",
+      "originalTeam": "OKC",
       "currentOwner": "ATL",
-      "description": "ATL or swap for HOU 31-55 (via ATL swap for HOU)",
+      "description": "OKC Most favorable of ATL and HOU 31-55 (or just ATL if HOU 56-60) (via ATL)",
       "protections": null,
-      "isSwap": true,
-      "isConditional": false,
-      "via": "ATL swap for HOU"
+      "isSwap": false,
+      "isConditional": true,
+      "via": "ATL"
     },
     {
-      "id": "2032-R2-ATL-ATL-16",
+      "id": "2032-R2-ATL-ATL-15",
       "year": 2032,
       "round": 2,
       "originalTeam": "ATL",
       "currentOwner": "ATL",
-      "description": "ATL own 2032 2nd",
+      "description": "ATL Least favorable of ATL and LAL then other to OKC (via ATL)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": null
+      "isConditional": true,
+      "via": "ATL"
     },
     {
-      "id": "2032-R2-ATL-ATL-17",
-      "year": 2032,
-      "round": 2,
-      "originalTeam": "ATL",
-      "currentOwner": "ATL",
-      "description": "ATL own 2032 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2033-R2-ATL-ATL-18",
+      "id": "2033-R2-ATL-ATL-16",
       "year": 2033,
       "round": 2,
       "originalTeam": "ATL",
@@ -18718,7 +19123,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-ATL-ATL-19",
+      "id": "2033-R2-ATL-ATL-17",
       "year": 2033,
       "round": 2,
       "originalTeam": "ATL",
@@ -18747,23 +19152,23 @@
       "round": 1,
       "originalTeam": "BOS",
       "currentOwner": "BOS",
-      "description": "BOS If 1",
-      "protections": "If 1",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2028-R1-SAS-BOS-2",
-      "year": 2028,
-      "round": 1,
-      "originalTeam": "SAS",
-      "currentOwner": "BOS",
-      "description": "SAS BOS Or swap 2-30 with SAS (via SAS swap for BOS)",
+      "description": "BOS SAS Or swap 2-30 with SAS (via SAS swap for BOS)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
       "via": "SAS swap for BOS"
+    },
+    {
+      "id": "2028-R1-BOS-BOS-2",
+      "year": 2028,
+      "round": 1,
+      "originalTeam": "BOS",
+      "currentOwner": "BOS",
+      "description": "BOS (via PHI)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "PHI"
     },
     {
       "id": "2028-R1-SAS-BOS-3",
@@ -18850,16 +19255,16 @@
       "via": null
     },
     {
-      "id": "2027-R2-CHA-BOS-10",
+      "id": "2027-R2-WAS-BOS-10",
       "year": 2027,
       "round": 2,
-      "originalTeam": "CHA",
+      "originalTeam": "WAS",
       "currentOwner": "BOS",
-      "description": "CHA Less favorable of BOS and ORL then other to UTA (via BOS to ORL to BOS to ORL)",
+      "description": "WAS More favorable of BKN and DAL to WAS then other to DET",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": "BOS to ORL to BOS to ORL"
+      "isConditional": true,
+      "via": null
     },
     {
       "id": "2028-R2-NYK-BOS-11",
@@ -18874,7 +19279,19 @@
       "via": "ORL to PHX"
     },
     {
-      "id": "2029-R2-OKC-BOS-12",
+      "id": "2028-R2-BOS-BOS-12",
+      "year": 2028,
+      "round": 2,
+      "originalTeam": "BOS",
+      "currentOwner": "BOS",
+      "description": "BOS Most favorable of GSW, MIL and OKC (via BKN to HOU to OKC to PHI)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "BKN to HOU to OKC to PHI"
+    },
+    {
+      "id": "2029-R2-OKC-BOS-13",
       "year": 2029,
       "round": 2,
       "originalTeam": "OKC",
@@ -18886,7 +19303,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-BKN-BOS-13",
+      "id": "2030-R2-BKN-BOS-14",
       "year": 2030,
       "round": 2,
       "originalTeam": "BKN",
@@ -18898,19 +19315,19 @@
       "via": "HOU"
     },
     {
-      "id": "2030-R2-CHA-BOS-14",
+      "id": "2030-R2-CHA-BOS-15",
       "year": 2030,
       "round": 2,
       "originalTeam": "CHA",
       "currentOwner": "BOS",
-      "description": "CHA",
-      "protections": null,
+      "description": "CHA If 30-55",
+      "protections": "If 30-55",
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": null
     },
     {
-      "id": "2030-R2-BOS-BOS-15",
+      "id": "2030-R2-BOS-BOS-16",
       "year": 2030,
       "round": 2,
       "originalTeam": "BOS",
@@ -18922,7 +19339,19 @@
       "via": null
     },
     {
-      "id": "2031-R2-BOS-BOS-16",
+      "id": "2030-R2-BOS-BOS-17",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "BOS",
+      "currentOwner": "BOS",
+      "description": "BOS Most favorable of PHX, POR and WAS then others to PHI and WAS (via PHI)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "PHI"
+    },
+    {
+      "id": "2031-R2-BOS-BOS-18",
       "year": 2031,
       "round": 2,
       "originalTeam": "BOS",
@@ -18934,19 +19363,19 @@
       "via": "CLE to ATL to BOS"
     },
     {
-      "id": "2031-R2-HOU-BOS-17",
+      "id": "2031-R2-HOU-BOS-19",
       "year": 2031,
       "round": 2,
       "originalTeam": "HOU",
       "currentOwner": "BOS",
-      "description": "HOU If 31-55 or swap with ATL (via ATL swap for HOU)",
-      "protections": "If 31-55 or swap with ATL (via ATL swap for HOU",
+      "description": "HOU Least favorable of HOU 31-55 and ATL (via ATL swap for HOU)",
+      "protections": null,
       "isSwap": true,
       "isConditional": true,
       "via": "ATL swap for HOU"
     },
     {
-      "id": "2031-R2-BOS-BOS-18",
+      "id": "2031-R2-BOS-BOS-20",
       "year": 2031,
       "round": 2,
       "originalTeam": "BOS",
@@ -18958,7 +19387,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-BOS-BOS-19",
+      "id": "2032-R2-BOS-BOS-21",
       "year": 2032,
       "round": 2,
       "originalTeam": "BOS",
@@ -18970,7 +19399,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-BOS-BOS-20",
+      "id": "2033-R2-BOS-BOS-22",
       "year": 2033,
       "round": 2,
       "originalTeam": "BOS",
@@ -19023,7 +19452,7 @@
       "round": 1,
       "originalTeam": "BKN",
       "currentOwner": "BKN",
-      "description": "BKN Two most favorable of BKN, PHI 9-30 (if PHI conveys 1st to OKC by 2026) and PHX (via BKN swap for PHX) Or swap with NYK",
+      "description": "BKN Two most favorable of BKN, PHI 9-30 and PHX (via BKN swap for PHX) Or swap with NYK",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
@@ -19047,11 +19476,11 @@
       "round": 1,
       "originalTeam": "PHI",
       "currentOwner": "BKN",
-      "description": "PHI If 1-8 and if PHI conveys 1st to OKC by 2026",
-      "protections": "If 1-8 and if PHI conveys 1st to OKC by 2026",
-      "isSwap": false,
+      "description": "PHI If 1-8 or LAC or BOS (via BOS swap for LAC or PHI 1-8)",
+      "protections": "If 1-8 or LAC or BOS (via BOS swap for LAC or PHI 1-8",
+      "isSwap": true,
       "isConditional": true,
-      "via": null
+      "via": "BOS swap for LAC or PHI 1-8"
     },
     {
       "id": "2028-R1-BKN-BKN-6",
@@ -19059,8 +19488,8 @@
       "round": 1,
       "originalTeam": "BKN",
       "currentOwner": "BKN",
-      "description": "BKN If 9-30 and if PHI conveys 1st to OKC by 2026",
-      "protections": "If 9-30 and if PHI conveys 1st to OKC by 2026",
+      "description": "BKN If 9-30",
+      "protections": "If 9-30",
       "isSwap": false,
       "isConditional": true,
       "via": null
@@ -19479,11 +19908,11 @@
       "round": 1,
       "originalTeam": "CHA",
       "currentOwner": "CHA",
-      "description": "CHA own 2028 1st",
+      "description": "CHA MIN Or swap for MIN (via CHA swap for MIN)",
       "protections": null,
-      "isSwap": false,
+      "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "CHA swap for MIN"
     },
     {
       "id": "2028-R1-MIA-CHA-6",
@@ -19491,7 +19920,7 @@
       "round": 1,
       "originalTeam": "MIA",
       "currentOwner": "CHA",
-      "description": "MIA CHA If MIA conveys 1st to CHA in 2027 or If MIA does not convey 1st to OKC in 2025",
+      "description": "MIA CHA If MIA does not convey 1st to CHA in 2027",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -19503,23 +19932,23 @@
       "round": 1,
       "originalTeam": "MIN",
       "currentOwner": "CHA",
-      "description": "MIN CHA CHA right to swap",
+      "description": "MIN CHA Or swap with CHA (via CHA swap for MIN)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "CHA swap for MIN"
     },
     {
-      "id": "2029-R1-CHA-CHA-8",
+      "id": "2029-R1-PHX-CHA-8",
       "year": 2029,
       "round": 1,
-      "originalTeam": "CHA",
+      "originalTeam": "PHX",
       "currentOwner": "CHA",
-      "description": "CHA own 2029 1st",
+      "description": "PHX Least favorable of CHA or CLE, MIN 6-30 and UTA (via CHA swap to PHX)",
       "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
+      "isSwap": true,
+      "isConditional": true,
+      "via": "CHA swap to PHX"
     },
     {
       "id": "2029-R1-CHA-CHA-9",
@@ -19539,38 +19968,14 @@
       "round": 1,
       "originalTeam": "CHA",
       "currentOwner": "CHA",
-      "description": "CHA own 2030 1st",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2030-R1-MIN-CHA-11",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "MIN",
-      "currentOwner": "CHA",
-      "description": "MIN If 1",
-      "protections": "If 1",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2030-R1-CHA-CHA-12",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "CHA",
-      "currentOwner": "CHA",
-      "description": "CHA Least favorable of MIN 2-30, DAL and SAS (via SAN swap for DAL; via SAN swap of SAN or DAL for MIN)",
+      "description": "CHA Or swap for least favorable of DAL, MIN 2-30 and SAS (via CHA swap for MIN)",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
-      "via": "SAN swap for DAL; via SAN swap of SAN or DAL for MIN"
+      "via": "CHA swap for MIN"
     },
     {
-      "id": "2031-R1-CHA-CHA-13",
+      "id": "2031-R1-CHA-CHA-11",
       "year": 2031,
       "round": 1,
       "originalTeam": "CHA",
@@ -19582,12 +19987,36 @@
       "via": null
     },
     {
-      "id": "2032-R1-CHA-CHA-14",
+      "id": "2032-R1-CHA-CHA-12",
       "year": 2032,
       "round": 1,
       "originalTeam": "CHA",
       "currentOwner": "CHA",
       "description": "CHA own 2032 1st",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2033-R1-CHA-CHA-13",
+      "year": 2033,
+      "round": 1,
+      "originalTeam": "CHA",
+      "currentOwner": "CHA",
+      "description": "CHA own 2033 1st",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2033-R1-CHA-CHA-14",
+      "year": 2033,
+      "round": 1,
+      "originalTeam": "CHA",
+      "currentOwner": "CHA",
+      "description": "CHA own 2033 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -19606,43 +20035,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-CHA-CHA-16",
-      "year": 2033,
-      "round": 1,
-      "originalTeam": "CHA",
-      "currentOwner": "CHA",
-      "description": "CHA own 2033 1st",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2033-R1-CHA-CHA-17",
-      "year": 2033,
-      "round": 1,
-      "originalTeam": "CHA",
-      "currentOwner": "CHA",
-      "description": "CHA own 2033 1st",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2027-R2-CHA-CHA-18",
-      "year": 2027,
-      "round": 2,
-      "originalTeam": "CHA",
-      "currentOwner": "CHA",
-      "description": "CHA Less favorable of BOS and ORL then other to UTA (via BOS to ORL to BOS to ORL)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": "BOS to ORL to BOS to ORL"
-    },
-    {
-      "id": "2027-R2-OKC-CHA-19",
+      "id": "2027-R2-OKC-CHA-16",
       "year": 2027,
       "round": 2,
       "originalTeam": "OKC",
@@ -19654,7 +20047,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-CHA-CHA-20",
+      "id": "2027-R2-CHA-CHA-17",
       "year": 2027,
       "round": 2,
       "originalTeam": "CHA",
@@ -19666,7 +20059,7 @@
       "via": "LAC to HOU"
     },
     {
-      "id": "2027-R2-CHA-CHA-21",
+      "id": "2027-R2-CHA-CHA-18",
       "year": 2027,
       "round": 2,
       "originalTeam": "CHA",
@@ -19678,7 +20071,7 @@
       "via": "POR"
     },
     {
-      "id": "2028-R2-CHA-CHA-22",
+      "id": "2028-R2-CHA-CHA-19",
       "year": 2028,
       "round": 2,
       "originalTeam": "CHA",
@@ -19690,19 +20083,19 @@
       "via": "LAC to CHA to DAL"
     },
     {
-      "id": "2028-R2-CHA-CHA-23",
+      "id": "2028-R2-CHA-CHA-20",
       "year": 2028,
       "round": 2,
       "originalTeam": "CHA",
       "currentOwner": "CHA",
-      "description": "CHA (via ATL to CHA)",
+      "description": "CHA (via HOU to ATL to HOU)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "ATL to CHA"
+      "via": "HOU to ATL to HOU"
     },
     {
-      "id": "2028-R2-CHA-CHA-24",
+      "id": "2028-R2-CHA-CHA-21",
       "year": 2028,
       "round": 2,
       "originalTeam": "CHA",
@@ -19714,7 +20107,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-CHA-CHA-25",
+      "id": "2029-R2-CHA-CHA-22",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHA",
@@ -19726,7 +20119,7 @@
       "via": "OKC"
     },
     {
-      "id": "2029-R2-CHA-CHA-26",
+      "id": "2029-R2-CHA-CHA-23",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHA",
@@ -19738,7 +20131,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-CHA-CHA-27",
+      "id": "2029-R2-CHA-CHA-24",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHA",
@@ -19750,31 +20143,31 @@
       "via": null
     },
     {
-      "id": "2029-R2-MIN-CHA-28",
+      "id": "2029-R2-CHA-CHA-25",
       "year": 2029,
       "round": 2,
-      "originalTeam": "MIN",
+      "originalTeam": "CHA",
       "currentOwner": "CHA",
-      "description": "MIN UTA CHA MIN pick if MIN conveys 1st to UTA in 2029; UTA pick if MIN does not convey 1st to UTA in 2029 or CHA if does not convery",
+      "description": "CHA MIN pick if MIN conveys 1st to UTA in 2029; UTA pick if MIN does not convey 1st to UTA in 2029 or CHA if does not convery",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": null
     },
     {
-      "id": "2030-R2-CHA-CHA-29",
+      "id": "2030-R2-CHA-CHA-26",
       "year": 2030,
       "round": 2,
       "originalTeam": "CHA",
       "currentOwner": "CHA",
-      "description": "CHA own 2030 2nd",
-      "protections": null,
+      "description": "CHA If 30-55",
+      "protections": "If 30-55",
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": null
     },
     {
-      "id": "2030-R2-BOS-CHA-30",
+      "id": "2030-R2-BOS-CHA-27",
       "year": 2030,
       "round": 2,
       "originalTeam": "BOS",
@@ -19786,7 +20179,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-CHA-CHA-31",
+      "id": "2030-R2-CHA-CHA-28",
       "year": 2030,
       "round": 2,
       "originalTeam": "CHA",
@@ -19798,7 +20191,7 @@
       "via": "UTA"
     },
     {
-      "id": "2031-R2-CHA-CHA-32",
+      "id": "2031-R2-CHA-CHA-29",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHA",
@@ -19810,7 +20203,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-CHA-CHA-33",
+      "id": "2031-R2-CHA-CHA-30",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHA",
@@ -19822,7 +20215,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-CHA-CHA-34",
+      "id": "2031-R2-CHA-CHA-31",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHA",
@@ -19834,7 +20227,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CHA-CHA-35",
+      "id": "2032-R2-CHA-CHA-32",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHA",
@@ -19846,7 +20239,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CHA-CHA-36",
+      "id": "2032-R2-CHA-CHA-33",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHA",
@@ -19858,7 +20251,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CHA-CHA-37",
+      "id": "2032-R2-CHA-CHA-34",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHA",
@@ -19870,7 +20263,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-CHA-CHA-38",
+      "id": "2033-R2-CHA-CHA-35",
       "year": 2033,
       "round": 2,
       "originalTeam": "CHA",
@@ -19882,7 +20275,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-CHA-CHA-39",
+      "id": "2033-R2-CHA-CHA-36",
       "year": 2033,
       "round": 2,
       "originalTeam": "CHA",
@@ -19894,7 +20287,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-CHA-CHA-40",
+      "id": "2033-R2-CHA-CHA-37",
       "year": 2033,
       "round": 2,
       "originalTeam": "CHA",
@@ -19918,31 +20311,7 @@
       "via": null
     },
     {
-      "id": "2027-R1-POR-CHI-1",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "POR",
-      "currentOwner": "CHI",
-      "description": "POR If 1-14 if not already settled with CHI",
-      "protections": "If 1-14 if not already settled with CHI",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2027-R1-CHI-CHI-2",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "CHI",
-      "currentOwner": "CHI",
-      "description": "CHI If 15-30 if not already settled",
-      "protections": "If 15-30 if not already settled",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2028-R1-CHI-CHI-3",
+      "id": "2028-R1-CHI-CHI-1",
       "year": 2028,
       "round": 1,
       "originalTeam": "CHI",
@@ -19954,31 +20323,31 @@
       "via": null
     },
     {
-      "id": "2028-R1-POR-CHI-4",
+      "id": "2028-R1-POR-CHI-2",
       "year": 2028,
       "round": 1,
       "originalTeam": "POR",
       "currentOwner": "CHI",
-      "description": "POR If 1-14 if not already settled with CHI or swap with MIL",
-      "protections": "If 1-14 if not already settled with CHI or swap with MIL",
+      "description": "POR MIL or swap with MIL",
+      "protections": null,
       "isSwap": true,
-      "isConditional": true,
+      "isConditional": false,
       "via": null
     },
     {
-      "id": "2028-R1-CHI-CHI-5",
+      "id": "2028-R1-CHI-CHI-3",
       "year": 2028,
       "round": 1,
       "originalTeam": "CHI",
       "currentOwner": "CHI",
-      "description": "CHI If 15-30 if not already settled",
-      "protections": "If 15-30 if not already settled",
-      "isSwap": false,
-      "isConditional": true,
+      "description": "CHI MIL or swap with MIL",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
       "via": null
     },
     {
-      "id": "2029-R1-CHI-CHI-6",
+      "id": "2029-R1-CHI-CHI-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "CHI",
@@ -19990,7 +20359,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-CHI-CHI-7",
+      "id": "2030-R1-CHI-CHI-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "CHI",
@@ -20002,7 +20371,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-CHI-CHI-8",
+      "id": "2031-R1-CHI-CHI-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "CHI",
@@ -20014,7 +20383,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-CHI-CHI-9",
+      "id": "2032-R1-CHI-CHI-7",
       "year": 2032,
       "round": 1,
       "originalTeam": "CHI",
@@ -20026,7 +20395,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-CHI-CHI-10",
+      "id": "2033-R1-CHI-CHI-8",
       "year": 2033,
       "round": 1,
       "originalTeam": "CHI",
@@ -20038,19 +20407,19 @@
       "via": null
     },
     {
-      "id": "2027-R2-DAL-CHI-11",
+      "id": "2027-R2-OKC-CHI-9",
       "year": 2027,
       "round": 2,
-      "originalTeam": "DAL",
+      "originalTeam": "OKC",
       "currentOwner": "CHI",
-      "description": "DAL (via WAS to NOP to WAS)",
+      "description": "OKC (via WAS to NOP to WAS to DAL)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "WAS to NOP to WAS"
+      "via": "WAS to NOP to WAS to DAL"
     },
     {
-      "id": "2027-R2-CHI-CHI-12",
+      "id": "2027-R2-CHI-CHI-10",
       "year": 2027,
       "round": 2,
       "originalTeam": "CHI",
@@ -20062,31 +20431,31 @@
       "via": "ATL to MIN"
     },
     {
-      "id": "2028-R2-CHI-CHI-13",
+      "id": "2028-R2-CHI-CHI-11",
       "year": 2028,
       "round": 2,
       "originalTeam": "CHI",
       "currentOwner": "CHI",
-      "description": "CHI own 2028 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2028-R2-POR-CHI-14",
-      "year": 2028,
-      "round": 2,
-      "originalTeam": "POR",
-      "currentOwner": "CHI",
-      "description": "POR CHI POR pick if POR conveys 1st to CHI by 2028; CHI pick if POR does not convey 1st to POR by 2028",
+      "description": "CHI Most favorable of CHI, IND and PHX then others to IND and NYK",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": null
     },
     {
-      "id": "2029-R2-CHI-CHI-15",
+      "id": "2028-R2-POR-CHI-12",
+      "year": 2028,
+      "round": 2,
+      "originalTeam": "POR",
+      "currentOwner": "CHI",
+      "description": "POR CHI (via CHI to SAC to MEM)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "CHI to SAC to MEM"
+    },
+    {
+      "id": "2029-R2-CHI-CHI-13",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHI",
@@ -20098,43 +20467,43 @@
       "via": null
     },
     {
-      "id": "2029-R2-CHI-CHI-16",
+      "id": "2029-R2-CHI-CHI-14",
       "year": 2029,
       "round": 2,
       "originalTeam": "CHI",
       "currentOwner": "CHI",
-      "description": "CHI Least favorable of DET, MIL and NYK then others to DET (via MIL to BRK to DET; via NYK to DET to SAC)",
+      "description": "CHI (via NYK to DET to SAC)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "NYK to DET to SAC"
+    },
+    {
+      "id": "2030-R2-CHI-CHI-15",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "CHI",
+      "currentOwner": "CHI",
+      "description": "CHI More favorable of CHI and IND then other to IND",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": "MIL to BRK to DET; via NYK to DET to SAC"
+      "via": null
     },
     {
-      "id": "2030-R2-CHI-CHI-17",
+      "id": "2030-R2-CHI-CHI-16",
       "year": 2030,
       "round": 2,
       "originalTeam": "CHI",
       "currentOwner": "CHI",
-      "description": "CHI own 2030 2nd",
+      "description": "CHI Less favorable of CHI and IND then other to CHI",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2030-R2-CHI-CHI-18",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "CHI",
-      "currentOwner": "CHI",
-      "description": "CHI own 2030 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2031-R2-CHI-CHI-19",
+      "id": "2031-R2-CHI-CHI-17",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHI",
@@ -20146,7 +20515,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-CHI-CHI-20",
+      "id": "2031-R2-CHI-CHI-18",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHI",
@@ -20158,7 +20527,7 @@
       "via": "PHX to CHA"
     },
     {
-      "id": "2031-R2-CHI-CHI-21",
+      "id": "2031-R2-CHI-CHI-19",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHI",
@@ -20170,7 +20539,7 @@
       "via": "MIN swap for GSW (via MIN"
     },
     {
-      "id": "2031-R2-CHI-CHI-22",
+      "id": "2031-R2-CHI-CHI-20",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHI",
@@ -20182,7 +20551,7 @@
       "via": "DET to CHA"
     },
     {
-      "id": "2032-R2-CHI-CHI-23",
+      "id": "2032-R2-CHI-CHI-21",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHI",
@@ -20194,7 +20563,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CHI-CHI-24",
+      "id": "2032-R2-CHI-CHI-22",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHI",
@@ -20206,7 +20575,7 @@
       "via": "PHX to MIN"
     },
     {
-      "id": "2033-R2-CHI-CHI-25",
+      "id": "2033-R2-CHI-CHI-23",
       "year": 2033,
       "round": 2,
       "originalTeam": "CHI",
@@ -20223,7 +20592,7 @@
       "round": 1,
       "originalTeam": "PHX",
       "currentOwner": "CLE",
-      "description": "PHX Least favorable of CLE, MIN and UTA to PHX then others to UTA (via UTA)",
+      "description": "PHX Least favorable of CLE, MIN and UTA then others to MEM and UTA (via UTA)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -20242,19 +20611,7 @@
       "via": "UTH swap for CLE; via ATL swap for CLE or UTH"
     },
     {
-      "id": "2028-R1-UTA-CLE-2",
-      "year": 2028,
-      "round": 1,
-      "originalTeam": "UTA",
-      "currentOwner": "CLE",
-      "description": "UTA CLE Or swap with CLE",
-      "protections": null,
-      "isSwap": true,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2029-R1-CHA-CLE-3",
+      "id": "2029-R1-CHA-CLE-2",
       "year": 2029,
       "round": 1,
       "originalTeam": "CHA",
@@ -20266,7 +20623,7 @@
       "via": "UTA to PHX"
     },
     {
-      "id": "2030-R1-CLE-CLE-4",
+      "id": "2030-R1-CLE-CLE-3",
       "year": 2030,
       "round": 1,
       "originalTeam": "CLE",
@@ -20278,7 +20635,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-CLE-CLE-5",
+      "id": "2031-R1-CLE-CLE-4",
       "year": 2031,
       "round": 1,
       "originalTeam": "CLE",
@@ -20290,7 +20647,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-CLE-CLE-6",
+      "id": "2032-R1-CLE-CLE-5",
       "year": 2032,
       "round": 1,
       "originalTeam": "CLE",
@@ -20302,19 +20659,19 @@
       "via": null
     },
     {
-      "id": "2033-R1-CLE-CLE-7",
+      "id": "2033-R1-CLE-CLE-6",
       "year": 2033,
       "round": 1,
       "originalTeam": "CLE",
       "currentOwner": "CLE",
-      "description": "CLE own 2033 1st",
+      "description": "CLE FROZEN PICK",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2027-R2-CHI-CLE-8",
+      "id": "2027-R2-CHI-CLE-7",
       "year": 2027,
       "round": 2,
       "originalTeam": "CHI",
@@ -20326,7 +20683,7 @@
       "via": "ATL to MIN"
     },
     {
-      "id": "2028-R2-UTA-CLE-9",
+      "id": "2028-R2-UTA-CLE-8",
       "year": 2028,
       "round": 2,
       "originalTeam": "UTA",
@@ -20338,7 +20695,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-ATL-CLE-10",
+      "id": "2029-R2-ATL-CLE-9",
       "year": 2029,
       "round": 2,
       "originalTeam": "ATL",
@@ -20350,7 +20707,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-SAS-CLE-11",
+      "id": "2030-R2-SAS-CLE-10",
       "year": 2030,
       "round": 2,
       "originalTeam": "SAS",
@@ -20362,7 +20719,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-UTA-CLE-12",
+      "id": "2031-R2-UTA-CLE-11",
       "year": 2031,
       "round": 2,
       "originalTeam": "UTA",
@@ -20374,7 +20731,7 @@
       "via": "CLE to ATL to BOS"
     },
     {
-      "id": "2032-R2-UTA-CLE-13",
+      "id": "2032-R2-UTA-CLE-12",
       "year": 2032,
       "round": 2,
       "originalTeam": "UTA",
@@ -20386,7 +20743,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CLE-CLE-14",
+      "id": "2032-R2-CLE-CLE-13",
       "year": 2032,
       "round": 2,
       "originalTeam": "CLE",
@@ -20398,7 +20755,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-CLE-CLE-15",
+      "id": "2033-R2-CLE-CLE-14",
       "year": 2033,
       "round": 2,
       "originalTeam": "CLE",
@@ -20487,7 +20844,7 @@
       "round": 1,
       "originalTeam": "DAL",
       "currentOwner": "DAL",
-      "description": "DAL SAS Least favorable of DAL and SAS (via SAN swap for DAL)",
+      "description": "DAL Least favorable of DAL and SAS (via SAN swap for DAL)",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
@@ -20530,31 +20887,19 @@
       "via": null
     },
     {
-      "id": "2027-R2-DAL-DAL-10",
+      "id": "2027-R2-MIL-DAL-10",
       "year": 2027,
       "round": 2,
-      "originalTeam": "DAL",
+      "originalTeam": "MIL",
       "currentOwner": "DAL",
-      "description": "DAL (via WAS to NOP to WAS)",
+      "description": "MIL Less favorable of BKN and DAL to MIL then other to WAS (via DET)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "WAS to NOP to WAS"
+      "via": "DET"
     },
     {
-      "id": "2027-R2-DET-DAL-11",
-      "year": 2027,
-      "round": 2,
-      "originalTeam": "DET",
-      "currentOwner": "DAL",
-      "description": "DET Less favorable of BKN and DAL to DET then other to WAS",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2028-R2-LAC-DAL-12",
+      "id": "2028-R2-LAC-DAL-11",
       "year": 2028,
       "round": 2,
       "originalTeam": "LAC",
@@ -20566,7 +20911,7 @@
       "via": "SAC to IND"
     },
     {
-      "id": "2029-R2-BKN-DAL-13",
+      "id": "2029-R2-BKN-DAL-12",
       "year": 2029,
       "round": 2,
       "originalTeam": "BKN",
@@ -20576,6 +20921,18 @@
       "isSwap": false,
       "isConditional": false,
       "via": null
+    },
+    {
+      "id": "2029-R2-DAL-DAL-13",
+      "year": 2029,
+      "round": 2,
+      "originalTeam": "DAL",
+      "currentOwner": "DAL",
+      "description": "DAL (via OKC to WAS)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "OKC to WAS"
     },
     {
       "id": "2030-R2-BKN-DAL-14",
@@ -20763,11 +21120,11 @@
       "round": 2,
       "originalTeam": "UTA",
       "currentOwner": "DEN",
-      "description": "UTA (via CLE to CHI to BOS to UTA)",
+      "description": "UTA (via CLE to CHI to BOS)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "CLE to CHI to BOS to UTA"
+      "via": "CLE to CHI to BOS"
     },
     {
       "id": "2028-R2-DEN-DEN-12",
@@ -20823,10 +21180,10 @@
       "round": 2,
       "originalTeam": "OKC",
       "currentOwner": "DEN",
-      "description": "OKC (via CHA)",
+      "description": "OKC Two least favorable picks of DEN, HOU and MIA then other to MEM (via CHA)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": "CHA"
     },
     {
@@ -20967,18 +21324,6 @@
       "round": 2,
       "originalTeam": "DET",
       "currentOwner": "DET",
-      "description": "DET Less favorable of BKN and DAL to DET then other to WAS",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2027-R2-DET-DET-8",
-      "year": 2027,
-      "round": 2,
-      "originalTeam": "DET",
-      "currentOwner": "DET",
       "description": "DET own 2027 2nd",
       "protections": null,
       "isSwap": false,
@@ -20986,7 +21331,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-DET-DET-9",
+      "id": "2028-R2-DET-DET-8",
       "year": 2028,
       "round": 2,
       "originalTeam": "DET",
@@ -20998,7 +21343,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-PHI-DET-10",
+      "id": "2028-R2-PHI-DET-9",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
@@ -21010,7 +21355,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-DET-DET-11",
+      "id": "2028-R2-DET-DET-10",
       "year": 2028,
       "round": 2,
       "originalTeam": "DET",
@@ -21022,7 +21367,7 @@
       "via": "LAC to CHA to DAL"
     },
     {
-      "id": "2028-R2-DET-DET-12",
+      "id": "2028-R2-DET-DET-11",
       "year": 2028,
       "round": 2,
       "originalTeam": "DET",
@@ -21032,6 +21377,18 @@
       "isSwap": false,
       "isConditional": true,
       "via": "SAS to DAL to DET"
+    },
+    {
+      "id": "2029-R2-DET-DET-12",
+      "year": 2029,
+      "round": 2,
+      "originalTeam": "DET",
+      "currentOwner": "DET",
+      "description": "DET Two most favorable of DET, MIL and NYK then other to SAC (via MIL to BRK to DET; via NYK to DET)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "MIL to BRK to DET; via NYK to DET"
     },
     {
       "id": "2029-R2-DET-DET-13",
@@ -21046,19 +21403,7 @@
       "via": "MIL to BRK to DET; via NYK to DET"
     },
     {
-      "id": "2029-R2-DET-DET-14",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "DET",
-      "currentOwner": "DET",
-      "description": "DET Two most favorable of DET, MIL and NYK then other to SAC (via MIL to BRK to DET; via NYK to DET)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": true,
-      "via": "MIL to BRK to DET; via NYK to DET"
-    },
-    {
-      "id": "2030-R2-DET-DET-15",
+      "id": "2030-R2-DET-DET-14",
       "year": 2030,
       "round": 2,
       "originalTeam": "DET",
@@ -21070,7 +21415,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-DET-DET-16",
+      "id": "2031-R2-DET-DET-15",
       "year": 2031,
       "round": 2,
       "originalTeam": "DET",
@@ -21082,7 +21427,7 @@
       "via": "PHI"
     },
     {
-      "id": "2031-R2-DET-DET-17",
+      "id": "2031-R2-DET-DET-16",
       "year": 2031,
       "round": 2,
       "originalTeam": "DET",
@@ -21094,7 +21439,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-DET-DET-18",
+      "id": "2031-R2-DET-DET-17",
       "year": 2031,
       "round": 2,
       "originalTeam": "DET",
@@ -21106,19 +21451,19 @@
       "via": "MIN swap for GSW (via GSW"
     },
     {
-      "id": "2032-R2-DET-DET-19",
+      "id": "2032-R2-DET-DET-18",
       "year": 2032,
       "round": 2,
       "originalTeam": "DET",
       "currentOwner": "DET",
-      "description": "DET own 2032 2nd",
+      "description": "DET (via MEM)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": null
+      "via": "MEM"
     },
     {
-      "id": "2033-R2-DET-DET-20",
+      "id": "2033-R2-DET-DET-19",
       "year": 2033,
       "round": 2,
       "originalTeam": "DET",
@@ -21243,10 +21588,10 @@
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "GSW",
-      "description": "PHI (via POR to WAS)",
+      "description": "PHI Two least favorable of GSW, MIL and OKC to PHI then other to BOS (via POR to WAS)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": "POR to WAS"
     },
     {
@@ -21483,23 +21828,23 @@
       "round": 2,
       "originalTeam": "CHA",
       "currentOwner": "HOU",
-      "description": "CHA (via ATL to CHA)",
+      "description": "CHA (via HOU to ATL to HOU)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "ATL to CHA"
+      "via": "HOU to ATL to HOU"
     },
     {
-      "id": "2029-R2-MEM-HOU-14",
+      "id": "2029-R2-DAL-HOU-14",
       "year": 2029,
       "round": 2,
-      "originalTeam": "MEM",
+      "originalTeam": "DAL",
       "currentOwner": "HOU",
-      "description": "MEM (via OKC to WAS to DAL)",
+      "description": "DAL (via OKC to WAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "OKC to WAS to DAL"
+      "via": "OKC to WAS"
     },
     {
       "id": "2030-R2-MEM-HOU-15",
@@ -21507,10 +21852,10 @@
       "round": 2,
       "originalTeam": "MEM",
       "currentOwner": "HOU",
-      "description": "MEM (via OKC)",
+      "description": "MEM Most favorable pick of DEN, HOU and MIA then others to OKC (via OKC)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": "OKC"
     },
     {
@@ -21519,8 +21864,8 @@
       "round": 2,
       "originalTeam": "HOU",
       "currentOwner": "HOU",
-      "description": "HOU If 31-55 or swap with ATL (via ATL swap for HOU)",
-      "protections": "If 31-55 or swap with ATL (via ATL swap for HOU",
+      "description": "HOU Least favorable of HOU 31-55 and ATL (via ATL swap for HOU)",
+      "protections": null,
       "isSwap": true,
       "isConditional": true,
       "via": "ATL swap for HOU"
@@ -21651,7 +21996,7 @@
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "IND",
-      "description": "NYK Second and third most favorable of HOU, IND, MIA and OKC to NYK; then others to OKC and SAS (via HOU to DET to UTA to OKC)",
+      "description": "NYK Third most favorable of HOU, IND, MIA and OKC to NYK; then others to PHI and SAS (via HOU to DET to UTA to OKC)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -21675,10 +22020,10 @@
       "round": 2,
       "originalTeam": "IND",
       "currentOwner": "IND",
-      "description": "IND More favorable of IND and PHX then other to NYK",
+      "description": "IND Middle Pick of CHI, IND and PHX then others to CHI and NYK",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
+      "isConditional": false,
       "via": null
     },
     {
@@ -21711,7 +22056,7 @@
       "round": 2,
       "originalTeam": "CHI",
       "currentOwner": "IND",
-      "description": "CHI",
+      "description": "CHI Less favorable of CHI and IND then other to CHI",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -21778,16 +22123,16 @@
       "via": "OKC swap for LAC"
     },
     {
-      "id": "2028-R1-PHI-LAC-2",
+      "id": "2028-R1-BOS-LAC-2",
       "year": 2028,
       "round": 1,
-      "originalTeam": "PHI",
+      "originalTeam": "BOS",
       "currentOwner": "LAC",
-      "description": "PHI",
+      "description": "BOS (via PHI)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": null
+      "via": "PHI"
     },
     {
       "id": "2029-R1-LAC-LAC-3",
@@ -21999,11 +22344,11 @@
       "round": 1,
       "originalTeam": "LAL",
       "currentOwner": "LAL",
-      "description": "LAL UTA UTA right to swap",
+      "description": "LAL Least favorable of LAL and more favorable or CLE and UTA then other to UTA (via UTA swap for CLE and LAL)",
       "protections": null,
       "isSwap": true,
-      "isConditional": false,
-      "via": null
+      "isConditional": true,
+      "via": "UTA swap for CLE and LAL"
     },
     {
       "id": "2029-R1-DAL-LAL-3",
@@ -22023,14 +22368,26 @@
       "round": 1,
       "originalTeam": "LAL",
       "currentOwner": "LAL",
-      "description": "LAL UTA UTA right to swap",
+      "description": "LAL UTA Or swap with UTA (via UTA swap for LAL)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "UTA swap for LAL"
     },
     {
-      "id": "2031-R1-UTA-LAL-5",
+      "id": "2030-R1-UTA-LAL-5",
+      "year": 2030,
+      "round": 1,
+      "originalTeam": "UTA",
+      "currentOwner": "LAL",
+      "description": "UTA LAL Or swap for LAL (via UTA swap for LAL)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": "UTA swap for LAL"
+    },
+    {
+      "id": "2031-R1-UTA-LAL-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "UTA",
@@ -22042,7 +22399,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-LAL-LAL-6",
+      "id": "2032-R1-LAL-LAL-7",
       "year": 2032,
       "round": 1,
       "originalTeam": "LAL",
@@ -22054,7 +22411,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-UTA-LAL-7",
+      "id": "2033-R1-UTA-LAL-8",
       "year": 2033,
       "round": 1,
       "originalTeam": "UTA",
@@ -22066,7 +22423,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-UTA-LAL-8",
+      "id": "2027-R2-UTA-LAL-9",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
@@ -22078,7 +22435,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-WAS-LAL-9",
+      "id": "2028-R2-WAS-LAL-10",
       "year": 2028,
       "round": 2,
       "originalTeam": "WAS",
@@ -22090,19 +22447,19 @@
       "via": "LAL to WAS"
     },
     {
-      "id": "2029-R2-MEM-LAL-10",
+      "id": "2029-R2-WAS-LAL-11",
       "year": 2029,
       "round": 2,
-      "originalTeam": "MEM",
+      "originalTeam": "WAS",
       "currentOwner": "LAL",
-      "description": "MEM (via WAS)",
+      "description": "WAS",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "WAS"
+      "via": null
     },
     {
-      "id": "2030-R2-BKN-LAL-11",
+      "id": "2030-R2-BKN-LAL-12",
       "year": 2030,
       "round": 2,
       "originalTeam": "BKN",
@@ -22114,7 +22471,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-BKN-LAL-12",
+      "id": "2031-R2-BKN-LAL-13",
       "year": 2031,
       "round": 2,
       "originalTeam": "BKN",
@@ -22126,7 +22483,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-LAL-LAL-13",
+      "id": "2031-R2-LAL-LAL-14",
       "year": 2031,
       "round": 2,
       "originalTeam": "LAL",
@@ -22138,19 +22495,19 @@
       "via": null
     },
     {
-      "id": "2032-R2-ATL-LAL-14",
+      "id": "2032-R2-OKC-LAL-15",
       "year": 2032,
       "round": 2,
-      "originalTeam": "ATL",
+      "originalTeam": "OKC",
       "currentOwner": "LAL",
-      "description": "ATL",
+      "description": "OKC More favorable of ATL and LAL then other to ATL (via ATL)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": null
+      "isConditional": true,
+      "via": "ATL"
     },
     {
-      "id": "2032-R2-LAL-LAL-15",
+      "id": "2032-R2-LAL-LAL-16",
       "year": 2032,
       "round": 2,
       "originalTeam": "LAL",
@@ -22162,7 +22519,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-LAL-LAL-16",
+      "id": "2033-R2-LAL-LAL-17",
       "year": 2033,
       "round": 2,
       "originalTeam": "LAL",
@@ -22239,11 +22596,11 @@
       "round": 1,
       "originalTeam": "MEM",
       "currentOwner": "MEM",
-      "description": "MEM own 2029 1st",
+      "description": "MEM ORL Or swap for ORL 3-30 (via MEM swap for ORL)",
       "protections": null,
-      "isSwap": false,
+      "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "MEM swap for ORL"
     },
     {
       "id": "2029-R1-ORL-MEM-6",
@@ -22390,31 +22747,7 @@
       "via": "PHX"
     },
     {
-      "id": "2029-R2-MEM-MEM-18",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "MEM",
-      "currentOwner": "MEM",
-      "description": "MEM (via OKC to WAS to DAL)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": "OKC to WAS to DAL"
-    },
-    {
-      "id": "2029-R2-MEM-MEM-19",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "MEM",
-      "currentOwner": "MEM",
-      "description": "MEM (via WAS)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": "WAS"
-    },
-    {
-      "id": "2029-R2-BKN-MEM-20",
+      "id": "2029-R2-BKN-MEM-18",
       "year": 2029,
       "round": 2,
       "originalTeam": "BKN",
@@ -22426,7 +22759,7 @@
       "via": "PHX"
     },
     {
-      "id": "2029-R2-ORL-MEM-21",
+      "id": "2029-R2-ORL-MEM-19",
       "year": 2029,
       "round": 2,
       "originalTeam": "ORL",
@@ -22438,7 +22771,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-MEM-MEM-22",
+      "id": "2029-R2-MEM-MEM-20",
       "year": 2029,
       "round": 2,
       "originalTeam": "MEM",
@@ -22450,19 +22783,19 @@
       "via": "PHI to IND"
     },
     {
-      "id": "2030-R2-MEM-MEM-23",
+      "id": "2030-R2-MEM-MEM-21",
       "year": 2030,
       "round": 2,
       "originalTeam": "MEM",
       "currentOwner": "MEM",
-      "description": "MEM (via OKC)",
+      "description": "MEM Most favorable pick of DEN, HOU and MIA then others to OKC (via OKC)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": "OKC"
     },
     {
-      "id": "2030-R2-MEM-MEM-24",
+      "id": "2030-R2-MEM-MEM-22",
       "year": 2030,
       "round": 2,
       "originalTeam": "MEM",
@@ -22474,7 +22807,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-MIN-MEM-25",
+      "id": "2030-R2-MIN-MEM-23",
       "year": 2030,
       "round": 2,
       "originalTeam": "MIN",
@@ -22486,7 +22819,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-MEM-MEM-26",
+      "id": "2031-R2-MEM-MEM-24",
       "year": 2031,
       "round": 2,
       "originalTeam": "MEM",
@@ -22498,7 +22831,7 @@
       "via": "MIA swap for IND; via MEM swap for IND or MIA"
     },
     {
-      "id": "2032-R2-GSW-MEM-27",
+      "id": "2032-R2-GSW-MEM-25",
       "year": 2032,
       "round": 2,
       "originalTeam": "GSW",
@@ -22510,7 +22843,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-MEM-MEM-28",
+      "id": "2032-R2-MEM-MEM-26",
       "year": 2032,
       "round": 2,
       "originalTeam": "MEM",
@@ -22522,55 +22855,55 @@
       "via": null
     },
     {
-      "id": "2032-R2-MEM-MEM-29",
+      "id": "2032-R2-MEM-MEM-27",
       "year": 2032,
       "round": 2,
       "originalTeam": "MEM",
       "currentOwner": "MEM",
-      "description": "MEM own 2032 2nd",
+      "description": "MEM Most favorable of MEM, PHI and UTA (via MEM swap for PHI or UTA)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": true,
+      "via": "MEM swap for PHI or UTA"
+    },
+    {
+      "id": "2032-R2-MEM-MEM-28",
+      "year": 2032,
+      "round": 2,
+      "originalTeam": "MEM",
+      "currentOwner": "MEM",
+      "description": "MEM PHI Or MEM via MEM swap for PHI",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": "MEM swap for PHI"
+    },
+    {
+      "id": "2033-R2-MEM-MEM-29",
+      "year": 2033,
+      "round": 2,
+      "originalTeam": "MEM",
+      "currentOwner": "MEM",
+      "description": "MEM own 2033 2nd",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2032-R2-MEM-MEM-30",
-      "year": 2032,
+      "id": "2033-R2-MEM-MEM-30",
+      "year": 2033,
       "round": 2,
       "originalTeam": "MEM",
       "currentOwner": "MEM",
-      "description": "MEM MEM can swap for PHI",
+      "description": "MEM own 2033 2nd",
       "protections": null,
-      "isSwap": true,
+      "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
       "id": "2033-R2-MEM-MEM-31",
-      "year": 2033,
-      "round": 2,
-      "originalTeam": "MEM",
-      "currentOwner": "MEM",
-      "description": "MEM own 2033 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2033-R2-MEM-MEM-32",
-      "year": 2033,
-      "round": 2,
-      "originalTeam": "MEM",
-      "currentOwner": "MEM",
-      "description": "MEM own 2033 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2033-R2-MEM-MEM-33",
       "year": 2033,
       "round": 2,
       "originalTeam": "MEM",
@@ -22611,7 +22944,7 @@
       "round": 1,
       "originalTeam": "MIA",
       "currentOwner": "MIA",
-      "description": "MIA CHA If MIA conveys 1st to CHA in 2027 or If MIA does not convey 1st to OKC in 2025",
+      "description": "MIA CHA If MIA does not convey 1st to CHA in 2027",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -22630,16 +22963,16 @@
       "via": null
     },
     {
-      "id": "2030-R1-MIL-MIA-4",
+      "id": "2030-R1-MIA-MIA-4",
       "year": 2030,
       "round": 1,
-      "originalTeam": "MIL",
+      "originalTeam": "MIA",
       "currentOwner": "MIA",
-      "description": "MIL MIL right to swap",
+      "description": "MIA Or swap for least favorable of MIL and POR (via MIL swap for MIA)",
       "protections": null,
       "isSwap": true,
-      "isConditional": false,
-      "via": null
+      "isConditional": true,
+      "via": "MIL swap for MIA"
     },
     {
       "id": "2031-R1-MIL-MIA-5",
@@ -22695,7 +23028,7 @@
       "round": 2,
       "originalTeam": "MIA",
       "currentOwner": "MIA",
-      "description": "MIA Least favorable of HOU, IND, MIA and OKC then others to NYK, OKC and SAS (via HOU to DET to OKC; via UTA to SAS)",
+      "description": "MIA Least favorable of HOU, IND, MIA and OKC then others to NYK, PHI and SAS (via HOU to DET to OKC; via UTA to SAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -22719,11 +23052,11 @@
       "round": 2,
       "originalTeam": "OKC",
       "currentOwner": "MIA",
-      "description": "OKC",
+      "description": "OKC Less favorable of ATL and MIA the other to CHA (via OKC)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": null
+      "via": "OKC"
     },
     {
       "id": "2030-R2-OKC-MIA-12",
@@ -22731,10 +23064,10 @@
       "round": 2,
       "originalTeam": "OKC",
       "currentOwner": "MIA",
-      "description": "OKC",
+      "description": "OKC Two least favorable picks of DEN, HOU and MIA then other to MEM",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": null
     },
     {
@@ -22798,7 +23131,31 @@
       "via": "POR swap for MIL"
     },
     {
-      "id": "2029-R1-POR-MIL-2",
+      "id": "2028-R1-POR-MIL-2",
+      "year": 2028,
+      "round": 1,
+      "originalTeam": "POR",
+      "currentOwner": "MIL",
+      "description": "POR MIL or swap with MIL",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2028-R1-CHI-MIL-3",
+      "year": 2028,
+      "round": 1,
+      "originalTeam": "CHI",
+      "currentOwner": "MIL",
+      "description": "CHI MIL or swap with MIL",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2029-R1-POR-MIL-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "POR",
@@ -22810,31 +23167,19 @@
       "via": "BOS to POR; via MIL to POR; via POR to WAS"
     },
     {
-      "id": "2030-R1-MIL-MIL-3",
+      "id": "2030-R1-MIL-MIL-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "MIL",
       "currentOwner": "MIL",
-      "description": "MIL MIL right to swap",
+      "description": "MIL Or swap with POR (via POR swap for MIL) or swap for most favorable of MIL and POR (via MIL swap for MIA)",
       "protections": null,
       "isSwap": true,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2030-R1-MIL-MIL-4",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "MIL",
-      "currentOwner": "MIL",
-      "description": "MIL POR Or swap with POR (via POR swap for MIL)",
-      "protections": null,
-      "isSwap": true,
-      "isConditional": false,
+      "isConditional": true,
       "via": "POR swap for MIL"
     },
     {
-      "id": "2030-R1-POR-MIL-5",
+      "id": "2030-R1-POR-MIL-6",
       "year": 2030,
       "round": 1,
       "originalTeam": "POR",
@@ -22842,18 +23187,6 @@
       "description": "POR MIL Or swap with MIL",
       "protections": null,
       "isSwap": true,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2031-R1-MIL-MIL-6",
-      "year": 2031,
-      "round": 1,
-      "originalTeam": "MIL",
-      "currentOwner": "MIL",
-      "description": "MIL own 2031 1st",
-      "protections": null,
-      "isSwap": false,
       "isConditional": false,
       "via": null
     },
@@ -22870,24 +23203,24 @@
       "via": null
     },
     {
-      "id": "2032-R1-MIL-MIL-8",
-      "year": 2032,
+      "id": "2031-R1-MIL-MIL-8",
+      "year": 2031,
       "round": 1,
       "originalTeam": "MIL",
       "currentOwner": "MIL",
-      "description": "MIL own 2032 1st",
+      "description": "MIL own 2031 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2033-R1-MIL-MIL-9",
-      "year": 2033,
+      "id": "2032-R1-MIL-MIL-9",
+      "year": 2032,
       "round": 1,
       "originalTeam": "MIL",
       "currentOwner": "MIL",
-      "description": "MIL own 2033 1st",
+      "description": "MIL own 2032 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -22906,7 +23239,31 @@
       "via": null
     },
     {
-      "id": "2027-R2-MIL-MIL-11",
+      "id": "2033-R1-MIL-MIL-11",
+      "year": 2033,
+      "round": 1,
+      "originalTeam": "MIL",
+      "currentOwner": "MIL",
+      "description": "MIL own 2033 1st",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2027-R2-MIL-MIL-12",
+      "year": 2027,
+      "round": 2,
+      "originalTeam": "MIL",
+      "currentOwner": "MIL",
+      "description": "MIL Less favorable of BKN and DAL to MIL then other to WAS (via DET)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "DET"
+    },
+    {
+      "id": "2027-R2-MIL-MIL-13",
       "year": 2027,
       "round": 2,
       "originalTeam": "MIL",
@@ -22918,19 +23275,19 @@
       "via": "PHI to DET"
     },
     {
-      "id": "2028-R2-PHI-MIL-12",
+      "id": "2028-R2-BOS-MIL-14",
       "year": 2028,
       "round": 2,
-      "originalTeam": "PHI",
+      "originalTeam": "BOS",
       "currentOwner": "MIL",
-      "description": "PHI (via BKN to HOU to OKC)",
+      "description": "BOS Most favorable of GSW, MIL and OKC (via BKN to HOU to OKC to PHI)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": "BKN to HOU to OKC"
+      "isConditional": true,
+      "via": "BKN to HOU to OKC to PHI"
     },
     {
-      "id": "2029-R2-DET-MIL-13",
+      "id": "2029-R2-DET-MIL-15",
       "year": 2029,
       "round": 2,
       "originalTeam": "DET",
@@ -22942,7 +23299,7 @@
       "via": "MIL to BRK to DET; via NYK to DET"
     },
     {
-      "id": "2030-R2-ORL-MIL-14",
+      "id": "2030-R2-ORL-MIL-16",
       "year": 2030,
       "round": 2,
       "originalTeam": "ORL",
@@ -22954,7 +23311,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-CHA-MIL-15",
+      "id": "2031-R2-CHA-MIL-17",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHA",
@@ -22966,7 +23323,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-CHA-MIL-16",
+      "id": "2032-R2-CHA-MIL-18",
       "year": 2032,
       "round": 2,
       "originalTeam": "CHA",
@@ -22978,7 +23335,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-MIL-MIL-17",
+      "id": "2033-R2-MIL-MIL-19",
       "year": 2033,
       "round": 2,
       "originalTeam": "MIL",
@@ -22990,7 +23347,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-MIL-MIL-18",
+      "id": "2033-R2-MIL-MIL-20",
       "year": 2033,
       "round": 2,
       "originalTeam": "MIL",
@@ -23007,26 +23364,38 @@
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "MIN",
-      "description": "UTA Two most favorable of CLE, MIN and UTA then other to PHX",
+      "description": "UTA Second most favorable of CLE, MIN and UTA then others to MEM and PHX",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": null
     },
     {
-      "id": "2028-R1-MIN-MIN-1",
+      "id": "2028-R1-CHA-MIN-1",
+      "year": 2028,
+      "round": 1,
+      "originalTeam": "CHA",
+      "currentOwner": "MIN",
+      "description": "CHA MIN Or swap for MIN (via CHA swap for MIN)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": "CHA swap for MIN"
+    },
+    {
+      "id": "2028-R1-MIN-MIN-2",
       "year": 2028,
       "round": 1,
       "originalTeam": "MIN",
       "currentOwner": "MIN",
-      "description": "MIN CHA CHA right to swap",
+      "description": "MIN CHA Or swap with CHA (via CHA swap for MIN)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "CHA swap for MIN"
     },
     {
-      "id": "2029-R1-MIN-MIN-2",
+      "id": "2029-R1-MIN-MIN-3",
       "year": 2029,
       "round": 1,
       "originalTeam": "MIN",
@@ -23038,7 +23407,7 @@
       "via": null
     },
     {
-      "id": "2029-R1-UTA-MIN-3",
+      "id": "2029-R1-UTA-MIN-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "UTA",
@@ -23050,28 +23419,16 @@
       "via": null
     },
     {
-      "id": "2030-R1-MIN-MIN-4",
+      "id": "2030-R1-MIN-MIN-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "MIN",
       "currentOwner": "MIN",
-      "description": "MIN If 1",
-      "protections": "If 1",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2030-R1-CHA-MIN-5",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "CHA",
-      "currentOwner": "MIN",
-      "description": "CHA Least favorable of MIN 2-30, DAL and SAS (via SAN swap for DAL; via SAN swap of SAN or DAL for MIN)",
+      "description": "MIN Least favorable of MIN 2-30, CHA, DAL and SAS (via SAN swap for DAL; via SAN swap of SAN or DAL for MIN; via CHA swap for MIN)",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
-      "via": "SAN swap for DAL; via SAN swap of SAN or DAL for MIN"
+      "via": "SAN swap for DAL; via SAN swap of SAN or DAL for MIN; via CHA swap for MIN"
     },
     {
       "id": "2031-R1-SAC-MIN-6",
@@ -23134,12 +23491,12 @@
       "via": "SAS"
     },
     {
-      "id": "2029-R2-MIN-MIN-11",
+      "id": "2029-R2-CHA-MIN-11",
       "year": 2029,
       "round": 2,
-      "originalTeam": "MIN",
+      "originalTeam": "CHA",
       "currentOwner": "MIN",
-      "description": "MIN UTA CHA MIN pick if MIN conveys 1st to UTA in 2029; UTA pick if MIN does not convey 1st to UTA in 2029 or CHA if does not convery",
+      "description": "CHA MIN pick if MIN conveys 1st to UTA in 2029; UTA pick if MIN does not convey 1st to UTA in 2029 or CHA if does not convery",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -23511,34 +23868,34 @@
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "NYK",
-      "description": "NYK Second and third most favorable of HOU, IND, MIA and OKC to NYK; then others to OKC and SAS (via HOU to DET to UTA to OKC)",
+      "description": "NYK Third most favorable of HOU, IND, MIA and OKC to NYK; then others to PHI and SAS (via HOU to DET to UTA to OKC)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "HOU to DET to UTA to OKC"
     },
     {
-      "id": "2027-R2-ATL-NYK-8",
+      "id": "2027-R2-NYK-NYK-8",
       "year": 2027,
       "round": 2,
-      "originalTeam": "ATL",
+      "originalTeam": "NYK",
       "currentOwner": "NYK",
-      "description": "ATL (via POR)",
+      "description": "NYK own 2027 2nd",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "POR"
+      "via": null
     },
     {
-      "id": "2027-R2-WAS-NYK-9",
+      "id": "2027-R2-NYK-NYK-9",
       "year": 2027,
       "round": 2,
-      "originalTeam": "WAS",
+      "originalTeam": "NYK",
       "currentOwner": "NYK",
-      "description": "WAS NYK WAS pick if WAS conveys 1st to NYK by 2026; NYK pick if WAS does not convey 1st to NYK to by 2026 (via HOU to OKC)",
+      "description": "NYK (via HOU to OKC)",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
+      "isConditional": false,
       "via": "HOU to OKC"
     },
     {
@@ -23571,7 +23928,7 @@
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "NYK",
-      "description": "NYK Less favorable of IND and PHX to NYK then other to IND (via IND)",
+      "description": "NYK Less favorable of CHI, IND and PHX then others to CHI and IND (via IND)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -23583,11 +23940,11 @@
       "round": 2,
       "originalTeam": "CHI",
       "currentOwner": "NYK",
-      "description": "CHI Least favorable of DET, MIL and NYK then others to DET (via MIL to BRK to DET; via NYK to DET to SAC)",
+      "description": "CHI (via NYK to DET to SAC)",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
-      "via": "MIL to BRK to DET; via NYK to DET to SAC"
+      "isConditional": false,
+      "via": "NYK to DET to SAC"
     },
     {
       "id": "2029-R2-NYK-NYK-14",
@@ -23595,11 +23952,11 @@
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "NYK",
-      "description": "NYK (via OKC to CHA to PHX)",
+      "description": "NYK own 2029 2nd",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "OKC to CHA to PHX"
+      "via": null
     },
     {
       "id": "2029-R2-NYK-NYK-15",
@@ -23746,31 +24103,7 @@
       "via": "OKC swap for LAC"
     },
     {
-      "id": "2027-R1-PHI-OKC-4",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "PHI",
-      "currentOwner": "OKC",
-      "description": "PHI If 1-4 if not already settled with OKC",
-      "protections": "If 1-4 if not already settled with OKC",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2027-R1-OKC-OKC-5",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "OKC",
-      "currentOwner": "OKC",
-      "description": "OKC If 5-30 if not already settled",
-      "protections": "If 5-30 if not already settled",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2027-R1-OKC-OKC-6",
+      "id": "2027-R1-OKC-OKC-4",
       "year": 2027,
       "round": 1,
       "originalTeam": "OKC",
@@ -23782,7 +24115,7 @@
       "via": "SAC"
     },
     {
-      "id": "2028-R1-DAL-OKC-7",
+      "id": "2028-R1-DAL-OKC-5",
       "year": 2028,
       "round": 1,
       "originalTeam": "DAL",
@@ -23794,7 +24127,7 @@
       "via": "OKC swap for DAL"
     },
     {
-      "id": "2028-R1-DEN-OKC-8",
+      "id": "2028-R1-DEN-OKC-6",
       "year": 2028,
       "round": 1,
       "originalTeam": "DEN",
@@ -23806,7 +24139,7 @@
       "via": null
     },
     {
-      "id": "2028-R1-OKC-OKC-9",
+      "id": "2028-R1-OKC-OKC-7",
       "year": 2028,
       "round": 1,
       "originalTeam": "OKC",
@@ -23818,7 +24151,7 @@
       "via": null
     },
     {
-      "id": "2028-R1-OKC-OKC-10",
+      "id": "2028-R1-OKC-OKC-8",
       "year": 2028,
       "round": 1,
       "originalTeam": "OKC",
@@ -23830,7 +24163,7 @@
       "via": "OKC swap for DAL"
     },
     {
-      "id": "2029-R1-DEN-OKC-11",
+      "id": "2029-R1-DEN-OKC-9",
       "year": 2029,
       "round": 1,
       "originalTeam": "DEN",
@@ -23842,7 +24175,7 @@
       "via": null
     },
     {
-      "id": "2029-R1-OKC-OKC-12",
+      "id": "2029-R1-OKC-OKC-10",
       "year": 2029,
       "round": 1,
       "originalTeam": "OKC",
@@ -23854,7 +24187,7 @@
       "via": null
     },
     {
-      "id": "2029-R1-OKC-OKC-13",
+      "id": "2029-R1-OKC-OKC-11",
       "year": 2029,
       "round": 1,
       "originalTeam": "OKC",
@@ -23866,7 +24199,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-DEN-OKC-14",
+      "id": "2030-R1-DEN-OKC-12",
       "year": 2030,
       "round": 1,
       "originalTeam": "DEN",
@@ -23878,7 +24211,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-OKC-OKC-15",
+      "id": "2030-R1-OKC-OKC-13",
       "year": 2030,
       "round": 1,
       "originalTeam": "OKC",
@@ -23890,7 +24223,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-OKC-OKC-16",
+      "id": "2030-R1-OKC-OKC-14",
       "year": 2030,
       "round": 1,
       "originalTeam": "OKC",
@@ -23902,7 +24235,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-OKC-OKC-17",
+      "id": "2031-R1-OKC-OKC-15",
       "year": 2031,
       "round": 1,
       "originalTeam": "OKC",
@@ -23914,7 +24247,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-OKC-OKC-18",
+      "id": "2032-R1-OKC-OKC-16",
       "year": 2032,
       "round": 1,
       "originalTeam": "OKC",
@@ -23926,7 +24259,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-OKC-OKC-19",
+      "id": "2033-R1-OKC-OKC-17",
       "year": 2033,
       "round": 1,
       "originalTeam": "OKC",
@@ -23938,7 +24271,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-OKC-OKC-20",
+      "id": "2027-R2-OKC-OKC-18",
       "year": 2027,
       "round": 2,
       "originalTeam": "OKC",
@@ -23950,31 +24283,31 @@
       "via": null
     },
     {
-      "id": "2027-R2-MIA-OKC-21",
+      "id": "2027-R2-OKC-OKC-19",
+      "year": 2027,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC (via WAS to NOP to WAS to DAL)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "WAS to NOP to WAS to DAL"
+    },
+    {
+      "id": "2027-R2-MIA-OKC-20",
       "year": 2027,
       "round": 2,
       "originalTeam": "MIA",
       "currentOwner": "OKC",
-      "description": "MIA Least favorable of HOU, IND, MIA and OKC then others to NYK, OKC and SAS (via HOU to DET to OKC; via UTA to SAS)",
+      "description": "MIA Least favorable of HOU, IND, MIA and OKC then others to NYK, PHI and SAS (via HOU to DET to OKC; via UTA to SAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "HOU to DET to OKC; via UTA to SAS"
     },
     {
-      "id": "2027-R2-PHI-OKC-22",
-      "year": 2027,
-      "round": 2,
-      "originalTeam": "PHI",
-      "currentOwner": "OKC",
-      "description": "PHI OKC PHI pick if PHI conveys 1st to OKC by 2027; OKC pick if PHI does not convey 1st to HOU by 2027",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2027-R2-OKC-OKC-23",
+      "id": "2027-R2-OKC-OKC-21",
       "year": 2027,
       "round": 2,
       "originalTeam": "OKC",
@@ -23986,19 +24319,19 @@
       "via": null
     },
     {
-      "id": "2028-R2-PHI-OKC-24",
+      "id": "2028-R2-PHI-OKC-22",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "OKC",
-      "description": "PHI",
+      "description": "PHI Two least favorable of GSW, MIL and OKC to PHI then other to BOS",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": null
     },
     {
-      "id": "2028-R2-OKC-OKC-25",
+      "id": "2028-R2-OKC-OKC-23",
       "year": 2028,
       "round": 2,
       "originalTeam": "OKC",
@@ -24008,6 +24341,30 @@
       "isSwap": false,
       "isConditional": false,
       "via": null
+    },
+    {
+      "id": "2029-R2-OKC-OKC-24",
+      "year": 2029,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC own 2029 2nd",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2029-R2-OKC-OKC-25",
+      "year": 2029,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC Less favorable of ATL and MIA the other to CHA (via OKC)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "OKC"
     },
     {
       "id": "2029-R2-OKC-OKC-26",
@@ -24022,31 +24379,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-OKC-OKC-27",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "OKC",
-      "currentOwner": "OKC",
-      "description": "OKC own 2029 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2029-R2-OKC-OKC-28",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "OKC",
-      "currentOwner": "OKC",
-      "description": "OKC own 2029 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2030-R2-OKC-OKC-29",
+      "id": "2030-R2-OKC-OKC-27",
       "year": 2030,
       "round": 2,
       "originalTeam": "OKC",
@@ -24058,16 +24391,40 @@
       "via": null
     },
     {
+      "id": "2030-R2-OKC-OKC-28",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC Two least favorable picks of DEN, HOU and MIA then other to MEM (via CHA)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "CHA"
+    },
+    {
+      "id": "2030-R2-OKC-OKC-29",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC Two least favorable picks of DEN, HOU and MIA then other to MEM",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": null
+    },
+    {
       "id": "2030-R2-OKC-OKC-30",
       "year": 2030,
       "round": 2,
       "originalTeam": "OKC",
       "currentOwner": "OKC",
-      "description": "OKC (via CHA)",
+      "description": "OKC (via DET)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "CHA"
+      "via": "DET"
     },
     {
       "id": "2030-R2-OKC-OKC-31",
@@ -24082,31 +24439,19 @@
       "via": null
     },
     {
-      "id": "2030-R2-OKC-OKC-32",
-      "year": 2030,
+      "id": "2031-R2-OKC-OKC-32",
+      "year": 2031,
       "round": 2,
       "originalTeam": "OKC",
       "currentOwner": "OKC",
-      "description": "OKC (via DET)",
+      "description": "OKC Most favorable of ATL and HOU 31-55 (or just ATL if HOU 56-60) (via ATL)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": "DET"
+      "isConditional": true,
+      "via": "ATL"
     },
     {
-      "id": "2030-R2-OKC-OKC-33",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "OKC",
-      "currentOwner": "OKC",
-      "description": "OKC own 2030 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2031-R2-OKC-OKC-34",
+      "id": "2031-R2-OKC-OKC-33",
       "year": 2031,
       "round": 2,
       "originalTeam": "OKC",
@@ -24118,7 +24463,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-OKC-OKC-35",
+      "id": "2031-R2-OKC-OKC-34",
       "year": 2031,
       "round": 2,
       "originalTeam": "OKC",
@@ -24128,6 +24473,18 @@
       "isSwap": true,
       "isConditional": true,
       "via": "ORL swap for NOP (via NOP"
+    },
+    {
+      "id": "2032-R2-OKC-OKC-35",
+      "year": 2032,
+      "round": 2,
+      "originalTeam": "OKC",
+      "currentOwner": "OKC",
+      "description": "OKC More favorable of ATL and LAL then other to ATL (via ATL)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "ATL"
     },
     {
       "id": "2032-R2-OKC-OKC-36",
@@ -24178,7 +24535,19 @@
       "via": "MEM"
     },
     {
-      "id": "2029-R1-ORL-ORL-2",
+      "id": "2029-R1-MEM-ORL-2",
+      "year": 2029,
+      "round": 1,
+      "originalTeam": "MEM",
+      "currentOwner": "ORL",
+      "description": "MEM ORL Or swap for ORL 3-30 (via MEM swap for ORL)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": "MEM swap for ORL"
+    },
+    {
+      "id": "2029-R1-ORL-ORL-3",
       "year": 2029,
       "round": 1,
       "originalTeam": "ORL",
@@ -24190,7 +24559,7 @@
       "via": "MEM swap for ORL"
     },
     {
-      "id": "2029-R1-MEM-ORL-3",
+      "id": "2029-R1-MEM-ORL-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "MEM",
@@ -24202,7 +24571,7 @@
       "via": "MEM swap for ORL"
     },
     {
-      "id": "2030-R1-MEM-ORL-4",
+      "id": "2030-R1-MEM-ORL-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "MEM",
@@ -24214,7 +24583,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-ORL-ORL-5",
+      "id": "2031-R1-ORL-ORL-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "ORL",
@@ -24226,7 +24595,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-ORL-ORL-6",
+      "id": "2032-R1-ORL-ORL-7",
       "year": 2032,
       "round": 1,
       "originalTeam": "ORL",
@@ -24238,7 +24607,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-ORL-ORL-7",
+      "id": "2033-R1-ORL-ORL-8",
       "year": 2033,
       "round": 1,
       "originalTeam": "ORL",
@@ -24250,19 +24619,19 @@
       "via": null
     },
     {
-      "id": "2027-R2-UTA-ORL-8",
+      "id": "2027-R2-UTA-ORL-9",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
       "currentOwner": "ORL",
-      "description": "UTA More favorable of BOS and UTA then other to ORL (via BOS to ORL to BOS)",
+      "description": "UTA More favorable of BOS and UTA then other to CHA (via BOS to ORL to BOS to ORL)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": "BOS to ORL to BOS"
+      "via": "BOS to ORL to BOS to ORL"
     },
     {
-      "id": "2028-R2-CHA-ORL-9",
+      "id": "2028-R2-CHA-ORL-10",
       "year": 2028,
       "round": 2,
       "originalTeam": "CHA",
@@ -24274,7 +24643,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-ORL-ORL-10",
+      "id": "2028-R2-ORL-ORL-11",
       "year": 2028,
       "round": 2,
       "originalTeam": "ORL",
@@ -24286,7 +24655,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-ORL-ORL-11",
+      "id": "2029-R2-ORL-ORL-12",
       "year": 2029,
       "round": 2,
       "originalTeam": "ORL",
@@ -24298,7 +24667,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-ORL-ORL-12",
+      "id": "2030-R2-ORL-ORL-13",
       "year": 2030,
       "round": 2,
       "originalTeam": "ORL",
@@ -24310,7 +24679,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-NOP-ORL-13",
+      "id": "2030-R2-NOP-ORL-14",
       "year": 2030,
       "round": 2,
       "originalTeam": "NOP",
@@ -24322,7 +24691,7 @@
       "via": "ORL swap for NOP"
     },
     {
-      "id": "2030-R2-ORL-ORL-14",
+      "id": "2030-R2-ORL-ORL-15",
       "year": 2030,
       "round": 2,
       "originalTeam": "ORL",
@@ -24334,7 +24703,7 @@
       "via": null
     },
     {
-      "id": "2031-R2-ORL-ORL-15",
+      "id": "2031-R2-ORL-ORL-16",
       "year": 2031,
       "round": 2,
       "originalTeam": "ORL",
@@ -24346,7 +24715,7 @@
       "via": "ORL swap for NOP (via NOP"
     },
     {
-      "id": "2031-R2-OKC-ORL-16",
+      "id": "2031-R2-OKC-ORL-17",
       "year": 2031,
       "round": 2,
       "originalTeam": "OKC",
@@ -24358,7 +24727,7 @@
       "via": "ORL swap for NOP (via NOP"
     },
     {
-      "id": "2032-R2-ORL-ORL-17",
+      "id": "2032-R2-ORL-ORL-18",
       "year": 2032,
       "round": 2,
       "originalTeam": "ORL",
@@ -24370,7 +24739,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-ORL-ORL-18",
+      "id": "2033-R2-ORL-ORL-19",
       "year": 2033,
       "round": 2,
       "originalTeam": "ORL",
@@ -24387,62 +24756,38 @@
       "round": 1,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI If 1-4 if not already settled with OKC",
-      "protections": "If 1-4 if not already settled with OKC",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2027-R1-OKC-PHI-1",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "OKC",
-      "currentOwner": "PHI",
-      "description": "OKC If 5-30 if not already settled",
-      "protections": "If 5-30 if not already settled",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2028-R1-PHI-PHI-2",
-      "year": 2028,
-      "round": 1,
-      "originalTeam": "PHI",
-      "currentOwner": "PHI",
-      "description": "PHI own 2028 1st",
+      "description": "PHI own 2027 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2028-R1-PHI-PHI-3",
+      "id": "2028-R1-PHI-PHI-1",
       "year": 2028,
       "round": 1,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI If 1-8 and if PHI conveys 1st to OKC by 2026",
-      "protections": "If 1-8 and if PHI conveys 1st to OKC by 2026",
-      "isSwap": false,
+      "description": "PHI If 1-8 or LAC or BOS (via BOS swap for LAC or PHI 1-8)",
+      "protections": "If 1-8 or LAC or BOS (via BOS swap for LAC or PHI 1-8",
+      "isSwap": true,
       "isConditional": true,
-      "via": null
+      "via": "BOS swap for LAC or PHI 1-8"
     },
     {
-      "id": "2028-R1-BKN-PHI-4",
+      "id": "2028-R1-BKN-PHI-2",
       "year": 2028,
       "round": 1,
       "originalTeam": "BKN",
       "currentOwner": "PHI",
-      "description": "BKN If 9-30 and if PHI conveys 1st to OKC by 2026",
-      "protections": "If 9-30 and if PHI conveys 1st to OKC by 2026",
+      "description": "BKN If 9-30",
+      "protections": "If 9-30",
       "isSwap": false,
       "isConditional": true,
       "via": null
     },
     {
-      "id": "2029-R1-LAC-PHI-5",
+      "id": "2029-R1-LAC-PHI-3",
       "year": 2029,
       "round": 1,
       "originalTeam": "LAC",
@@ -24454,7 +24799,7 @@
       "via": "PHI swap for LAC"
     },
     {
-      "id": "2029-R1-PHI-PHI-6",
+      "id": "2029-R1-PHI-PHI-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "PHI",
@@ -24466,7 +24811,7 @@
       "via": "PHI swap for LAC"
     },
     {
-      "id": "2030-R1-PHI-PHI-7",
+      "id": "2030-R1-PHI-PHI-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "PHI",
@@ -24478,7 +24823,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-BOS-PHI-8",
+      "id": "2031-R1-BOS-PHI-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "BOS",
@@ -24490,7 +24835,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-PHI-PHI-9",
+      "id": "2032-R1-PHI-PHI-7",
       "year": 2032,
       "round": 1,
       "originalTeam": "PHI",
@@ -24502,7 +24847,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-PHI-PHI-10",
+      "id": "2033-R1-PHI-PHI-8",
       "year": 2033,
       "round": 1,
       "originalTeam": "PHI",
@@ -24514,7 +24859,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-PHI-PHI-11",
+      "id": "2027-R2-PHI-PHI-9",
       "year": 2027,
       "round": 2,
       "originalTeam": "PHI",
@@ -24526,19 +24871,19 @@
       "via": "HOU to DET to UTA to OKC"
     },
     {
-      "id": "2027-R2-PHI-PHI-12",
+      "id": "2027-R2-PHI-PHI-10",
       "year": 2027,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI OKC PHI pick if PHI conveys 1st to OKC by 2027; OKC pick if PHI does not convey 1st to HOU by 2027",
+      "description": "PHI own 2027 2nd",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
+      "isConditional": false,
       "via": null
     },
     {
-      "id": "2027-R2-PHI-PHI-13",
+      "id": "2027-R2-PHI-PHI-11",
       "year": 2027,
       "round": 2,
       "originalTeam": "PHI",
@@ -24550,7 +24895,7 @@
       "via": "WAS"
     },
     {
-      "id": "2028-R2-DET-PHI-14",
+      "id": "2028-R2-DET-PHI-12",
       "year": 2028,
       "round": 2,
       "originalTeam": "DET",
@@ -24562,7 +24907,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-PHI-PHI-15",
+      "id": "2028-R2-PHI-PHI-13",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
@@ -24574,43 +24919,31 @@
       "via": null
     },
     {
-      "id": "2028-R2-PHI-PHI-16",
+      "id": "2028-R2-PHI-PHI-14",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI (via POR to WAS)",
+      "description": "PHI Two least favorable of GSW, MIL and OKC to PHI then other to BOS (via POR to WAS)",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": "POR to WAS"
     },
     {
-      "id": "2028-R2-PHI-PHI-17",
+      "id": "2028-R2-PHI-PHI-15",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI (via BKN to HOU to OKC)",
+      "description": "PHI Two least favorable of GSW, MIL and OKC to PHI then other to BOS",
       "protections": null,
       "isSwap": false,
-      "isConditional": false,
-      "via": "BKN to HOU to OKC"
-    },
-    {
-      "id": "2028-R2-PHI-PHI-18",
-      "year": 2028,
-      "round": 2,
-      "originalTeam": "PHI",
-      "currentOwner": "PHI",
-      "description": "PHI own 2028 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
+      "isConditional": true,
       "via": null
     },
     {
-      "id": "2028-R2-PHI-PHI-19",
+      "id": "2028-R2-PHI-PHI-16",
       "year": 2028,
       "round": 2,
       "originalTeam": "PHI",
@@ -24622,7 +24955,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-PHI-PHI-20",
+      "id": "2029-R2-PHI-PHI-17",
       "year": 2029,
       "round": 2,
       "originalTeam": "PHI",
@@ -24634,7 +24967,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-NYK-PHI-21",
+      "id": "2030-R2-NYK-PHI-18",
       "year": 2030,
       "round": 2,
       "originalTeam": "NYK",
@@ -24646,31 +24979,19 @@
       "via": "DAL"
     },
     {
-      "id": "2030-R2-PHI-PHI-22",
+      "id": "2030-R2-PHI-PHI-19",
       "year": 2030,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "PHI",
-      "description": "PHI More favorable of PHX and POR to PHI then other to WAS (via WAS to PHI)",
+      "description": "PHI Second most favorable of PHX, POR and WAS then others to BOS and WAS (via WAS to PHI)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "WAS to PHI"
     },
     {
-      "id": "2030-R2-PHI-PHI-23",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "PHI",
-      "currentOwner": "PHI",
-      "description": "PHI own 2030 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2031-R2-PHI-PHI-24",
+      "id": "2031-R2-PHI-PHI-20",
       "year": 2031,
       "round": 2,
       "originalTeam": "PHI",
@@ -24682,19 +25003,19 @@
       "via": null
     },
     {
-      "id": "2032-R2-MEM-PHI-25",
+      "id": "2032-R2-MEM-PHI-21",
       "year": 2032,
       "round": 2,
       "originalTeam": "MEM",
       "currentOwner": "PHI",
-      "description": "MEM MEM can swap for PHI",
+      "description": "MEM PHI Or MEM via MEM swap for PHI",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "MEM swap for PHI"
     },
     {
-      "id": "2033-R2-PHI-PHI-26",
+      "id": "2033-R2-PHI-PHI-22",
       "year": 2033,
       "round": 2,
       "originalTeam": "PHI",
@@ -24711,7 +25032,7 @@
       "round": 1,
       "originalTeam": "PHX",
       "currentOwner": "PHX",
-      "description": "PHX Least favorable of CLE, MIN and UTA to PHX then others to UTA (via UTA)",
+      "description": "PHX Least favorable of CLE, MIN and UTA then others to MEM and UTA (via UTA)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -24735,14 +25056,26 @@
       "round": 1,
       "originalTeam": "PHX",
       "currentOwner": "PHX",
-      "description": "PHX Least Favorable of WAS and BKN, PHI 9-30 if not already settled and if PHI conveys 1st to OKC by 2026 and PHX (via BKN and WAS swap for PHX)",
+      "description": "PHX Least Favorable of WAS and BKN, PHI 9-30 and PHX (via BKN and WAS swap for PHX)",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
       "via": "BKN and WAS swap for PHX"
     },
     {
-      "id": "2029-R1-HOU-PHX-3",
+      "id": "2029-R1-PHX-PHX-3",
+      "year": 2029,
+      "round": 1,
+      "originalTeam": "PHX",
+      "currentOwner": "PHX",
+      "description": "PHX Least favorable of CHA or CLE, MIN 6-30 and UTA (via CHA swap to PHX)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": true,
+      "via": "CHA swap to PHX"
+    },
+    {
+      "id": "2029-R1-HOU-PHX-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "HOU",
@@ -24754,7 +25087,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-PHX-PHX-4",
+      "id": "2030-R1-PHX-PHX-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "PHX",
@@ -24766,7 +25099,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-MEM-PHX-5",
+      "id": "2031-R1-MEM-PHX-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "MEM",
@@ -24778,7 +25111,7 @@
       "via": "UTA"
     },
     {
-      "id": "2032-R1-PHX-PHX-6",
+      "id": "2032-R1-PHX-PHX-7",
       "year": 2032,
       "round": 1,
       "originalTeam": "PHX",
@@ -24790,7 +25123,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-CHA-PHX-7",
+      "id": "2033-R1-CHA-PHX-8",
       "year": 2033,
       "round": 1,
       "originalTeam": "CHA",
@@ -24802,7 +25135,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-PHI-PHX-8",
+      "id": "2027-R2-PHI-PHX-9",
       "year": 2027,
       "round": 2,
       "originalTeam": "PHI",
@@ -24814,43 +25147,43 @@
       "via": "WAS"
     },
     {
-      "id": "2028-R2-NYK-PHX-9",
+      "id": "2028-R2-NYK-PHX-10",
       "year": 2028,
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "PHX",
-      "description": "NYK Less favorable of IND and PHX to NYK then other to IND (via IND)",
+      "description": "NYK Less favorable of CHI, IND and PHX then others to CHI and IND (via IND)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": "IND"
     },
     {
-      "id": "2029-R2-NYK-PHX-10",
+      "id": "2029-R2-NYK-PHX-11",
       "year": 2029,
       "round": 2,
       "originalTeam": "NYK",
       "currentOwner": "PHX",
-      "description": "NYK (via OKC to CHA to PHX)",
+      "description": "NYK",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "OKC to CHA to PHX"
+      "via": null
     },
     {
-      "id": "2030-R2-WAS-PHX-11",
+      "id": "2030-R2-WAS-PHX-12",
       "year": 2030,
       "round": 2,
       "originalTeam": "WAS",
       "currentOwner": "PHX",
-      "description": "WAS Least favorable of PHX and POR to WAS then other to PHI (via WAS to PHI)",
+      "description": "WAS Least favor of PHX, POR and WAS then others to BOS and PHI (via PHI)",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
-      "via": "WAS to PHI"
+      "isConditional": false,
+      "via": "PHI"
     },
     {
-      "id": "2031-R2-CHA-PHX-12",
+      "id": "2031-R2-CHA-PHX-13",
       "year": 2031,
       "round": 2,
       "originalTeam": "CHA",
@@ -24862,19 +25195,19 @@
       "via": null
     },
     {
-      "id": "2032-R2-PHX-PHX-13",
+      "id": "2032-R2-PHX-PHX-14",
       "year": 2032,
       "round": 2,
       "originalTeam": "PHX",
       "currentOwner": "PHX",
-      "description": "PHX Least favorable of HOU and PHX then other to MIN (via PHX)",
+      "description": "PHX Least favorable of HOU and PHX then other to CHI (via PHX)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "PHX"
     },
     {
-      "id": "2033-R2-NYK-PHX-14",
+      "id": "2033-R2-NYK-PHX-15",
       "year": 2033,
       "round": 2,
       "originalTeam": "NYK",
@@ -24891,26 +25224,14 @@
       "round": 1,
       "originalTeam": "POR",
       "currentOwner": "POR",
-      "description": "POR If 1-14 if not already settled with CHI",
-      "protections": "If 1-14 if not already settled with CHI",
+      "description": "POR own 2027 1st",
+      "protections": null,
       "isSwap": false,
-      "isConditional": true,
+      "isConditional": false,
       "via": null
     },
     {
-      "id": "2027-R1-CHI-POR-1",
-      "year": 2027,
-      "round": 1,
-      "originalTeam": "CHI",
-      "currentOwner": "POR",
-      "description": "CHI If 15-30 if not already settled",
-      "protections": "If 15-30 if not already settled",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2028-R1-MIL-POR-2",
+      "id": "2028-R1-MIL-POR-1",
       "year": 2028,
       "round": 1,
       "originalTeam": "MIL",
@@ -24922,7 +25243,7 @@
       "via": "POR swap for MIL"
     },
     {
-      "id": "2028-R1-POR-POR-3",
+      "id": "2028-R1-POR-POR-2",
       "year": 2028,
       "round": 1,
       "originalTeam": "POR",
@@ -24934,28 +25255,40 @@
       "via": "MEM"
     },
     {
-      "id": "2028-R1-POR-POR-4",
+      "id": "2028-R1-POR-POR-3",
       "year": 2028,
       "round": 1,
       "originalTeam": "POR",
       "currentOwner": "POR",
-      "description": "POR If 1-14 if not already settled with CHI or swap with MIL",
-      "protections": "If 1-14 if not already settled with CHI or swap with MIL",
+      "description": "POR MIL or swap with MIL",
+      "protections": null,
       "isSwap": true,
-      "isConditional": true,
+      "isConditional": false,
       "via": null
     },
     {
-      "id": "2028-R1-CHI-POR-5",
+      "id": "2028-R1-CHI-POR-4",
       "year": 2028,
       "round": 1,
       "originalTeam": "CHI",
       "currentOwner": "POR",
-      "description": "CHI If 15-30 if not already settled",
-      "protections": "If 15-30 if not already settled",
+      "description": "CHI MIL or swap with MIL",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2029-R1-POR-POR-5",
+      "year": 2029,
+      "round": 1,
+      "originalTeam": "POR",
+      "currentOwner": "POR",
+      "description": "POR Most and least favorable of BOS, MIL and POR to POR then other to WAS (via BOS to POR; via MIL to POR; via POR to WAS)",
+      "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": null
+      "via": "BOS to POR; via MIL to POR; via POR to WAS"
     },
     {
       "id": "2029-R1-POR-POR-6",
@@ -24970,43 +25303,19 @@
       "via": "BOS to POR; via MIL to POR; via POR to WAS"
     },
     {
-      "id": "2029-R1-POR-POR-7",
+      "id": "2029-R1-WAS-POR-7",
       "year": 2029,
       "round": 1,
-      "originalTeam": "POR",
+      "originalTeam": "WAS",
       "currentOwner": "POR",
-      "description": "POR Most and least favorable of BOS, MIL and POR to POR then other to WAS (via BOS to POR; via MIL to POR; via POR to WAS)",
+      "description": "WAS Second most favorable of BOS, POR and MIL then others to POR (via BOS to POR; via MIL to POR; via POR to WAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "BOS to POR; via MIL to POR; via POR to WAS"
     },
     {
-      "id": "2029-R1-WAS-POR-8",
-      "year": 2029,
-      "round": 1,
-      "originalTeam": "WAS",
-      "currentOwner": "POR",
-      "description": "WAS Two most favorable of BKN, DAL and PHX to HOU then other to BKN",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2030-R1-MIL-POR-9",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "MIL",
-      "currentOwner": "POR",
-      "description": "MIL POR Or swap with POR (via POR swap for MIL)",
-      "protections": null,
-      "isSwap": true,
-      "isConditional": false,
-      "via": "POR swap for MIL"
-    },
-    {
-      "id": "2030-R1-POR-POR-10",
+      "id": "2030-R1-POR-POR-8",
       "year": 2030,
       "round": 1,
       "originalTeam": "POR",
@@ -25018,7 +25327,7 @@
       "via": null
     },
     {
-      "id": "2031-R1-POR-POR-11",
+      "id": "2031-R1-POR-POR-9",
       "year": 2031,
       "round": 1,
       "originalTeam": "POR",
@@ -25030,7 +25339,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-POR-POR-12",
+      "id": "2032-R1-POR-POR-10",
       "year": 2032,
       "round": 1,
       "originalTeam": "POR",
@@ -25042,7 +25351,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-POR-POR-13",
+      "id": "2033-R1-POR-POR-11",
       "year": 2033,
       "round": 1,
       "originalTeam": "POR",
@@ -25054,7 +25363,7 @@
       "via": null
     },
     {
-      "id": "2027-R2-POR-POR-14",
+      "id": "2027-R2-POR-POR-12",
       "year": 2027,
       "round": 2,
       "originalTeam": "POR",
@@ -25066,7 +25375,7 @@
       "via": "HOU to OKC to NYK"
     },
     {
-      "id": "2027-R2-HOU-POR-15",
+      "id": "2027-R2-HOU-POR-13",
       "year": 2027,
       "round": 2,
       "originalTeam": "HOU",
@@ -25078,19 +25387,19 @@
       "via": "POR to BOS"
     },
     {
-      "id": "2028-R2-POR-POR-16",
+      "id": "2028-R2-POR-POR-14",
       "year": 2028,
       "round": 2,
       "originalTeam": "POR",
       "currentOwner": "POR",
-      "description": "POR CHI POR pick if POR conveys 1st to CHI by 2028; CHI pick if POR does not convey 1st to POR by 2028",
+      "description": "POR CHI (via CHI to SAC to MEM)",
       "protections": null,
       "isSwap": false,
-      "isConditional": true,
-      "via": null
+      "isConditional": false,
+      "via": "CHI to SAC to MEM"
     },
     {
-      "id": "2028-R2-POR-POR-17",
+      "id": "2028-R2-POR-POR-15",
       "year": 2028,
       "round": 2,
       "originalTeam": "POR",
@@ -25102,7 +25411,7 @@
       "via": "CHI to SAC to MEM"
     },
     {
-      "id": "2029-R2-POR-POR-18",
+      "id": "2029-R2-POR-POR-16",
       "year": 2029,
       "round": 2,
       "originalTeam": "POR",
@@ -25114,7 +25423,7 @@
       "via": "NYK"
     },
     {
-      "id": "2029-R2-MEM-POR-19",
+      "id": "2029-R2-MEM-POR-17",
       "year": 2029,
       "round": 2,
       "originalTeam": "MEM",
@@ -25126,19 +25435,19 @@
       "via": "PHI to IND"
     },
     {
-      "id": "2030-R2-PHI-POR-20",
+      "id": "2030-R2-PHI-POR-18",
       "year": 2030,
       "round": 2,
       "originalTeam": "PHI",
       "currentOwner": "POR",
-      "description": "PHI More favorable of PHX and POR to PHI then other to WAS (via WAS to PHI)",
+      "description": "PHI Second most favorable of PHX, POR and WAS then others to BOS and WAS (via WAS to PHI)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "WAS to PHI"
     },
     {
-      "id": "2031-R2-POR-POR-21",
+      "id": "2031-R2-POR-POR-19",
       "year": 2031,
       "round": 2,
       "originalTeam": "POR",
@@ -25150,7 +25459,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-POR-POR-22",
+      "id": "2032-R2-POR-POR-20",
       "year": 2032,
       "round": 2,
       "originalTeam": "POR",
@@ -25162,7 +25471,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-POR-POR-23",
+      "id": "2033-R2-POR-POR-21",
       "year": 2033,
       "round": 2,
       "originalTeam": "POR",
@@ -25419,26 +25728,14 @@
       "round": 1,
       "originalTeam": "BOS",
       "currentOwner": "SAS",
-      "description": "BOS If 1",
-      "protections": "If 1",
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2028-R1-SAS-SAS-3",
-      "year": 2028,
-      "round": 1,
-      "originalTeam": "SAS",
-      "currentOwner": "SAS",
-      "description": "SAS BOS Or swap 2-30 with SAS (via SAS swap for BOS)",
+      "description": "BOS SAS Or swap 2-30 with SAS (via SAS swap for BOS)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
       "via": "SAS swap for BOS"
     },
     {
-      "id": "2028-R1-SAS-SAS-4",
+      "id": "2028-R1-SAS-SAS-3",
       "year": 2028,
       "round": 1,
       "originalTeam": "SAS",
@@ -25450,7 +25747,7 @@
       "via": "SAS swap for BOS"
     },
     {
-      "id": "2029-R1-SAS-SAS-5",
+      "id": "2029-R1-SAS-SAS-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "SAS",
@@ -25462,19 +25759,7 @@
       "via": null
     },
     {
-      "id": "2030-R1-DAL-SAS-6",
-      "year": 2030,
-      "round": 1,
-      "originalTeam": "DAL",
-      "currentOwner": "SAS",
-      "description": "DAL SAS Least favorable of DAL and SAS (via SAN swap for DAL)",
-      "protections": null,
-      "isSwap": true,
-      "isConditional": true,
-      "via": "SAN swap for DAL"
-    },
-    {
-      "id": "2030-R1-SAS-SAS-7",
+      "id": "2030-R1-SAS-SAS-5",
       "year": 2030,
       "round": 1,
       "originalTeam": "SAS",
@@ -25486,7 +25771,7 @@
       "via": "SAN swap for DAL; via SAN swap of SAN or DAL for MIN"
     },
     {
-      "id": "2031-R1-SAC-SAS-8",
+      "id": "2031-R1-SAC-SAS-6",
       "year": 2031,
       "round": 1,
       "originalTeam": "SAC",
@@ -25498,7 +25783,7 @@
       "via": "SAS swap for SAC"
     },
     {
-      "id": "2031-R1-SAS-SAS-9",
+      "id": "2031-R1-SAS-SAS-7",
       "year": 2031,
       "round": 1,
       "originalTeam": "SAS",
@@ -25510,7 +25795,7 @@
       "via": null
     },
     {
-      "id": "2032-R1-SAS-SAS-10",
+      "id": "2032-R1-SAS-SAS-8",
       "year": 2032,
       "round": 1,
       "originalTeam": "SAS",
@@ -25522,7 +25807,7 @@
       "via": null
     },
     {
-      "id": "2033-R1-SAS-SAS-11",
+      "id": "2033-R1-SAS-SAS-9",
       "year": 2033,
       "round": 1,
       "originalTeam": "SAS",
@@ -25534,19 +25819,19 @@
       "via": null
     },
     {
-      "id": "2027-R2-SAS-SAS-12",
+      "id": "2027-R2-SAS-SAS-10",
       "year": 2027,
       "round": 2,
       "originalTeam": "SAS",
       "currentOwner": "SAS",
-      "description": "SAS More favorable SAS and least favorable of HOU, IND, MIA and OKC then others to NYK and OKC (via HOU to DET to OKC; via UTA to SAS)",
+      "description": "SAS More favorable SAS and least favorable of HOU, IND, MIA and OKC then others to NYK and PHI (via HOU to DET to OKC; via UTA to SAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
       "via": "HOU to DET to OKC; via UTA to SAS"
     },
     {
-      "id": "2028-R2-NYK-SAS-13",
+      "id": "2028-R2-NYK-SAS-11",
       "year": 2028,
       "round": 2,
       "originalTeam": "NYK",
@@ -25558,7 +25843,7 @@
       "via": "ORL to PHX"
     },
     {
-      "id": "2028-R2-SAS-SAS-14",
+      "id": "2028-R2-SAS-SAS-12",
       "year": 2028,
       "round": 2,
       "originalTeam": "SAS",
@@ -25570,7 +25855,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-SAS-SAS-15",
+      "id": "2028-R2-SAS-SAS-13",
       "year": 2028,
       "round": 2,
       "originalTeam": "SAS",
@@ -25582,7 +25867,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-SAS-SAS-16",
+      "id": "2029-R2-SAS-SAS-14",
       "year": 2029,
       "round": 2,
       "originalTeam": "SAS",
@@ -25594,7 +25879,7 @@
       "via": "PHI"
     },
     {
-      "id": "2029-R2-SAS-SAS-17",
+      "id": "2029-R2-SAS-SAS-15",
       "year": 2029,
       "round": 2,
       "originalTeam": "SAS",
@@ -25606,7 +25891,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-SAS-SAS-18",
+      "id": "2029-R2-SAS-SAS-16",
       "year": 2029,
       "round": 2,
       "originalTeam": "SAS",
@@ -25616,6 +25901,30 @@
       "isSwap": false,
       "isConditional": false,
       "via": null
+    },
+    {
+      "id": "2030-R2-SAS-SAS-17",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "SAS",
+      "currentOwner": "SAS",
+      "description": "SAS own 2030 2nd",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2030-R2-SAS-SAS-18",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "SAS",
+      "currentOwner": "SAS",
+      "description": "SAS (via IND)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": "IND"
     },
     {
       "id": "2030-R2-SAS-SAS-19",
@@ -25630,31 +25939,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-SAS-SAS-20",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "SAS",
-      "currentOwner": "SAS",
-      "description": "SAS (via IND)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": "IND"
-    },
-    {
-      "id": "2030-R2-SAS-SAS-21",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "SAS",
-      "currentOwner": "SAS",
-      "description": "SAS own 2030 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2031-R2-SAS-SAS-22",
+      "id": "2031-R2-SAS-SAS-20",
       "year": 2031,
       "round": 2,
       "originalTeam": "SAS",
@@ -25666,7 +25951,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-SAS-SAS-23",
+      "id": "2032-R2-SAS-SAS-21",
       "year": 2032,
       "round": 2,
       "originalTeam": "SAS",
@@ -25678,7 +25963,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-SAS-SAS-24",
+      "id": "2033-R2-SAS-SAS-22",
       "year": 2033,
       "round": 2,
       "originalTeam": "SAS",
@@ -25863,7 +26148,7 @@
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA Two most favorable of CLE, MIN and UTA then other to PHX",
+      "description": "UTA Second most favorable of CLE, MIN and UTA then others to MEM and PHX",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
@@ -25882,31 +26167,19 @@
       "via": "UTA"
     },
     {
-      "id": "2028-R1-LAL-UTA-2",
-      "year": 2028,
-      "round": 1,
-      "originalTeam": "LAL",
-      "currentOwner": "UTA",
-      "description": "LAL UTA UTA right to swap",
-      "protections": null,
-      "isSwap": true,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2028-R1-UTA-UTA-3",
+      "id": "2028-R1-UTA-UTA-2",
       "year": 2028,
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA CLE Or swap with CLE",
+      "description": "UTA Most favorable of LAL and more favorable or CLE and UTA then other to LAL (via UTA swap for CLE and LAL)",
       "protections": null,
       "isSwap": true,
-      "isConditional": false,
-      "via": null
+      "isConditional": true,
+      "via": "UTA swap for CLE and LAL"
     },
     {
-      "id": "2029-R1-MIN-UTA-4",
+      "id": "2029-R1-MIN-UTA-3",
       "year": 2029,
       "round": 1,
       "originalTeam": "MIN",
@@ -25918,7 +26191,7 @@
       "via": null
     },
     {
-      "id": "2029-R1-UTA-UTA-5",
+      "id": "2029-R1-UTA-UTA-4",
       "year": 2029,
       "round": 1,
       "originalTeam": "UTA",
@@ -25930,7 +26203,7 @@
       "via": null
     },
     {
-      "id": "2029-R1-UTA-UTA-6",
+      "id": "2029-R1-UTA-UTA-5",
       "year": 2029,
       "round": 1,
       "originalTeam": "UTA",
@@ -25942,24 +26215,36 @@
       "via": null
     },
     {
-      "id": "2030-R1-LAL-UTA-7",
+      "id": "2030-R1-LAL-UTA-6",
       "year": 2030,
       "round": 1,
       "originalTeam": "LAL",
       "currentOwner": "UTA",
-      "description": "LAL UTA UTA right to swap",
+      "description": "LAL UTA Or swap with UTA (via UTA swap for LAL)",
       "protections": null,
       "isSwap": true,
       "isConditional": false,
-      "via": null
+      "via": "UTA swap for LAL"
     },
     {
-      "id": "2030-R1-UTA-UTA-8",
+      "id": "2030-R1-UTA-UTA-7",
       "year": 2030,
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA own 2030 1st",
+      "description": "UTA LAL Or swap for LAL (via UTA swap for LAL)",
+      "protections": null,
+      "isSwap": true,
+      "isConditional": false,
+      "via": "UTA swap for LAL"
+    },
+    {
+      "id": "2031-R1-UTA-UTA-8",
+      "year": 2031,
+      "round": 1,
+      "originalTeam": "UTA",
+      "currentOwner": "UTA",
+      "description": "UTA own 2031 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -25978,24 +26263,24 @@
       "via": null
     },
     {
-      "id": "2031-R1-UTA-UTA-10",
-      "year": 2031,
+      "id": "2032-R1-UTA-UTA-10",
+      "year": 2032,
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA own 2031 1st",
+      "description": "UTA own 2032 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
       "via": null
     },
     {
-      "id": "2032-R1-UTA-UTA-11",
-      "year": 2032,
+      "id": "2033-R1-UTA-UTA-11",
+      "year": 2033,
       "round": 1,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA own 2032 1st",
+      "description": "UTA own 2033 1st",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
@@ -26014,31 +26299,19 @@
       "via": null
     },
     {
-      "id": "2033-R1-UTA-UTA-13",
-      "year": 2033,
-      "round": 1,
-      "originalTeam": "UTA",
-      "currentOwner": "UTA",
-      "description": "UTA own 2033 1st",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2027-R2-UTA-UTA-14",
+      "id": "2027-R2-UTA-UTA-13",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA (via CLE to CHI to BOS to UTA)",
+      "description": "UTA (via CLE to CHI to BOS)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": "CLE to CHI to BOS to UTA"
+      "via": "CLE to CHI to BOS"
     },
     {
-      "id": "2027-R2-UTA-UTA-15",
+      "id": "2027-R2-UTA-UTA-14",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
@@ -26050,7 +26323,7 @@
       "via": "ATL to LAC"
     },
     {
-      "id": "2027-R2-UTA-UTA-16",
+      "id": "2027-R2-UTA-UTA-15",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
@@ -26062,19 +26335,19 @@
       "via": null
     },
     {
-      "id": "2027-R2-UTA-UTA-17",
+      "id": "2027-R2-UTA-UTA-16",
       "year": 2027,
       "round": 2,
       "originalTeam": "UTA",
       "currentOwner": "UTA",
-      "description": "UTA More favorable of BOS and UTA then other to ORL (via BOS to ORL to BOS)",
+      "description": "UTA More favorable of BOS and UTA then other to CHA (via BOS to ORL to BOS to ORL)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": "BOS to ORL to BOS"
+      "via": "BOS to ORL to BOS to ORL"
     },
     {
-      "id": "2027-R2-IND-UTA-18",
+      "id": "2027-R2-IND-UTA-17",
       "year": 2027,
       "round": 2,
       "originalTeam": "IND",
@@ -26084,6 +26357,18 @@
       "isSwap": false,
       "isConditional": true,
       "via": "CLE"
+    },
+    {
+      "id": "2028-R2-UTA-UTA-18",
+      "year": 2028,
+      "round": 2,
+      "originalTeam": "UTA",
+      "currentOwner": "UTA",
+      "description": "UTA own 2028 2nd",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
     },
     {
       "id": "2028-R2-UTA-UTA-19",
@@ -26098,19 +26383,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-UTA-UTA-20",
-      "year": 2028,
-      "round": 2,
-      "originalTeam": "UTA",
-      "currentOwner": "UTA",
-      "description": "UTA own 2028 2nd",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": false,
-      "via": null
-    },
-    {
-      "id": "2028-R2-OKC-UTA-21",
+      "id": "2028-R2-OKC-UTA-20",
       "year": 2028,
       "round": 2,
       "originalTeam": "OKC",
@@ -26122,19 +26395,7 @@
       "via": null
     },
     {
-      "id": "2029-R2-MIN-UTA-22",
-      "year": 2029,
-      "round": 2,
-      "originalTeam": "MIN",
-      "currentOwner": "UTA",
-      "description": "MIN UTA CHA MIN pick if MIN conveys 1st to UTA in 2029; UTA pick if MIN does not convey 1st to UTA in 2029 or CHA if does not convery",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": true,
-      "via": null
-    },
-    {
-      "id": "2029-R2-UTA-UTA-23",
+      "id": "2029-R2-UTA-UTA-21",
       "year": 2029,
       "round": 2,
       "originalTeam": "UTA",
@@ -26146,7 +26407,7 @@
       "via": null
     },
     {
-      "id": "2030-R2-UTA-UTA-24",
+      "id": "2030-R2-UTA-UTA-22",
       "year": 2030,
       "round": 2,
       "originalTeam": "UTA",
@@ -26158,7 +26419,7 @@
       "via": "LAC to UTA"
     },
     {
-      "id": "2030-R2-CHA-UTA-25",
+      "id": "2030-R2-CHA-UTA-23",
       "year": 2030,
       "round": 2,
       "originalTeam": "CHA",
@@ -26170,7 +26431,7 @@
       "via": "UTA"
     },
     {
-      "id": "2031-R2-UTA-UTA-26",
+      "id": "2031-R2-UTA-UTA-24",
       "year": 2031,
       "round": 2,
       "originalTeam": "UTA",
@@ -26182,7 +26443,7 @@
       "via": "CLE to ATL to BOS"
     },
     {
-      "id": "2031-R2-UTA-UTA-27",
+      "id": "2031-R2-UTA-UTA-25",
       "year": 2031,
       "round": 2,
       "originalTeam": "UTA",
@@ -26194,7 +26455,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-UTA-UTA-28",
+      "id": "2032-R2-UTA-UTA-26",
       "year": 2032,
       "round": 2,
       "originalTeam": "UTA",
@@ -26206,7 +26467,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-WAS-UTA-29",
+      "id": "2032-R2-WAS-UTA-27",
       "year": 2032,
       "round": 2,
       "originalTeam": "WAS",
@@ -26218,7 +26479,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-UTA-UTA-30",
+      "id": "2033-R2-UTA-UTA-28",
       "year": 2033,
       "round": 2,
       "originalTeam": "UTA",
@@ -26247,7 +26508,7 @@
       "round": 1,
       "originalTeam": "WAS",
       "currentOwner": "WAS",
-      "description": "WAS Most Favorable of WAS and BKN, PHI 9-30 and if PHI conveys 1st to OKC by 2026 and PHX (via BKN and WAS swap for PHX) or swap for MIL or POR",
+      "description": "WAS Most Favorable of WAS and BKN, PHI 9-30 and PHX (via BKN and WAS swap for PHX) or swap for MIL or POR",
       "protections": null,
       "isSwap": true,
       "isConditional": true,
@@ -26259,11 +26520,11 @@
       "round": 1,
       "originalTeam": "WAS",
       "currentOwner": "WAS",
-      "description": "WAS Two most favorable of BKN, DAL and PHX to HOU then other to BKN",
+      "description": "WAS Second most favorable of BOS, POR and MIL then others to POR (via BOS to POR; via MIL to POR; via POR to WAS)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": null
+      "via": "BOS to POR; via MIL to POR; via POR to WAS"
     },
     {
       "id": "2029-R1-WAS-WAS-3",
@@ -26343,11 +26604,11 @@
       "round": 2,
       "originalTeam": "WAS",
       "currentOwner": "WAS",
-      "description": "WAS Least favorable of GSW and PHX to WAS then other to PHI (via WAS to PHI)",
+      "description": "WAS More favorable of BKN and DAL to WAS then other to DET",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
-      "via": "WAS to PHI"
+      "via": null
     },
     {
       "id": "2027-R2-WAS-WAS-10",
@@ -26355,14 +26616,26 @@
       "round": 2,
       "originalTeam": "WAS",
       "currentOwner": "WAS",
-      "description": "WAS NYK WAS pick if WAS conveys 1st to NYK by 2026; NYK pick if WAS does not convey 1st to NYK to by 2026 (via HOU to OKC)",
+      "description": "WAS Least favorable of GSW and PHX to WAS then other to PHI (via WAS to PHI)",
       "protections": null,
       "isSwap": false,
       "isConditional": true,
+      "via": "WAS to PHI"
+    },
+    {
+      "id": "2027-R2-NYK-WAS-11",
+      "year": 2027,
+      "round": 2,
+      "originalTeam": "NYK",
+      "currentOwner": "WAS",
+      "description": "NYK (via HOU to OKC)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
       "via": "HOU to OKC"
     },
     {
-      "id": "2028-R2-DEN-WAS-11",
+      "id": "2028-R2-DEN-WAS-12",
       "year": 2028,
       "round": 2,
       "originalTeam": "DEN",
@@ -26374,7 +26647,7 @@
       "via": null
     },
     {
-      "id": "2028-R2-WAS-WAS-12",
+      "id": "2028-R2-WAS-WAS-13",
       "year": 2028,
       "round": 2,
       "originalTeam": "WAS",
@@ -26386,7 +26659,7 @@
       "via": "SAS to SAC"
     },
     {
-      "id": "2028-R2-WAS-WAS-13",
+      "id": "2028-R2-WAS-WAS-14",
       "year": 2028,
       "round": 2,
       "originalTeam": "WAS",
@@ -26398,7 +26671,7 @@
       "via": "LAL to WAS"
     },
     {
-      "id": "2028-R2-ORL-WAS-14",
+      "id": "2028-R2-ORL-WAS-15",
       "year": 2028,
       "round": 2,
       "originalTeam": "ORL",
@@ -26410,7 +26683,19 @@
       "via": null
     },
     {
-      "id": "2029-R2-IND-WAS-15",
+      "id": "2029-R2-WAS-WAS-16",
+      "year": 2029,
+      "round": 2,
+      "originalTeam": "WAS",
+      "currentOwner": "WAS",
+      "description": "WAS own 2029 2nd",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": false,
+      "via": null
+    },
+    {
+      "id": "2029-R2-IND-WAS-17",
       "year": 2029,
       "round": 2,
       "originalTeam": "IND",
@@ -26422,7 +26707,7 @@
       "via": "NYK"
     },
     {
-      "id": "2030-R2-GSW-WAS-16",
+      "id": "2030-R2-GSW-WAS-18",
       "year": 2030,
       "round": 2,
       "originalTeam": "GSW",
@@ -26434,31 +26719,31 @@
       "via": null
     },
     {
-      "id": "2030-R2-WAS-WAS-17",
+      "id": "2030-R2-WAS-WAS-19",
       "year": 2030,
       "round": 2,
       "originalTeam": "WAS",
       "currentOwner": "WAS",
-      "description": "WAS Least favorable of PHX and POR to WAS then other to PHI (via WAS to PHI)",
-      "protections": null,
-      "isSwap": false,
-      "isConditional": true,
-      "via": "WAS to PHI"
-    },
-    {
-      "id": "2030-R2-PHI-WAS-18",
-      "year": 2030,
-      "round": 2,
-      "originalTeam": "PHI",
-      "currentOwner": "WAS",
-      "description": "PHI",
+      "description": "WAS Least favor of PHX, POR and WAS then others to BOS and PHI (via PHI)",
       "protections": null,
       "isSwap": false,
       "isConditional": false,
-      "via": null
+      "via": "PHI"
     },
     {
-      "id": "2031-R2-WAS-WAS-19",
+      "id": "2030-R2-BOS-WAS-20",
+      "year": 2030,
+      "round": 2,
+      "originalTeam": "BOS",
+      "currentOwner": "WAS",
+      "description": "BOS Most favorable of PHX, POR and WAS then others to PHI and WAS (via PHI)",
+      "protections": null,
+      "isSwap": false,
+      "isConditional": true,
+      "via": "PHI"
+    },
+    {
+      "id": "2031-R2-WAS-WAS-21",
       "year": 2031,
       "round": 2,
       "originalTeam": "WAS",
@@ -26470,7 +26755,7 @@
       "via": "MIA swap for IND; via UTH"
     },
     {
-      "id": "2031-R2-LAL-WAS-20",
+      "id": "2031-R2-LAL-WAS-22",
       "year": 2031,
       "round": 2,
       "originalTeam": "LAL",
@@ -26482,7 +26767,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-WAS-WAS-21",
+      "id": "2032-R2-WAS-WAS-23",
       "year": 2032,
       "round": 2,
       "originalTeam": "WAS",
@@ -26494,7 +26779,7 @@
       "via": null
     },
     {
-      "id": "2032-R2-LAL-WAS-22",
+      "id": "2032-R2-LAL-WAS-24",
       "year": 2032,
       "round": 2,
       "originalTeam": "LAL",
@@ -26506,7 +26791,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-WAS-WAS-23",
+      "id": "2033-R2-WAS-WAS-25",
       "year": 2033,
       "round": 2,
       "originalTeam": "WAS",
@@ -26518,7 +26803,7 @@
       "via": null
     },
     {
-      "id": "2033-R2-WAS-WAS-24",
+      "id": "2033-R2-WAS-WAS-26",
       "year": 2033,
       "round": 2,
       "originalTeam": "WAS",

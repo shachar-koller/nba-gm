@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAppData } from "@/lib/data";
 import { TEAMS } from "@/lib/teams";
+import { LEAGUE_STAFF } from "@/lib/staff";
 import { formatMoney } from "@/lib/format";
 import { classNames } from "@/lib/format";
 import { clampActiveIndex, scoreSearchMatch } from "@/lib/ux";
@@ -24,6 +25,12 @@ const PAGES: Item[] = [
   { id: "p-sal", group: "Pages", label: "Player Salaries", href: "/salaries" },
   { id: "p-fa", group: "Pages", label: "Free Agent Classes", href: "/free-agents" },
   { id: "p-teams", group: "Pages", label: "Teams", href: "/teams" },
+  {
+    id: "p-staff",
+    group: "Pages",
+    label: "GMs & Head Coaches",
+    href: "/staff",
+  },
   { id: "p-stats", group: "Pages", label: "Player Stats", href: "/stats" },
   {
     id: "p-adv",
@@ -70,6 +77,22 @@ export function CommandPalette() {
       hint: t.abbr,
       href: `/teams/${t.abbr.toLowerCase()}`,
     }));
+    const staff: Item[] = LEAGUE_STAFF.flatMap((row) => [
+      {
+        id: `e-${row.team}`,
+        group: "Staff",
+        label: row.executive,
+        hint: `${row.team} · GM / lead executive`,
+        href: `/staff?q=${encodeURIComponent(row.executive)}`,
+      },
+      {
+        id: `h-${row.team}`,
+        group: "Staff",
+        label: row.headCoach,
+        hint: `${row.team} · Head coach`,
+        href: `/staff?q=${encodeURIComponent(row.headCoach)}`,
+      },
+    ]);
     const players: Item[] = data.contracts.map((c) => ({
       id: `c-${c.id}-${c.team}`,
       group: "Players",
@@ -77,7 +100,7 @@ export function CommandPalette() {
       hint: `${c.team} · ${formatMoney(c.currentSalary, true)}${c.freeAgencyYear ? ` · FA ${c.freeAgencyYear}` : ""}`,
       href: `/salaries?q=${encodeURIComponent(c.player)}`,
     }));
-    return [...PAGES, ...teams, ...players];
+    return [...PAGES, ...teams, ...staff, ...players];
   }, []);
 
   const filtered = useMemo(() => {
@@ -153,8 +176,36 @@ export function CommandPalette() {
     previouslyFocused.current = document.activeElement as HTMLElement | null;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      // Keep focus inside the palette dialog (input + options).
+      const root = inputRef.current?.closest('[role="dialog"]') as HTMLElement | null;
+      if (!root) return;
+      const focusable = root.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), input, [href], [tabindex]:not([tabindex="-1"])'
+      );
+      const list = Array.from(focusable).filter((el) => el.offsetParent !== null);
+      if (list.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = list[0];
+      const last = list[list.length - 1];
+      const active = document.activeElement as HTMLElement | null;
+      if (e.shiftKey) {
+        if (active === first || !root.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (active === last || !root.contains(active)) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
     requestAnimationFrame(() => inputRef.current?.focus());
     return () => {
+      document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
       const el = previouslyFocused.current;
       previouslyFocused.current = null;
@@ -205,11 +256,16 @@ export function CommandPalette() {
             ref={inputRef}
             value={q}
             onChange={(e) => {
-              setQ(e.target.value);
+              setQ(e.target.value.slice(0, 256));
               setActive(0);
             }}
-            placeholder="Search players, teams, pages…"
-            className="w-full bg-transparent py-2.5 text-[13px] outline-none focus-visible:outline-none placeholder:text-[var(--faint)]"
+            maxLength={256}
+            role="combobox"
+            aria-expanded={true}
+            aria-haspopup="listbox"
+            aria-autocomplete="list"
+            placeholder="Search players, staff, teams, pages…"
+            className="w-full bg-transparent py-2.5 text-[13px] outline-none placeholder:text-[var(--faint)] focus-visible:outline-none focus-visible:ring-0"
             aria-controls="command-palette-list"
             aria-activedescendant={
               filtered[safeActive] ? `palette-item-${filtered[safeActive].id}` : undefined

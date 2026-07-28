@@ -12,7 +12,7 @@ import {
 } from "@/lib/teamsMetrics";
 
 export const metadata = {
-  title: "Teams | NBA Front Office",
+  title: "Teams",
 };
 
 export default function TeamsPage() {

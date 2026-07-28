@@ -6,7 +6,7 @@ import {
 } from "@/lib/playerStats";
 
 export const metadata = {
-  title: "Player Stats | NBA Front Office",
+  title: "Player Stats",
   description:
     "Sortable NBA regular-season per-game stats: points, rebounds, assists, steals, blocks, shooting, and more.",
 };

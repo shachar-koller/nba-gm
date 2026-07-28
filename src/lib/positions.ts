@@ -12,6 +12,21 @@ const BROAD_TO_SPECIFIC: Record<string, readonly string[]> = {
   C: ["C"],
 };
 
+/** Shared position display order for filters across salaries, FA, and stats. */
+export const POSITION_ORDER = ["PG", "SG", "SF", "PF", "C", "G", "F"] as const;
+
+export function sortPositionList(positions: Iterable<string>): string[] {
+  const set = positions instanceof Set ? positions : new Set(positions);
+  return [...set].sort((a, b) => {
+    const ia = POSITION_ORDER.indexOf(a as (typeof POSITION_ORDER)[number]);
+    const ib = POSITION_ORDER.indexOf(b as (typeof POSITION_ORDER)[number]);
+    if (ia >= 0 && ib >= 0) return ia - ib;
+    if (ia >= 0) return -1;
+    if (ib >= 0) return 1;
+    return a.localeCompare(b);
+  });
+}
+
 /** Human labels for the filter dropdown. */
 export function positionFilterLabel(pos: string): string {
   switch (pos.toUpperCase()) {

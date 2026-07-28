@@ -13,12 +13,15 @@ export function ExportButton({
   rows: Array<Array<string | number | null | undefined>>;
   label?: string;
 }) {
+  const empty = !rows.length;
   return (
     <button
       type="button"
       onClick={() => downloadCsv(filename, toCsv(headers, rows))}
-      disabled={!rows.length}
-      className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--border-strong)] transition-colors disabled:opacity-40"
+      disabled={empty}
+      title={empty ? "No rows to export — adjust filters first" : `Download ${filename}`}
+      aria-disabled={empty}
+      className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--muted)] hover:text-[var(--foreground)] hover:border-[var(--border-strong)] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
     >
       {label}
     </button>

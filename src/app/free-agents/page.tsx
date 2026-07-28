@@ -2,7 +2,7 @@ import { FreeAgentClassesClient } from "@/components/FreeAgentClassesClient";
 import { getAppData, getContracts, uniquePositions } from "@/lib/data";
 
 export const metadata = {
-  title: "Free Agent Classes | NBA Front Office",
+  title: "Free Agent Classes",
 };
 
 export default function FreeAgentsPage() {

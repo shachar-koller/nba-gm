@@ -9,12 +9,32 @@ import type {
 } from "./types";
 import { TEAMS } from "./teams";
 import { seasonSortKey } from "./freeAgency";
+import { sortPositionList } from "./positions";
 
 // Bundled snapshot — refreshed via `npm run refresh`
 import snapshot from "@/data/app-data.json";
 
+function assertAppDataShape(data: AppData): void {
+  if (!Array.isArray(data.contracts) || !Array.isArray(data.teamPayrolls) || !Array.isArray(data.draftPicks)) {
+    throw new Error(
+      "Invalid app-data.json: expected contracts, teamPayrolls, and draftPicks arrays. Re-run `npm run refresh`."
+    );
+  }
+  if (data.teamPayrolls.length < 30) {
+    throw new Error(
+      `Invalid app-data.json: expected 30 team payrolls, found ${data.teamPayrolls.length}.`
+    );
+  }
+  if (data.contracts.length < 100) {
+    throw new Error(
+      `Invalid app-data.json: expected ≥100 contracts, found ${data.contracts.length}.`
+    );
+  }
+}
+
 export function getAppData(): AppData {
   const data = snapshot as AppData;
+  assertAppDataShape(data);
   return {
     ...data,
     capThresholds: data.capThresholds?.length ? data.capThresholds : CAP_THRESHOLDS,
@@ -171,15 +191,7 @@ export function uniquePositions(
   for (const c of contracts) {
     if (c.position) set.add(c.position);
   }
-  const order = ["PG", "SG", "SF", "PF", "C", "G", "F"];
-  return [...set].sort((a, b) => {
-    const ia = order.indexOf(a);
-    const ib = order.indexOf(b);
-    if (ia >= 0 && ib >= 0) return ia - ib;
-    if (ia >= 0) return -1;
-    if (ib >= 0) return 1;
-    return a.localeCompare(b);
-  });
+  return sortPositionList(set);
 }
 
 export function salaryForSeason(

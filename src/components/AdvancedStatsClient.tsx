@@ -1,8 +1,10 @@
 "use client";
 
-import { Suspense, useMemo } from "react";
+import { Suspense, useCallback, useMemo, useState } from "react";
 import Link from "next/link";
-import type { PlayerSeasonStats, TeamAbbr } from "@/lib/types";
+import { useSearchParams } from "next/navigation";
+import type { PlayerContract, PlayerSeasonStats, TeamAbbr } from "@/lib/types";
+import { getAppData } from "@/lib/data";
 import { TEAMS } from "@/lib/teams";
 import { formatNum, formatPct } from "@/lib/format";
 import {
@@ -19,7 +21,7 @@ import {
   minFilterLabels,
   passesStatMinFilters,
 } from "@/lib/statFilters";
-import { matchesSearch } from "@/lib/ux";
+import { matchesSearch, normalizeSearchText } from "@/lib/ux";
 import type { SortDir } from "./DataTable";
 import { DataTable, type Column } from "./DataTable";
 import {
@@ -34,6 +36,18 @@ import {
 } from "./Filters";
 import { TeamChip } from "./TeamLogo";
 import { ExportButton } from "./ExportButton";
+import { PlayerDrawer } from "./PlayerDrawer";
+
+function statsCrossLinkQuery(searchParams: URLSearchParams, target: string): string {
+  const keep = ["q", "team", "pos", "gp"];
+  const params = new URLSearchParams();
+  for (const key of keep) {
+    const v = searchParams.get(key);
+    if (v) params.set(key, v);
+  }
+  const qs = params.toString();
+  return qs ? `${target}?${qs}` : target;
+}
 
 const STAT_MIN_KEYS = new Set(ADVANCED_STAT_MIN_FILTERS.map((d) => d.key));
 
@@ -77,11 +91,47 @@ function AdvancedInner({
   season: string;
   positions: string[];
 }) {
+  const searchParams = useSearchParams();
   const { values, setFilter, setFilters, clearFilters, clearFilter, hasActive, chips } =
     useUrlFilters(FILTER_DEFAULTS, FILTER_LABELS);
   const { q, team, pos, gp, sort, dir } = values;
   const { compact } = useTableDensity();
   const minGp = Number(gp) || 0;
+  const [selected, setSelected] = useState<PlayerContract | null>(null);
+
+  const contracts = useMemo(() => getAppData().contracts, []);
+  const contractByKey = useMemo(() => {
+    const byTeamName = new Map<string, PlayerContract>();
+    const byName = new Map<string, PlayerContract>();
+    for (const c of contracts) {
+      const name = normalizeSearchText(c.player);
+      if (!name) continue;
+      byTeamName.set(`${c.team}|${name}`, c);
+      if (!byName.has(name)) byName.set(name, c);
+    }
+    return { byTeamName, byName };
+  }, [contracts]);
+
+  const matchContract = useCallback(
+    (row: PlayerSeasonStats) => {
+      const name = normalizeSearchText(row.player);
+      if (!name) return null;
+      if (row.team) {
+        const hit = contractByKey.byTeamName.get(`${row.team}|${name}`);
+        if (hit) return hit;
+      }
+      return contractByKey.byName.get(name) ?? null;
+    },
+    [contractByKey]
+  );
+
+  const openPlayer = useCallback(
+    (row: PlayerSeasonStats) => {
+      const match = matchContract(row);
+      if (match) setSelected(match);
+    },
+    [matchContract]
+  );
 
   const visibleChips = chips.filter((c) => {
     if (c.key === "sort" || c.key === "dir") return false;
@@ -125,16 +175,36 @@ function AdvancedInner({
         sortable: true,
         sortValue: (r) => r.player,
         className: "font-semibold min-w-[140px]",
-        render: (r) => (
-          <div>
-            <div className="text-[13px] leading-tight">{r.player}</div>
-            <div className="text-[10px] font-normal text-[var(--muted)]">
-              {r.position || "—"}
-              {r.age != null ? ` · ${r.age}` : ""}
-              {` · ${r.gp} GP`}
+        render: (r) => {
+          const hasContract = Boolean(matchContract(r));
+          return (
+            <div>
+              {hasContract ? (
+                <button
+                  type="button"
+                  onClick={() => openPlayer(r)}
+                  className="group/name text-left"
+                >
+                  <span className="text-[13px] font-semibold leading-tight group-hover/name:text-[var(--accent)] transition-colors">
+                    {r.player}
+                  </span>
+                </button>
+              ) : (
+                <Link
+                  href={`/salaries?q=${encodeURIComponent(r.player)}`}
+                  className="text-[13px] font-semibold leading-tight hover:text-[var(--accent)] transition-colors"
+                >
+                  {r.player}
+                </Link>
+              )}
+              <div className="text-[10px] font-normal text-[var(--muted)]">
+                {r.position || "—"}
+                {r.age != null ? ` · ${r.age}` : ""}
+                {` · ${r.gp} GP`}
+              </div>
             </div>
-          </div>
-        ),
+          );
+        },
       },
       {
         key: "team",
@@ -277,9 +347,9 @@ function AdvancedInner({
         render: (r) => formatNum(r.tov),
       },
     ],
-    // tip depends on defMap only
+    // tip depends on defMap; player cell uses matchContract/openPlayer
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [defMap]
+    [defMap, matchContract, openPlayer]
   );
 
   const leaders = useMemo(() => {
@@ -307,10 +377,10 @@ function AdvancedInner({
     <div className="space-y-6">
       <PageHeader
         title="Advanced Stats"
-        description={`${season} regular season — efficiency and rate metrics derived from box scores. Hover column headers for a quick tip; full explanations below.`}
+        description={`${season} regular season — efficiency and rate metrics from box scores (last completed season). Hover column headers for tips; full glossary below.`}
       >
         <Link
-          href="/stats"
+          href={statsCrossLinkQuery(searchParams, "/stats")}
           className="inline-flex items-center rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] px-2.5 py-1.5 text-[11px] font-medium text-[var(--muted)] hover:border-[var(--border-strong)] hover:text-[var(--foreground)]"
         >
           ← Basic stats
@@ -513,8 +583,14 @@ function AdvancedInner({
       <p className="text-[11px] text-[var(--muted)] print:hidden">
         Advanced rates are computed from season totals (true shooting, eFG%,
         turnover %, free-throw and three-point rates, AST/TO, traditional EFF,
-        stocks). Not pace- or opponent-adjusted.
+        stocks). Not pace- or opponent-adjusted. Click a player name for
+        contract details.
       </p>
+      <PlayerDrawer
+        player={selected}
+        season={getAppData().currentSeason}
+        onClose={() => setSelected(null)}
+      />
     </div>
   );
 }

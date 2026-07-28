@@ -35,6 +35,9 @@ export function TeamChip({
   size?: number;
 }) {
   const team = TEAM_BY_ABBR[abbr];
+  if (!team) {
+    return <span className="font-semibold tabular-nums">{abbr}</span>;
+  }
   return (
     <span className="inline-flex items-center gap-1.5 min-w-0">
       <span

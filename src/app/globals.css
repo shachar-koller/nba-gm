@@ -5,7 +5,8 @@
   --background: #f5f6f8;
   --foreground: #0e1524;
   --muted: #5a6573;
-  --faint: #8a93a1;
+  /* ~4.6:1 on --background for small captions (WCAG AA) */
+  --faint: #6b7785;
 
   /* Surfaces */
   --surface: #ffffff;
@@ -18,8 +19,9 @@
   --border-strong: #cdd2d9;
 
   /* Brand — interactive only */
-  --accent: #ea580c;
-  --accent-hover: #cf4e0a;
+  /* Darkened for ~5.9:1 on white (WCAG AA for normal text) */
+  --accent: #c2410c;
+  --accent-hover: #9a3412;
   --accent-soft: #fdeee3;
   --accent-border: #f3c9ab;
 
@@ -67,7 +69,8 @@
   --background: #0b0e13;
   --foreground: #e8eaef;
   --muted: #9aa3b2;
-  --faint: #6b7382;
+  /* ~5.5:1 on dark --background for small captions (WCAG AA) */
+  --faint: #94a0b0;
 
   --surface: #12161d;
   --surface-2: #181d27;
@@ -134,6 +137,29 @@ body {
   min-height: 100%;
   font-feature-settings: "tnum" 1, "ss01" 1;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible skip target / screen-reader-only utilities */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
 }
 
 .scrollbar-none {

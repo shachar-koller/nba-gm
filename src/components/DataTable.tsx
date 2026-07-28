@@ -10,6 +10,8 @@ export type SortDir = "asc" | "desc";
 export interface Column<T> {
   key: string;
   header: React.ReactNode;
+  /** Human label for “Sorted by …” (defaults to string header or key). */
+  label?: string;
   sortable?: boolean;
   sortValue?: (row: T) => string | number | null | undefined;
   /**
@@ -22,6 +24,15 @@ export interface Column<T> {
   align?: "left" | "right";
   sticky?: boolean;
   render: (row: T) => React.ReactNode;
+}
+
+function columnSortLabel<T>(col: Column<T> | undefined, key: string): string {
+  if (!col) return key;
+  if (col.label) return col.label;
+  if (typeof col.header === "string" || typeof col.header === "number") {
+    return String(col.header);
+  }
+  return key;
 }
 
 /** First-click sort direction: leaderboard metrics high→low, names A→Z. */
@@ -131,7 +142,7 @@ export function DataTable<T>({
 
   function onSort(key: string) {
     const col = columns.find((c) => c.key === key);
-    let nextDir: SortDir =
+    const nextDir: SortDir =
       sortKey === key
         ? sortDir === "asc"
           ? "desc"
@@ -151,6 +162,8 @@ export function DataTable<T>({
   const cellPad = compact ? "px-2 py-1" : "px-2.5 py-1.5";
   const textSize = "text-[13px]";
   const countLabel = formatRowCount(sorted.length, totalCount);
+  const activeSortCol = columns.find((c) => c.key === sortKey);
+  const sortLabel = sortKey ? columnSortLabel(activeSortCol, sortKey) : "";
 
   return (
     <div className="overflow-hidden rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
@@ -164,7 +177,7 @@ export function DataTable<T>({
           </span>
           {sortKey && (
             <span className="truncate text-[var(--faint)]">
-              Sorted by {sortKey}
+              Sorted by {sortLabel}
               {sortDir === "asc" ? " ↑" : " ↓"}
             </span>
           )}

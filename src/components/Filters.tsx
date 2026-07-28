@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { classNames } from "@/lib/format";
 import { shouldClearSearchOnEscape } from "@/lib/ux";
 import type { ActiveFilterChip } from "@/lib/urlState";
@@ -85,25 +86,86 @@ export function SearchInput({
   onChange,
   placeholder = "Search…",
   id,
+  maxLength = 256,
+  debounceMs = 250,
 }: {
   value: string;
   onChange: (v: string) => void;
   placeholder?: string;
   id?: string;
+  maxLength?: number;
+  /** Debounce parent updates (URL sync). Local input stays responsive. */
+  debounceMs?: number;
 }) {
-  const hasValue = shouldClearSearchOnEscape(value);
+  const [local, setLocal] = useState(value);
+  const [syncedValue, setSyncedValue] = useState(value);
+  const [gen, setGen] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const genRef = useRef(0);
+
+  // Keep a ref of the generation for stale debounce cancellation (updated in effect).
+  useEffect(() => {
+    genRef.current = gen;
+  }, [gen]);
+
+  // Adjust local text when URL/external value changes (clear-all, back/forward).
+  if (value !== syncedValue) {
+    setSyncedValue(value);
+    setLocal(value);
+    setGen((g) => g + 1);
+  }
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
+
+  function commit(next: string) {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = null;
+    setGen((g) => g + 1);
+    onChange(next);
+  }
+
+  function handleChange(raw: string) {
+    const next = raw.slice(0, maxLength);
+    setLocal(next);
+    if (timerRef.current) clearTimeout(timerRef.current);
+    if (debounceMs <= 0) {
+      setGen((g) => g + 1);
+      onChange(next);
+      return;
+    }
+    const scheduled = genRef.current;
+    timerRef.current = setTimeout(() => {
+      timerRef.current = null;
+      // Drop stale callbacks after external clear or a later commit.
+      if (scheduled !== genRef.current) return;
+      onChange(next);
+    }, debounceMs);
+  }
+
+  const hasValue = shouldClearSearchOnEscape(local);
   return (
     <div className="relative">
       <input
         id={id}
         type="search"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        value={local}
+        maxLength={maxLength}
+        onChange={(e) => handleChange(e.target.value)}
+        onBlur={() => {
+          if (local !== value) commit(local);
+        }}
         onKeyDown={(e) => {
-          if (e.key === "Escape" && shouldClearSearchOnEscape(value)) {
+          if (e.key === "Escape" && shouldClearSearchOnEscape(local)) {
             e.preventDefault();
             e.stopPropagation();
-            onChange("");
+            setLocal("");
+            commit("");
+          } else if (e.key === "Enter") {
+            commit(local);
           }
         }}
         placeholder={placeholder}
@@ -113,7 +175,10 @@ export function SearchInput({
       {hasValue && (
         <button
           type="button"
-          onClick={() => onChange("")}
+          onClick={() => {
+            setLocal("");
+            commit("");
+          }}
           className="absolute right-1.5 top-1/2 -translate-y-1/2 rounded px-1 py-0.5 text-[12px] leading-none text-[var(--muted)] hover:bg-[var(--surface-3)] hover:text-[var(--foreground)]"
           aria-label="Clear search"
           title="Clear (Esc)"
@@ -176,7 +241,11 @@ export function NumberInput({
       type="text"
       inputMode="decimal"
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={(e) => {
+        // Allow empty, digits, one decimal point, optional leading minus.
+        const next = e.target.value;
+        if (next === "" || /^-?\d*\.?\d*$/.test(next)) onChange(next);
+      }}
       onKeyDown={(e) => {
         if (e.key === "Escape" && value) {
           e.preventDefault();
@@ -187,6 +256,7 @@ export function NumberInput({
       placeholder={placeholder}
       min={min}
       step={step}
+      maxLength={12}
       aria-label={ariaLabel}
       autoComplete="off"
       className={controlClass}
@@ -297,7 +367,7 @@ export function SegmentedControl<T extends string>({
 }) {
   return (
     <div
-      role="tablist"
+      role="radiogroup"
       className="inline-flex rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-2)] p-0.5"
     >
       {options.map((o) => {
@@ -306,8 +376,8 @@ export function SegmentedControl<T extends string>({
           <button
             key={o.value}
             type="button"
-            role="tab"
-            aria-selected={active}
+            role="radio"
+            aria-checked={active}
             onClick={() => onChange(o.value)}
             className={classNames(
               "rounded-[5px] px-2.5 py-1 text-[11px] font-medium transition-colors",
