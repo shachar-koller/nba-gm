@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-28T06:53:21.052Z",
+  "updatedAt": "2026-07-30T13:36:08.473Z",
   "source": "Spotrac (live scrape) + NBA official cap announcements",
   "currentSeason": "2026-27",
   "capThresholds": [
@@ -99,16 +99,6 @@
       "deadCap": 0
     },
     {
-      "team": "LAL",
-      "season": "2026-27",
-      "playersActive": 15,
-      "avgAge": 25.3,
-      "totalCap": 198447901,
-      "capSpace": -33486901,
-      "activeCap": 198447901,
-      "deadCap": 0
-    },
-    {
       "team": "MIL",
       "season": "2026-27",
       "playersActive": 17,
@@ -117,6 +107,26 @@
       "capSpace": -34471431,
       "activeCap": 168320596,
       "deadCap": 24027877
+    },
+    {
+      "team": "LAL",
+      "season": "2026-27",
+      "playersActive": 16,
+      "avgAge": 25.5,
+      "totalCap": 200897322,
+      "capSpace": -35936322,
+      "activeCap": 200897322,
+      "deadCap": 0
+    },
+    {
+      "team": "POR",
+      "season": "2026-27",
+      "playersActive": 14,
+      "avgAge": 26.1,
+      "totalCap": 205996284,
+      "capSpace": -41035284,
+      "activeCap": 191824641,
+      "deadCap": 268032
     },
     {
       "team": "TOR",
@@ -161,7 +171,7 @@
     {
       "team": "NOP",
       "season": "2026-27",
-      "playersActive": 15,
+      "playersActive": 16,
       "avgAge": 25.7,
       "totalCap": 215123967,
       "capSpace": -50162967,
@@ -191,11 +201,11 @@
     {
       "team": "LAC",
       "season": "2026-27",
-      "playersActive": 13,
-      "avgAge": 26.4,
-      "totalCap": 217390749,
-      "capSpace": -52429749,
-      "activeCap": 161589130,
+      "playersActive": 14,
+      "avgAge": 26.3,
+      "totalCap": 219541666,
+      "capSpace": -54580666,
+      "activeCap": 163740047,
       "deadCap": 0
     },
     {
@@ -227,16 +237,6 @@
       "capSpace": -59475373,
       "activeCap": 194654879,
       "deadCap": 3211216
-    },
-    {
-      "team": "POR",
-      "season": "2026-27",
-      "playersActive": 14,
-      "avgAge": 26.1,
-      "totalCap": 227941284,
-      "capSpace": -62980284,
-      "activeCap": 191824641,
-      "deadCap": 268032
     },
     {
       "team": "SAS",
@@ -313,9 +313,9 @@
       "season": "2026-27",
       "playersActive": 13,
       "avgAge": 27.1,
-      "totalCap": 257641436,
-      "capSpace": -92680436,
-      "activeCap": 213506987,
+      "totalCap": 255137777,
+      "capSpace": -90176777,
+      "activeCap": 213653328,
       "deadCap": 2000000
     },
     {
@@ -333,8 +333,8 @@
       "season": "2026-27",
       "playersActive": 17,
       "avgAge": 25.7,
-      "totalCap": 266162411,
-      "capSpace": -101201411,
+      "totalCap": 263712990,
+      "capSpace": -98751990,
       "activeCap": 194904228,
       "deadCap": 0
     }
@@ -5225,17 +5225,17 @@
       "salaries": [
         {
           "season": "2026-27",
-          "amount": 5853659,
-          "option": "estimate",
-          "display": "$5,853,659",
-          "pctOfCap": 3.5
+          "amount": 6000000,
+          "option": "none",
+          "display": "$6,000,000",
+          "pctOfCap": 3.6
         },
         {
           "season": "2027-28",
-          "amount": 6146341,
-          "option": "estimate",
-          "display": "$6,146,341",
-          "pctOfCap": 3.5
+          "amount": 5750000,
+          "option": "none",
+          "display": "$5,750,000",
+          "pctOfCap": 3.3
         },
         {
           "season": "2028-29",
@@ -5245,11 +5245,11 @@
           "pctOfCap": null
         }
       ],
-      "guaranteed": 12000000,
+      "guaranteed": 11750000,
       "freeAgencyYear": "2028-29",
       "freeAgencyType": "UFA",
       "contractYears": 2,
-      "currentSalary": 5853659,
+      "currentSalary": 6000000,
       "notes": [
         "Trade restriction: 12/15/2026"
       ]
@@ -6149,6 +6149,37 @@
       "contractYears": 1,
       "currentSalary": 56832773,
       "notes": []
+    },
+    {
+      "id": "10860",
+      "player": "Draymond Green",
+      "team": "GSW",
+      "position": "PF",
+      "age": 36,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 27678571,
+          "option": "estimate",
+          "display": "$27,678,571",
+          "pctOfCap": 16.8
+        },
+        {
+          "season": "2027-28",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $2.6M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 27678571,
+      "freeAgencyYear": "2027-28",
+      "freeAgencyType": "UFA",
+      "contractYears": 1,
+      "currentSalary": 27678571,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
     },
     {
       "id": "17832",
@@ -8276,6 +8307,49 @@
       "notes": []
     },
     {
+      "id": "98634",
+      "player": "Johni Broome",
+      "team": "LAC",
+      "position": "C",
+      "age": 24,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 2150917,
+          "option": "none",
+          "display": "$2,150,917",
+          "pctOfCap": 1.3
+        },
+        {
+          "season": "2027-28",
+          "amount": 2525901,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2028-29",
+          "amount": 2735698,
+          "option": "team",
+          "display": "$0",
+          "pctOfCap": 1.5
+        },
+        {
+          "season": "2029-30",
+          "amount": null,
+          "option": "ufa",
+          "display": "UFA / $0.0M",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": 7412516,
+      "freeAgencyYear": "2029-30",
+      "freeAgencyType": "UFA",
+      "contractYears": 3,
+      "currentSalary": 2150917,
+      "notes": []
+    },
+    {
       "id": "108427",
       "player": "Baba Miller",
       "team": "LAC",
@@ -8364,719 +8438,6 @@
       "contractYears": 0,
       "currentSalary": null,
       "notes": []
-    },
-    {
-      "id": "26969",
-      "player": "Luka Doncic",
-      "team": "LAL",
-      "position": "PG",
-      "age": 27,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 49488300,
-          "option": "none",
-          "display": "$49,488,300",
-          "pctOfCap": 30
-        },
-        {
-          "season": "2027-28",
-          "amount": 53447364,
-          "option": "none",
-          "display": "$53,447,364",
-          "pctOfCap": 30.7
-        },
-        {
-          "season": "2028-29",
-          "amount": 57406428,
-          "option": "player",
-          "display": "$57,406,428",
-          "pctOfCap": 31.4
-        },
-        {
-          "season": "2029-30",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $66.8M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 160342092,
-      "freeAgencyYear": "2029-30",
-      "freeAgencyType": "UFA",
-      "contractYears": 3,
-      "currentSalary": 49488300,
-      "notes": []
-    },
-    {
-      "id": "74218",
-      "player": "Austin Reaves",
-      "team": "LAL",
-      "position": "SG",
-      "age": 28,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 41240250,
-          "option": "none",
-          "display": "$41,240,250",
-          "pctOfCap": 25
-        },
-        {
-          "season": "2027-28",
-          "amount": 42954030,
-          "option": "none",
-          "display": "$42,954,030",
-          "pctOfCap": 24.7
-        },
-        {
-          "season": "2028-29",
-          "amount": 46253250,
-          "option": "none",
-          "display": "$46,253,250",
-          "pctOfCap": 25.3
-        },
-        {
-          "season": "2029-30",
-          "amount": 49552470,
-          "option": "player",
-          "display": "$49,552,470",
-          "pctOfCap": 25.8
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $60.2M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 180000000,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "UFA",
-      "contractYears": 4,
-      "currentSalary": 41240250,
-      "notes": [
-        "Trade restriction: 01/15/2027"
-      ]
-    },
-    {
-      "id": "78133",
-      "player": "Walker Kessler",
-      "team": "LAL",
-      "position": "C",
-      "age": 25,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 30108821,
-          "option": "none",
-          "display": "$30,108,821",
-          "pctOfCap": 18.3
-        },
-        {
-          "season": "2027-28",
-          "amount": 31614262,
-          "option": "none",
-          "display": "$31,614,262",
-          "pctOfCap": 18.2
-        },
-        {
-          "season": "2028-29",
-          "amount": 33119703,
-          "option": "none",
-          "display": "$33,119,703",
-          "pctOfCap": 18.1
-        },
-        {
-          "season": "2029-30",
-          "amount": 34625144,
-          "option": "player",
-          "display": "$34,625,144",
-          "pctOfCap": 18
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $51.9M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 129467930,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "UFA",
-      "contractYears": 4,
-      "currentSalary": 30108821,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "74132",
-      "player": "Quentin Grimes",
-      "team": "LAL",
-      "position": "SG",
-      "age": 26,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 13953489,
-          "option": "none",
-          "display": "$13,953,489",
-          "pctOfCap": 8.5
-        },
-        {
-          "season": "2027-28",
-          "amount": 14651163,
-          "option": "none",
-          "display": "$14,651,163",
-          "pctOfCap": 8.4
-        },
-        {
-          "season": "2028-29",
-          "amount": 15348837,
-          "option": "none",
-          "display": "$15,348,837",
-          "pctOfCap": 8.4
-        },
-        {
-          "season": "2029-30",
-          "amount": 16046511,
-          "option": "player",
-          "display": "$16,046,511",
-          "pctOfCap": 8.4
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $30.5M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 60000000,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "UFA",
-      "contractYears": 4,
-      "currentSalary": 13953489,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "74161",
-      "player": "Sandro Mamukelashvili",
-      "team": "LAL",
-      "position": "C",
-      "age": 27,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 13000000,
-          "option": "none",
-          "display": "$13,000,000",
-          "pctOfCap": 7.9
-        },
-        {
-          "season": "2027-28",
-          "amount": 12350000,
-          "option": "none",
-          "display": "$12,350,000",
-          "pctOfCap": 7.1
-        },
-        {
-          "season": "2028-29",
-          "amount": 13000000,
-          "option": "none",
-          "display": "$13,000,000",
-          "pctOfCap": 7.1
-        },
-        {
-          "season": "2029-30",
-          "amount": 13650000,
-          "option": "player",
-          "display": "$13,650,000",
-          "pctOfCap": 7.1
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $25.9M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 52000000,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "UFA",
-      "contractYears": 4,
-      "currentSalary": 13000000,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "27007",
-      "player": "Jarred Vanderbilt",
-      "team": "LAL",
-      "position": "PF",
-      "age": 27,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 12428571,
-          "option": "none",
-          "display": "$12,428,571",
-          "pctOfCap": 7.5
-        },
-        {
-          "season": "2027-28",
-          "amount": 13285714,
-          "option": "player",
-          "display": "$13,285,714",
-          "pctOfCap": 7.6
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $19.9M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 25714285,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "UFA",
-      "contractYears": 2,
-      "currentSalary": 12428571,
-      "notes": []
-    },
-    {
-      "id": "26974",
-      "player": "Collin Sexton",
-      "team": "LAL",
-      "position": "PG",
-      "age": 28,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 9366000,
-          "option": "none",
-          "display": "$9,366,000",
-          "pctOfCap": 5.7
-        },
-        {
-          "season": "2027-28",
-          "amount": 9834300,
-          "option": "player",
-          "display": "$9,834,300",
-          "pctOfCap": 5.7
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $12.8M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 19200300,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "UFA",
-      "contractYears": 2,
-      "currentSalary": 9366000,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "78130",
-      "player": "Jaden Hardy",
-      "team": "LAL",
-      "position": "SG",
-      "age": 24,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 6000000,
-          "option": "none",
-          "display": "$6,000,000",
-          "pctOfCap": 3.6
-        },
-        {
-          "season": "2027-28",
-          "amount": 6000000,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 3.4
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $11.4M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 12000000,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "UFA",
-      "contractYears": 2,
-      "currentSalary": 6000000,
-      "notes": []
-    },
-    {
-      "id": "78141",
-      "player": "Jake LaRavia",
-      "team": "LAL",
-      "position": "PF",
-      "age": 25,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 6000000,
-          "option": "none",
-          "display": "$6,000,000",
-          "pctOfCap": 3.6
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $7.8M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 6000000,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 6000000,
-      "notes": []
-    },
-    {
-      "id": "91749",
-      "player": "Dalton Knecht",
-      "team": "LAL",
-      "position": "SF",
-      "age": 25,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 4201080,
-          "option": "none",
-          "display": "$4,201,080",
-          "pctOfCap": 2.5
-        },
-        {
-          "season": "2027-28",
-          "amount": 6452860,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 3.7
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "rfa",
-          "display": "RFA / $19.4M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 10653940,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "RFA",
-      "contractYears": 2,
-      "currentSalary": 4201080,
-      "notes": []
-    },
-    {
-      "id": "107940",
-      "player": "Cameron Carr",
-      "team": "LAL",
-      "position": "SG",
-      "age": 22,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 3315360,
-          "option": "none",
-          "display": "$3,315,360",
-          "pctOfCap": 2
-        },
-        {
-          "season": "2027-28",
-          "amount": 3481080,
-          "option": "none",
-          "display": "$3,481,080",
-          "pctOfCap": 2
-        },
-        {
-          "season": "2028-29",
-          "amount": 3646800,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 2
-        },
-        {
-          "season": "2029-30",
-          "amount": 6378253,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 3.3
-        },
-        {
-          "season": "2030-31",
-          "amount": null,
-          "option": "rfa",
-          "display": "RFA / $19.1M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 16821493,
-      "freeAgencyYear": "2030-31",
-      "freeAgencyType": "RFA",
-      "contractYears": 4,
-      "currentSalary": 3315360,
-      "notes": [
-        "Trade restriction: 08/01/2026"
-      ]
-    },
-    {
-      "id": "17858",
-      "player": "Kevon Looney",
-      "team": "LAL",
-      "position": "C",
-      "age": 30,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2449421,
-          "option": "estimate",
-          "display": "$2,449,421",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 2449421,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 2449421,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "31577",
-      "player": "Matisse Thybulle",
-      "team": "LAL",
-      "position": "SG",
-      "age": 29,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2449421,
-          "option": "none",
-          "display": "$2,449,421",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 2449421,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 2449421,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "74117",
-      "player": "Ziaire Williams",
-      "team": "LAL",
-      "position": "SF",
-      "age": 25,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2449421,
-          "option": "none",
-          "display": "$2,449,421",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2027-28",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $2.6M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 2449421,
-      "freeAgencyYear": "2027-28",
-      "freeAgencyType": "UFA",
-      "contractYears": 1,
-      "currentSalary": 2449421,
-      "notes": [
-        "Trade restriction: 12/15/2026"
-      ]
-    },
-    {
-      "id": "92960",
-      "player": "Bronny James",
-      "team": "LAL",
-      "position": "PG",
-      "age": 22,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2296271,
-          "option": "none",
-          "display": "$2,296,271",
-          "pctOfCap": 1.4
-        },
-        {
-          "season": "2027-28",
-          "amount": 2486995,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 1.4
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $3.1M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 4783266,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "UFA",
-      "contractYears": 2,
-      "currentSalary": 2296271,
-      "notes": []
-    },
-    {
-      "id": "98625",
-      "player": "Adou Thiero",
-      "team": "LAL",
-      "position": "SF",
-      "age": 22,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2150917,
-          "option": "none",
-          "display": "$2,150,917",
-          "pctOfCap": 1.3
-        },
-        {
-          "season": "2027-28",
-          "amount": 2525901,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2028-29",
-          "amount": null,
-          "option": "rfa",
-          "display": "RFA / $3.4M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 4676818,
-      "freeAgencyYear": "2028-29",
-      "freeAgencyType": "RFA",
-      "contractYears": 2,
-      "currentSalary": 2150917,
-      "notes": []
-    },
-    {
-      "id": "100568",
-      "player": "Arthur Kaluma",
-      "team": "LAL",
-      "position": "F",
-      "age": 24,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 91000,
-          "option": "two-way",
-          "display": "$91,000",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 91000,
-      "freeAgencyYear": null,
-      "freeAgencyType": null,
-      "contractYears": 1,
-      "currentSalary": 91000,
-      "notes": [
-        "Trade restriction: 08/22/2026"
-      ]
-    },
-    {
-      "id": "100551",
-      "player": "Chris Manon",
-      "team": "LAL",
-      "position": "G",
-      "age": 25,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 91000,
-          "option": "two-way",
-          "display": "$91,000",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 91000,
-      "freeAgencyYear": null,
-      "freeAgencyType": null,
-      "contractYears": 1,
-      "currentSalary": 91000,
-      "notes": []
-    },
-    {
-      "id": "108844",
-      "player": "AK Okereke",
-      "team": "LAL",
-      "position": "F",
-      "age": 23,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 91000,
-          "option": "two-way",
-          "display": "$91,000",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 91000,
-      "freeAgencyYear": null,
-      "freeAgencyType": null,
-      "contractYears": 1,
-      "currentSalary": 91000,
-      "notes": [
-        "Trade restriction: 08/02/2026"
-      ]
     },
     {
       "id": "15391",
@@ -12077,6 +11438,30 @@
       "notes": []
     },
     {
+      "id": "78131",
+      "player": "Christian Koloko",
+      "team": "NOP",
+      "position": "C",
+      "age": 26,
+      "salaries": [
+        {
+          "season": "2026-27",
+          "amount": 0,
+          "option": "non-guaranteed",
+          "display": "$0",
+          "pctOfCap": null
+        }
+      ],
+      "guaranteed": null,
+      "freeAgencyYear": null,
+      "freeAgencyType": null,
+      "contractYears": 1,
+      "currentSalary": 0,
+      "notes": [
+        "Trade restriction: 12/15/2026"
+      ]
+    },
+    {
       "id": "82271",
       "player": "Kobe Bufkin",
       "team": "NOP",
@@ -14469,49 +13854,6 @@
       "freeAgencyType": "UFA",
       "contractYears": 2,
       "currentSalary": 2296271,
-      "notes": []
-    },
-    {
-      "id": "98634",
-      "player": "Johni Broome",
-      "team": "PHI",
-      "position": "C",
-      "age": 24,
-      "salaries": [
-        {
-          "season": "2026-27",
-          "amount": 2150917,
-          "option": "none",
-          "display": "$2,150,917",
-          "pctOfCap": 1.3
-        },
-        {
-          "season": "2027-28",
-          "amount": 2525901,
-          "option": "non-guaranteed",
-          "display": "$0",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2028-29",
-          "amount": 2735698,
-          "option": "team",
-          "display": "$0",
-          "pctOfCap": 1.5
-        },
-        {
-          "season": "2029-30",
-          "amount": null,
-          "option": "ufa",
-          "display": "UFA / $0.0M",
-          "pctOfCap": null
-        }
-      ],
-      "guaranteed": 7412516,
-      "freeAgencyYear": "2029-30",
-      "freeAgencyType": "UFA",
-      "contractYears": 3,
-      "currentSalary": 2150917,
       "notes": []
     },
     {
