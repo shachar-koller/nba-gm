@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useMemo, useState } from "react";
+import Link from "next/link";
 import type { PlayerContract, TeamAbbr } from "@/lib/types";
 import { TEAMS } from "@/lib/teams";
 import { formatMoney } from "@/lib/format";
@@ -35,6 +36,8 @@ import { ExportButton } from "./ExportButton";
 import { SavedViewsBar } from "./SavedViews";
 import { PlayerDrawer, PlayerNameButton } from "./PlayerDrawer";
 import { useModShortcut } from "@/lib/useModShortcut";
+import { playerProfileHrefForContract } from "@/lib/playerProfiles";
+import { PLAYER_PROFILE_REGISTRY } from "@/lib/playerProfileRegistry";
 
 type TypeFilter = "all" | "ufa" | "rfa";
 
@@ -374,7 +377,7 @@ function FreeAgentsInner({
     <div>
       <PageHeader
         title="Free Agent Classes"
-        description={`Who becomes free each offseason — UFA vs RFA, estimated cap holds, option timing. Click a player for the full contract. ${shortcut} to search.`}
+        description={`Who becomes free each offseason — UFA vs RFA, estimated cap holds, option timing, and shareable player profiles. ${shortcut} to search.`}
       >
         <SavedViewsBar path={pathname} queryString={queryString} />
         {view !== "overview" && activeGroup && (
@@ -497,9 +500,15 @@ function FreeAgentsInner({
                     className="rounded-md border border-[var(--border)] bg-[var(--surface-2)] px-3 py-2"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="font-semibold text-sm truncate">
+                      <Link
+                        href={playerProfileHrefForContract(
+                          c,
+                          PLAYER_PROFILE_REGISTRY
+                        )}
+                        className="truncate text-sm font-semibold hover:text-[var(--accent)]"
+                      >
                         {c.player}
-                      </span>
+                      </Link>
                       {effectiveFreeAgencyType(c) && (
                         <OptionBadge
                           option={
@@ -652,8 +661,8 @@ function FreeAgentsInner({
             }
           />
           <p className="mt-2 text-[11px] text-[var(--muted)] print:hidden">
-            Cap hold is estimated from source display text. Click a player name for
-            the full year grid. Sort is stored in the URL.
+            Cap hold is estimated from source display text. Open the quick contract
+            view or a player&apos;s shareable profile. Sort is stored in the URL.
           </p>
         </>
       )}

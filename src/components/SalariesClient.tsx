@@ -295,7 +295,7 @@ function SalariesInner({
     <div>
       <PageHeader
         title="Player Salaries"
-        description="Click a player for the full year grid. Filters and sort sync to the URL — shareable and saveable."
+        description="Open a quick contract view or a shareable player profile. Filters and sort sync to the URL — shareable and saveable."
       >
         <SavedViewsBar path={pathname} queryString={queryString} />
         <ExportButton
@@ -429,8 +429,8 @@ function SalariesInner({
         onEmptyAction={clearFilters}
       />
       <p className="mt-2 text-[11px] text-[var(--muted)] print:hidden">
-        * Guaranteed total is an estimate from remaining listed years. Click a name for the
-        full contract. Sort is stored in the URL.
+        * Guaranteed total is an estimate from remaining listed years. Player names
+        offer a quick contract view and a canonical profile. Sort is stored in the URL.
       </p>
 
       <PlayerDrawer

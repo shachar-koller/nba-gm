@@ -15,20 +15,78 @@ import { sortPositionList } from "./positions";
 import snapshot from "@/data/app-data.json";
 
 function assertAppDataShape(data: AppData): void {
-  if (!Array.isArray(data.contracts) || !Array.isArray(data.teamPayrolls) || !Array.isArray(data.draftPicks)) {
+  if (
+    !Array.isArray(data.contracts) ||
+    !Array.isArray(data.teamPayrolls) ||
+    !Array.isArray(data.draftPicks) ||
+    !Array.isArray(data.capThresholds)
+  ) {
     throw new Error(
-      "Invalid app-data.json: expected contracts, teamPayrolls, and draftPicks arrays. Re-run `npm run refresh`."
+      "Invalid app-data.json: expected contracts, teamPayrolls, draftPicks, and capThresholds arrays. Re-run `npm run refresh`."
     );
   }
-  if (data.teamPayrolls.length < 30) {
+
+  const expectedTeams = new Set(TEAMS.map((team) => team.abbr));
+  const payrollTeams = new Set<string>();
+  const duplicatePayrollTeams = new Set<string>();
+  for (const payroll of data.teamPayrolls) {
+    if (!expectedTeams.has(payroll.team)) {
+      throw new Error(`Invalid app-data.json: unknown payroll team ${payroll.team}.`);
+    }
+    if (payrollTeams.has(payroll.team)) duplicatePayrollTeams.add(payroll.team);
+    payrollTeams.add(payroll.team);
+  }
+  const missingPayrollTeams = TEAMS.filter(
+    (team) => !payrollTeams.has(team.abbr)
+  ).map((team) => team.abbr);
+  if (
+    data.teamPayrolls.length !== TEAMS.length ||
+    missingPayrollTeams.length > 0 ||
+    duplicatePayrollTeams.size > 0
+  ) {
     throw new Error(
-      `Invalid app-data.json: expected 30 team payrolls, found ${data.teamPayrolls.length}.`
+      `Invalid app-data.json: payroll coverage must include all 30 teams exactly once` +
+        `${missingPayrollTeams.length ? `; missing ${missingPayrollTeams.join(", ")}` : ""}` +
+        `${duplicatePayrollTeams.size ? `; duplicates ${[...duplicatePayrollTeams].join(", ")}` : ""}.`
     );
   }
-  if (data.contracts.length < 100) {
+
+  const contractsByTeam = Object.fromEntries(
+    TEAMS.map((team) => [team.abbr, 0])
+  ) as Record<TeamAbbr, number>;
+  const contractKeys = new Set<string>();
+  for (const contract of data.contracts) {
+    if (!expectedTeams.has(contract.team)) {
+      throw new Error(`Invalid app-data.json: unknown contract team ${contract.team}.`);
+    }
+    contractsByTeam[contract.team] += 1;
+    const key = `${contract.team}|${contract.id}`;
+    if (contractKeys.has(key)) {
+      throw new Error(`Invalid app-data.json: duplicate contract key ${key}.`);
+    }
+    contractKeys.add(key);
+  }
+  const thinRosters = TEAMS.filter(
+    (team) => contractsByTeam[team.abbr] < 8
+  ).map((team) => `${team.abbr} (${contractsByTeam[team.abbr]})`);
+  if (thinRosters.length > 0) {
     throw new Error(
-      `Invalid app-data.json: expected ≥100 contracts, found ${data.contracts.length}.`
+      `Invalid app-data.json: expected at least 8 contracts per team; incomplete rosters: ${thinRosters.join(", ")}.`
     );
+  }
+
+  if (data.draftPicks.length < 50) {
+    throw new Error(
+      `Invalid app-data.json: expected at least 50 draft picks, found ${data.draftPicks.length}.`
+    );
+  }
+  if (!data.capThresholds.some((cap) => cap.season === data.currentSeason)) {
+    throw new Error(
+      `Invalid app-data.json: cap thresholds do not include ${data.currentSeason}.`
+    );
+  }
+  if (Number.isNaN(Date.parse(data.updatedAt))) {
+    throw new Error("Invalid app-data.json: updatedAt is not a valid timestamp.");
   }
 }
 

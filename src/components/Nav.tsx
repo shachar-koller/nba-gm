@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { classNames } from "@/lib/format";
@@ -22,6 +23,21 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
   const pathname = usePathname();
   const onHome = pathname === "/";
   const { shortcut, spoken } = useModShortcut();
+  const primaryNavRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      const nav = primaryNavRef.current;
+      const active = nav?.querySelector<HTMLElement>('[aria-current="page"]');
+      if (!nav || !active || nav.scrollWidth <= nav.clientWidth) return;
+
+      const centeredLeft =
+        active.offsetLeft - (nav.clientWidth - active.offsetWidth) / 2;
+      nav.scrollTo({ left: Math.max(0, centeredLeft), behavior: "auto" });
+    });
+
+    return () => cancelAnimationFrame(frame);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--surface)]/95 backdrop-blur-md print:hidden">
@@ -50,6 +66,7 @@ export function Nav({ updatedLabel }: { updatedLabel?: string }) {
 
         <div className="relative min-w-0 flex-1">
           <nav
+            ref={primaryNavRef}
             className="flex min-w-0 items-center gap-0 overflow-x-auto scrollbar-none [mask-image:linear-gradient(to_right,transparent,black_12px,black_calc(100%-20px),transparent)] sm:[mask-image:none]"
             aria-label="Primary"
           >

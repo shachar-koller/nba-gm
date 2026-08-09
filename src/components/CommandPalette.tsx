@@ -3,6 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getAppData } from "@/lib/data";
+import { getPlayerStats, getPlayerStatsData } from "@/lib/playerStats";
+import {
+  createPlayerProfileIndex,
+  playerProfileHref,
+} from "@/lib/playerProfiles";
+import { PLAYER_PROFILE_REGISTRY } from "@/lib/playerProfileRegistry";
 import { TEAMS } from "@/lib/teams";
 import { LEAGUE_STAFF } from "@/lib/staff";
 import { formatMoney } from "@/lib/format";
@@ -70,6 +76,7 @@ export function CommandPalette() {
 
   const items = useMemo(() => {
     const data = getAppData();
+    const statsData = getPlayerStatsData();
     const teams: Item[] = TEAMS.map((t) => ({
       id: `t-${t.abbr}`,
       group: "Teams",
@@ -93,13 +100,29 @@ export function CommandPalette() {
         href: `/staff?q=${encodeURIComponent(row.headCoach)}`,
       },
     ]);
-    const players: Item[] = data.contracts.map((c) => ({
-      id: `c-${c.id}-${c.team}`,
-      group: "Players",
-      label: c.player,
-      hint: `${c.team} · ${formatMoney(c.currentSalary, true)}${c.freeAgencyYear ? ` · FA ${c.freeAgencyYear}` : ""}`,
-      href: `/salaries?q=${encodeURIComponent(c.player)}`,
-    }));
+    const profileIndex = createPlayerProfileIndex(
+      data.contracts,
+      getPlayerStats(statsData),
+      PLAYER_PROFILE_REGISTRY
+    );
+    const players: Item[] = profileIndex.profiles.map((profile) => {
+      const contract = profile.contract;
+      const hints = [
+        profile.team,
+        contract?.currentSalary != null
+          ? formatMoney(contract.currentSalary, true)
+          : null,
+        contract?.freeAgencyYear ? `FA ${contract.freeAgencyYear}` : null,
+        profile.stats ? `${statsData.season} stats` : null,
+      ].filter(Boolean);
+      return {
+        id: `player-${profile.id}`,
+        group: "Players",
+        label: profile.name,
+        hint: hints.join(" · "),
+        href: playerProfileHref(profile.id),
+      };
+    });
     return [...PAGES, ...teams, ...staff, ...players];
   }, []);
 

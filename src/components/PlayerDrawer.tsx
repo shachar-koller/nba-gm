@@ -9,6 +9,8 @@ import {
   faCapHold,
   timingOptions,
 } from "@/lib/freeAgency";
+import { playerProfileHrefForContract } from "@/lib/playerProfiles";
+import { PLAYER_PROFILE_REGISTRY } from "@/lib/playerProfileRegistry";
 import { Drawer } from "./Drawer";
 import { OptionBadge } from "./Badge";
 import { TeamChip } from "./TeamLogo";
@@ -80,6 +82,21 @@ export function PlayerDrawer({
                 onClick={onClose}
               >
                 {player.team} dashboard →
+              </Link>
+            }
+          />
+          <Meta
+            label="Shareable profile"
+            value={
+              <Link
+                href={playerProfileHrefForContract(
+                  player,
+                  PLAYER_PROFILE_REGISTRY
+                )}
+                className="text-[var(--accent)] hover:underline"
+                onClick={onClose}
+              >
+                Full player profile →
               </Link>
             }
           />
@@ -211,19 +228,31 @@ export function PlayerNameButton({
   subtitle?: React.ReactNode;
 }) {
   return (
-    <button
-      type="button"
-      onClick={() => onOpen(player)}
-      className="group/name text-left"
-    >
-      <span className="font-semibold group-hover/name:text-[var(--accent)] transition-colors">
-        {player.player}
+    <div className="text-left">
+      <span className="inline-flex max-w-full items-baseline gap-1.5">
+        <button
+          type="button"
+          onClick={() => onOpen(player)}
+          className="group/name min-w-0 text-left"
+        >
+          <span className="font-semibold group-hover/name:text-[var(--accent)] transition-colors">
+            {player.player}
+          </span>
+        </button>
+        <Link
+          href={playerProfileHrefForContract(player, PLAYER_PROFILE_REGISTRY)}
+          className="shrink-0 text-[9px] font-medium uppercase tracking-wide text-[var(--faint)] hover:text-[var(--accent)]"
+          title={`Open ${player.player}'s shareable profile`}
+          aria-label={`Open ${player.player}'s shareable profile`}
+        >
+          profile
+        </Link>
       </span>
       {subtitle != null && (
         <span className="block text-[11px] text-[var(--muted)] font-normal">
           {subtitle}
         </span>
       )}
-    </button>
+    </div>
   );
 }

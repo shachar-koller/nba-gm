@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { DataFreshnessBanner } from "@/components/DataFreshnessBanner";
 import { CommandPaletteLazy } from "@/components/CommandPaletteLazy";
 import { dataFreshness } from "@/lib/data";
+import { resolveSiteUrl } from "@/lib/siteUrl";
 import { UI_PREFS_INIT_SCRIPT } from "@/lib/theme-shared";
 
 const geistSans = Geist({
@@ -18,9 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
-  ),
+  metadataBase: resolveSiteUrl(),
   title: {
     default: "NBA Front Office | Cap, Contracts, Draft & Stats",
     template: "%s | NBA Front Office",
@@ -86,12 +86,19 @@ export default function RootLayout({
           tabIndex={-1}
           className="flex-1 mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8 outline-none"
         >
-          <DataFreshnessBanner />
+          <DataFreshnessBanner updatedAt={freshness.updatedAt} />
           {children}
         </main>
         <footer className="border-t border-[var(--border)] px-4 py-4 text-center text-[12px] text-[var(--muted)] print:hidden">
           <p>
-            {freshness.source} data · Updated {freshness.label} · Independent reference, not affiliated with the NBA.
+            {freshness.source} data · Updated {freshness.label} ·{" "}
+            <Link
+              href="/methodology"
+              className="font-medium text-[var(--foreground)] hover:text-[var(--accent)]"
+            >
+              Sources &amp; methodology
+            </Link>{" "}
+            · Independent reference, not affiliated with the NBA.
           </p>
         </footer>
         <CommandPaletteLazy />

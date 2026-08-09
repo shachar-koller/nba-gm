@@ -2,32 +2,38 @@
   "name": "nba-front-office",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test src/lib/*.test.ts",
-    "ci": "npm run lint && npm run typecheck && npm run test && npm run build",
-    "refresh": "node scripts/refresh-data.mjs && node scripts/fetch-player-stats.mjs",
-    "refresh:stats": "node scripts/fetch-player-stats.mjs"
+    "typecheck": "next typegen && tsc --noEmit --project tsconfig.typecheck.json",
+    "test": "node --experimental-strip-types --test src/lib/*.test.ts scripts/lib/*.test.mjs",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium",
+    "validate:data": "node scripts/validate-data.mjs",
+    "ci": "npm run lint && npm run typecheck && npm run test && npm run validate:data && npm run build",
+    "refresh": "node scripts/refresh-data.mjs && node scripts/fetch-player-stats.mjs && npm run refresh:profiles",
+    "refresh:stats": "node scripts/fetch-player-stats.mjs && npm run refresh:profiles",
+    "refresh:profiles": "node --experimental-strip-types scripts/update-player-profile-registry.ts"
   },
   "engines": {
     "node": ">=22.6.0"
   },
   "dependencies": {
-    "next": "16.2.10",
+    "next": "16.3.0",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

@@ -6,12 +6,14 @@
  * Usage: node scripts/fetch-player-stats.mjs
  *        (also invoked by npm run refresh)
  */
-import { writeFile, mkdir } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { validateEspnStatsPage } from "./lib/espn-stats.mjs";
+import { fetchJsonWithRetry, writeValidatedJsonAtomic } from "./lib/pipeline.mjs";
+import { validatePlayerStatsSnapshot } from "./lib/validate-snapshots.mjs";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT = join(__dirname, "..", "src", "data", "player-stats.json");
+const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
+const OUT = join(SCRIPT_DIR, "..", "src", "data", "player-stats.json");
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
 
@@ -48,12 +50,23 @@ function normalizeTeam(raw) {
   return VALID.has(mapped) ? mapped : null;
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-  return res.json();
+async function fetchJson(url, transform) {
+  return fetchJsonWithRetry(
+    url,
+    { headers: { "User-Agent": UA, Accept: "application/json" } },
+    {
+      attempts: 4,
+      baseDelayMs: 500,
+      maxDelayMs: 5_000,
+      timeoutMs: 20_000,
+      transform,
+      onRetry: ({ attempt, attempts, error, waitMs }) => {
+        console.warn(
+          `  retry ${attempt + 1}/${attempts} in ${Math.ceil(waitMs)}ms (${error.message})`
+        );
+      },
+    }
+  );
 }
 
 function catNames(categories) {
@@ -213,15 +226,23 @@ async function main() {
     `&sort=offensive.avgPoints%3Adesc&season=${SEASON_YEAR}&seasontype=2`;
 
   console.log(`Fetching ${SEASON_LABEL} player stats from ESPN…`);
-  const first = await fetchJson(`${base}&page=1`);
-  const pages = first.pagination.pages;
+  const first = await fetchJson(`${base}&page=1`, (data) =>
+    validateEspnStatsPage(data, { page: 1 })
+  );
+  const pages = Number(first?.pagination?.pages);
   const namesByCat = catNames(first.categories);
   const rows = [...first.athletes];
   console.log(`  page 1/${pages} (${rows.length})`);
 
   for (let p = 2; p <= pages; p++) {
     await sleep(350);
-    const data = await fetchJson(`${base}&page=${p}`);
+    const data = await fetchJson(`${base}&page=${p}`, (value) =>
+      validateEspnStatsPage(value, {
+        page: p,
+        requirePagination: false,
+        requireCategories: false,
+      })
+    );
     rows.push(...data.athletes);
     console.log(`  page ${p}/${pages} (${rows.length})`);
   }
@@ -250,10 +271,15 @@ async function main() {
     players,
   };
 
-  await mkdir(dirname(OUT), { recursive: true });
-  await writeFile(OUT, JSON.stringify(payload));
-  console.log(`Wrote ${OUT}`);
-  console.log(`Summary: ${players.length} players · ${SEASON_LABEL} regular season`);
+  const summary = await writeValidatedJsonAtomic(
+    OUT,
+    payload,
+    (candidate, { previous }) =>
+      validatePlayerStatsSnapshot(candidate, { previous }),
+    { space: 2 }
+  );
+  console.log(`Validated and atomically wrote ${OUT}`);
+  console.log(`Summary: ${summary.players} players · ${SEASON_LABEL} regular season`);
 }
 
 main().catch((err) => {

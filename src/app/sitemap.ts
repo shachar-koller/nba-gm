@@ -1,5 +1,13 @@
 import type { MetadataRoute } from "next";
+import { getAppData } from "@/lib/data";
+import { getPlayerStats } from "@/lib/playerStats";
+import {
+  createPlayerProfileIndex,
+  playerProfileHref,
+} from "@/lib/playerProfiles";
 import { TEAMS } from "@/lib/teams";
+import { siteOrigin } from "@/lib/siteUrl";
+import { PLAYER_PROFILE_REGISTRY } from "@/lib/playerProfileRegistry";
 
 const ROUTES = [
   "/",
@@ -11,22 +19,38 @@ const ROUTES = [
   "/staff",
   "/stats",
   "/stats/advanced",
+  "/methodology",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "";
+  const base = siteOrigin();
+  const appData = getAppData();
+  const playerProfiles = createPlayerProfileIndex(
+    appData.contracts,
+    getPlayerStats(),
+    PLAYER_PROFILE_REGISTRY
+  ).profiles;
 
   const pages: MetadataRoute.Sitemap = ROUTES.map((path) => ({
-    url: base ? `${base}${path}` : path,
+    url: `${base}${path}`,
     changeFrequency: path === "/" ? "daily" : "weekly",
     priority: path === "/" ? 1 : 0.8,
   }));
 
   const teams: MetadataRoute.Sitemap = TEAMS.map((t) => ({
-    url: base ? `${base}/teams/${t.abbr.toLowerCase()}` : `/teams/${t.abbr.toLowerCase()}`,
+    url: `${base}/teams/${t.abbr.toLowerCase()}`,
     changeFrequency: "weekly",
     priority: 0.6,
   }));
 
-  return [...pages, ...teams];
+  const players: MetadataRoute.Sitemap = playerProfiles.map((profile) => {
+    const path = playerProfileHref(profile.id);
+    return {
+      url: `${base}${path}`,
+      changeFrequency: "weekly",
+      priority: 0.5,
+    };
+  });
+
+  return [...pages, ...teams, ...players];
 }
