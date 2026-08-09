@@ -1,0 +1,98 @@
+name: Refresh NBA data
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Weekdays at 11:17 UTC (7:17 AM Eastern during daylight saving time).
+    - cron: "17 11 * * 1-5"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nba-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh and validate source snapshots
+        run: npm run refresh
+
+      - name: Run code, data, and production-build checks
+        run: npm run ci
+
+      - name: Install Chromium
+        run: npm run test:e2e:install
+
+      - name: Run browser smoke tests
+        run: npm run test:e2e
+        env:
+          PLAYWRIGHT_REUSE_BUILD: "1"
+
+      - name: Upload validated snapshots
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: refreshed-data
+          path: |
+            src/data/app-data.json
+            src/data/player-stats.json
+            src/data/player-profile-registry.json
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Download validated snapshots
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: refreshed-data
+          path: src/data
+
+      - name: Open a reviewed data-update pull request
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        with:
+          token: ${{ secrets.DATA_REFRESH_TOKEN || github.token }}
+          branch: codex/automated-data-refresh
+          delete-branch: true
+          draft: true
+          commit-message: "chore(data): refresh NBA snapshots"
+          title: "chore(data): refresh NBA snapshots"
+          body: |
+            Automated weekday refresh of the NBA Front Office snapshots.
+
+            Validation completed before this pull request was opened:
+            - retryable source fetches and atomic last-good snapshot writes
+            - dataset shape, all-team coverage, row-count, and drop checks
+            - lint, TypeScript, unit tests, and production build
+            - Chromium route and interaction smoke tests
+
+            Review source changes and spot-check notable transactions before merging.
+          add-paths: |
+            src/data/app-data.json
+            src/data/player-stats.json
+            src/data/player-profile-registry.json
